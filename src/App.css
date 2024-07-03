@@ -49,7 +49,12 @@ header {
   width: 100%;
   opacity: 0;
 }
-
+.sec {
+  height: auto;
+  width: 100%;
+  max-width: 400px;
+  padding-inline: 20px;
+}
 .homepage-kinetic {
   position: relative;
   width: 100%;
@@ -57,7 +62,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-inline: 10px;
+padding: 30px;
   overflow: hidden;
   display: none;
   opacity: 0;
@@ -432,9 +437,20 @@ header {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      font-size: 4vw;
+      font-size: 7vw;
       display: flex;
+      height: auto;
       overflow: hidden;
+      gap: 5px;
+      .date {
+        display: flex;
+        flex-direction: column;
+        height: 5vw;
+        overflow: hidden;
+        span {
+          transform: translateY(-10vw);
+        }
+      }
     }
 
     .workItem:nth-child(2) {
@@ -615,7 +631,9 @@ header {
   }
 }
 
-
+html::-webkit-scrollbar {
+  display: none;
+}
 .selectedWorks,
 .footer,
 .more {
@@ -625,4 +643,21 @@ header {
 
 .Homepage::-webkit-scrollbar {
   display: none;
+}
+
+
+
+.perc {
+  position: fixed;
+  top: 80%;
+  right: -35px;
+  background-color: #171717;
+  color: #f4f3ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+  rotate: -90deg;
 }

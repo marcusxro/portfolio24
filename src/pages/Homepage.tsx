@@ -227,11 +227,10 @@ const Homepage: React.FC = () => {
     };
   }, []);
 
-  const [isAllowed, setAllowed] = useState<boolean>(false)
 
   useEffect(() => {
     const itemShow: NodeListOf<Element> = document.querySelectorAll('.landing .landingCon .textCon span .word');
-window.scrollTo(0,0)
+    window.scrollTo(0, 0)
     gsap.to(itemShow, {
       opacity: 1,
       stagger: 0.1,
@@ -241,18 +240,33 @@ window.scrollTo(0,0)
           opacity: 1,
           delay: .7
         })
-        setAllowed(true)
       }
     })
 
+  }, []);
 
-  }, [isAllowed]);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+      gsap.to('.workItem .date span', {
+        y: '-2vw',
+        scrollTrigger: {
+          trigger: '.workItem .date',
+          start: 'top 80%',
+          end: 'bottom',
+          scrub: 1
+        }
+      })
+  }, [])
 
   return (
     <div className='Homepage'>
       <Header />
+      <div className="perc">
+          <div className="percentage">
+            MUSIC ON
+          </div>
+      </div>
       <div className="content">
-
         <div className="landing">
           <div className="landingCon">
             <div className="textCon">
@@ -301,16 +315,18 @@ window.scrollTo(0,0)
               </span>
             </div>
           </div>
-          <section className="homepage-kinetic laststag">
-            <div className="shape"></div>
-            <div className="shape"></div>
-            <div className="shape"></div>
-            <div className="shape"></div>
-            <div className="shape"></div>
-            <div className="shape"></div>
-            <div className="shape"></div>
-            <div className="shape"></div>
-          </section>
+          <div className="sec">
+            <section className="homepage-kinetic laststag">
+              <div className="shape"></div>
+              <div className="shape"></div>
+              <div className="shape"></div>
+              <div className="shape"></div>
+              <div className="shape"></div>
+              <div className="shape"></div>
+              <div className="shape"></div>
+              <div className="shape"></div>
+            </section>
+          </div>
           <div className="descContent">
             <div className="firstLayer">
               <div className="quote">
@@ -348,7 +364,11 @@ window.scrollTo(0,0)
         </div>
         <div className="selectedWorks">
           <div className="workItem">
-            SELECTED WORKS ('24)  -
+            SELECTED WORKS
+            <div className="date">
+            <span>('24)</span>
+              <span>('23?)</span>
+            </div> -
           </div>
           <div className="workItem">
             <div className="con">
@@ -360,12 +380,12 @@ window.scrollTo(0,0)
                 </div>
               </div>
               <div className="nameCon">
-              <div className="item title">
-                <span>Cafe Eunoia</span>
-              </div>
-              <div className="num item">
+                <div className="item title">
+                  <span>Cafe Eunoia</span>
+                </div>
+                <div className="num item">
                     //01
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -379,12 +399,12 @@ window.scrollTo(0,0)
                 </div>
               </div>
               <div className="nameCon">
-              <div className="item title">
-                Riri's WRS
-              </div>
-              <div className="num item">
+                <div className="item title">
+                  Riri's WRS
+                </div>
+                <div className="num item">
                     //02
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -398,12 +418,12 @@ window.scrollTo(0,0)
                 </div>
               </div>
               <div className="nameCon">
-              <div className="item title">
-                ULC Telesales
-              </div>
-              <div className="num item">
+                <div className="item title">
+                  ULC Telesales
+                </div>
+                <div className="num item">
                     //03
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -417,12 +437,12 @@ window.scrollTo(0,0)
                 </div>
               </div>
               <div className="nameCon">
-              <div className="item title">
-                PCUP
-              </div>
-              <div className="num item">
+                <div className="item title">
+                  PCUP
+                </div>
+                <div className="num item">
                     //04
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -436,12 +456,12 @@ window.scrollTo(0,0)
                 </div>
               </div>
               <div className="nameCon">
-              <div className="item title">
-                MELCHORA IRS
-              </div>
-              <div className="num item">
+                <div className="item title">
+                  MELCHORA IRS
+                </div>
+                <div className="num item">
                     //05
-              </div>
+                </div>
               </div>
             </div>
           </div>
