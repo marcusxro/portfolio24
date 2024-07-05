@@ -614,6 +614,7 @@ html::-webkit-scrollbar {
   font-size: 1.7rem;
   font-family: 'boldFont', sans-serif;
   z-index: 10;
+  opacity: 0;
 }
 
 .slctd .content {
@@ -648,6 +649,7 @@ html::-webkit-scrollbar {
   overflow: hidden;
   height: 100%;
   width: 100%;
+  opacity: 0;
 }
 
 .slctd .content .left .imageItem img {
@@ -692,10 +694,12 @@ html::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   gap: 50px;
+  padding-top: 30px;
 }
 
 .slctd .content .right .content .title {
   font-size: 5vw;
+    opacity: 0;
 }
 
 .slctd .content .right .content .headerText {
@@ -716,6 +720,7 @@ html::-webkit-scrollbar {
 .slctd .content .right .content .innerCon {
   display: flex;
   gap: 40px;
+  opacity: 0;
 }
 
 .slctd .content .right .navigation {
@@ -730,6 +735,7 @@ html::-webkit-scrollbar {
 
 .slctd .content .right .navigation .item {
   cursor: pointer;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -753,8 +759,6 @@ html::-webkit-scrollbar {
       padding-bottom: 30px;
     }
   }
-
-
 
   .slctd .content .right {
 

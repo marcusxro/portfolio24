@@ -131,9 +131,9 @@ const SelectedWorks: React.FC = () => {
         };
     }, [workID]);
 
- 
-  
-    
+
+
+
     const nav = useNavigate()
     const [scrollWidthDoc, setScrollWidthDoc] = useState<number>(0);
     const prevScrollWidth = useRef<number>(0); // Ref to store the previous scroll width
@@ -193,7 +193,48 @@ const SelectedWorks: React.FC = () => {
     }, []); // Empty dependency array means this effect runs once on mo
 
 
+    const [isAvail, setIsAvail] = useState<boolean>(false)
 
+    useEffect(() => {
+        setIsAvail(true)
+        if(isAvail) {
+            gsap.to('.slctd .content .right .content .title', {
+                opacity: 1,
+                duration: 0,
+                delay: 1,
+                onComplete: () => {
+                    gsap.to([`.header`, '.imageItem',
+                        '.slctd .content .right .content .title',
+                        '.slctd .content .right .content .innerCon',
+                        '.slctd .content .right .navigation .item '], {
+                        opacity: 1,
+                        duration: .5,
+                        delay: 1,
+                        stagger: 0.2,
+                    })
+                    setIsAvail(false)
+                }
+            })
+        }
+    }, [isAvail])
+
+
+    const nextBtn = () => {
+        gsap.to([`.header`, '.imageItem',
+            '.slctd .content .right .content .title',
+            '.slctd .content .right .content .innerCon',
+            '.slctd .content .right .navigation .item',
+            '.slctd .content .right .content .title'], {
+            opacity: 0,
+            duration: 0,
+            onComplete: () => {
+                nav(`/selectedwork/${filteredObj[0]?.next}`); 
+                window.scrollTo(0, 0) 
+                setIsAvail(true)
+            }
+        })
+
+    }
 
 
     return (
@@ -247,7 +288,7 @@ const SelectedWorks: React.FC = () => {
                     <div className="navigation">
                         <div className="item">VISIT</div>
 
-                        <div className="item" onClick={() => { nav(`/selectedwork/${filteredObj[0]?.next}`); window.scrollTo(0, 0) }}>NEXT</div>
+                        <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>
                 </div>
             </div>
