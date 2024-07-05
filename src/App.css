@@ -1254,15 +1254,14 @@ html::-webkit-scrollbar {
   left: 0;
   width: 100%;
   z-index: 99;
-padding-inline: 10px;
+  padding-inline: 10px;
+
   .footer {
     border-top: 2px solid black;
   }
 }
 
-
-.footer {
-
+.footerContainer {
   height: auto;
   font-family: 'mediumFont', sans-serif;
   padding-top: 20px;
@@ -1271,98 +1270,94 @@ padding-inline: 10px;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+}
 
-  .firstLayer {
+.footerContainer .firstLayer {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  padding-inline: 25px;
+  justify-content: space-between;
+}
+
+.footerContainer .firstLayer span {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerContainer .firstLayer .midCon {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.footerContainer .firstLayer .midCon .item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 20px;
+}
+
+.footerContainer .firstLayer .midCon .item span {
+  transform: translateY(-20px);
+}
+
+.footerContainer .hiddenLayer {
+  display: none;
+}
+
+.footerContainer .secLayer {
+  font-family: 'boldFont', sans-serif;
+  height: 27vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerContainer .secLayer .text {
+  font-size: 33vw;
+  color: #171717;
+  transform-origin: center;
+  line-height: 90%;
+  width: 100%;
+  letter-spacing: -1vw;
+}
+
+@media only screen and (max-width: 850px) {
+  .footerContainer .secLayer .text {
+    letter-spacing: -3.5vw;
     width: 100%;
-    gap: 10px;
-    display: flex;
-    justify-content: space-between;
-
-
-    span {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .midCon {
-      display: flex;
-      width: 50%;
-      justify-content: space-between;
-      gap: 3px;
-
-      .item {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        overflow: hidden;
-        height: 20px;
-
-        span {
-          transform: translateY(-20px);
-        }
-      }
-
-    }
-
   }
 
-  .hiddenLayer {
+  .footerContainer .firstLayer {
     display: none;
   }
 
-  .secLayer {
-    font-family: 'boldFont', sans-serif;
-    height: 27vw;
+  .footerContainer .hiddenLayer {
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .text {
-      font-size: 33vw;
-      color: #171717;
-      transform-origin: center;
-      line-height: 90%;
-      width: 100%;
-      letter-spacing: -1vw;
-    }
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
   }
 
-  @media only screen and (max-width:850px) {
-    .secLayer {
-      .text {
-        letter-spacing: -3.5vw;
-        width: 100%;
-      }
-    }
+  .footerContainer .hiddenLayer .firstCon {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .firstLayer {
-      display: none;
-    }
-
-    .hiddenLayer {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 20px;
-
-      .firstCon {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        .item {
-          display: flex;
-          flex-direction: column;
-        }
-      }
-    }
-
+  .footerContainer .hiddenLayer .firstCon .item {
+    display: flex;
+    flex-direction: column;
   }
 }
 
+
 @media only screen and (max-width:850px) {
-  .footer {
+  .footerContainer {
     padding: 25px;
   }
 }

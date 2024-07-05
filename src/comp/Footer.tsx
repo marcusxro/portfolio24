@@ -48,7 +48,7 @@ const Footer = () => {
     };
   }, []);
     return (
-        <div className="footer">
+        <div className="footer footerContainer">
             <div className="firstLayer">
                 <div className="item address">
                     <span>Area 5B</span>
