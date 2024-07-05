@@ -4,6 +4,8 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import Lenis from 'lenis'
+import SelectedWork from './pages/SelectedWork';
+import About from './pages/About';
 
 const App: React.FC = () => {
 
@@ -23,6 +25,8 @@ const App: React.FC = () => {
       <div className="App">
         <Routes>
           <Route path='/' element={<Homepage />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/SelectedWork/:workID' element={<SelectedWork />} />
         </Routes>
       </div>
     </Router>

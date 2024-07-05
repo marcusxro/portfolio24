@@ -48,13 +48,16 @@ header {
   left: 0;
   width: 100%;
   opacity: 0;
+  z-index: 100;
 }
+
 .sec {
   height: auto;
   width: 100%;
   max-width: 400px;
   padding-inline: 20px;
 }
+
 .homepage-kinetic {
   position: relative;
   width: 100%;
@@ -62,7 +65,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-padding: 30px;
+  padding: 30px;
   overflow: hidden;
   display: none;
   opacity: 0;
@@ -195,7 +198,7 @@ padding: 30px;
           gap: 1vw;
 
           .word {
-            color: rgb(29, 2, 2);
+            color: #171717;
             opacity: 0;
           }
         }
@@ -338,7 +341,7 @@ padding: 30px;
           }
         }
 
-     
+
 
         .imageCon {
           height: 100%;
@@ -400,6 +403,7 @@ padding: 30px;
             }
           }
         }
+
         @media only screen and (max-width: 890px) {
           .nameCon {
             width: 100%;
@@ -412,6 +416,7 @@ padding: 30px;
               width: 100%;
               text-align: center;
             }
+
             .imageCon {
               width: 100%;
               background-color: red;
@@ -427,9 +432,9 @@ padding: 30px;
     }
 
     @media only screen and (max-width: 700px) {
-        .workItem{
-          height: 200px;
-        }
+      .workItem {
+        height: 200px;
+      }
     }
 
     .workItem:nth-child(1) {
@@ -442,11 +447,13 @@ padding: 30px;
       height: auto;
       overflow: hidden;
       gap: 5px;
+
       .date {
         display: flex;
         flex-direction: column;
         height: 5vw;
         overflow: hidden;
+
         span {
           transform: translateY(-10vw);
         }
@@ -634,6 +641,7 @@ padding: 30px;
 html::-webkit-scrollbar {
   display: none;
 }
+
 .selectedWorks,
 .footer,
 .more {
@@ -660,4 +668,285 @@ html::-webkit-scrollbar {
   width: 100px;
   cursor: pointer;
   rotate: -90deg;
+}
+
+.SelectedWorks {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+
+  .header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    justify-content: space-between;
+    width: 100%;
+    color: #f4f3ed;
+    mix-blend-mode: difference;
+    padding: 25px;
+    font-size: 1.7rem;
+    font-family: 'boldFont', sans-serif;
+    z-index: 10;
+  }
+
+  .content {
+
+    display: flex;
+    width: 100%;
+    background-color: #171717;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+
+
+    .right {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .left {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 30px;
+      height: 350vh;
+      position: relative;
+
+      .imageItem {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .videos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+
+        video {
+          height: 100%;
+          width: 100%;
+
+          source {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .outerLeft {
+      display: none;
+    }
+
+    .right {
+      padding: 30px;
+      color: #f4f3ed;
+      font-family: 'boldFont', sans-serif;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .title {
+          font-size: 5vw;
+        }
+
+        .headerText {
+          padding-bottom: 20px;
+          font-family: 'regularFont', sans-serif;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+
+          .text {
+            width: 100%;
+            max-width: 100px;
+          }
+        }
+
+        .innerCon {
+          display: flex;
+          gap: 40px;
+        }
+      }
+
+      .navigation {
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+        width: 100%;
+        position: absolute;
+        bottom: 10%;
+
+        z-index: 100;
+
+        .item {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .SelectedWorks {
+    height: 100dvh;
+    all: unset;
+    height: auto;
+  }
+
+  .SelectedWorks .content {
+    all: unset;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #171717;
+    justify-content: space-between;
+
+
+    .title {
+      padding-bottom: 30px;
+    }
+  }
+
+
+
+  .SelectedWorks .content .right {
+
+    all: unset;
+    height: 50%;
+    width: 100%;
+    padding-top: 70px;
+    color: #f4f3ed;
+    font-family: 'boldFont', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .content {
+      all: unset;
+      padding: 25px;
+
+      .innerCon {
+        font-size: .7rem;
+      }
+    }
+
+    .navigation {
+      all: unset;
+      display: flex;
+      gap: 10px;
+      position: relative;
+      justify-content: space-around;
+      padding-inline: 10px;
+    }
+  }
+
+
+  .SelectedWorks .content .left {
+    all: unset;
+    position: relative;
+    display: flex;
+    height: 30%;
+    width: 500vw;
+    overflow-x: scroll;
+    padding: 25px;
+    align-items: center;
+    gap: 10px;
+
+  }
+
+  .SelectedWorks .content .left .imageItem {
+    height: 100%;
+    width: 700px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+}
+
+
+.About {
+  height: auto;
+  background-color: #171717;
+  color: #f4f3ed;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    padding-top: 70px;
+    padding-inline: 25px;
+    height: auto;
+
+    .Landing {
+      height: auto;
+      height: auto;
+      font-family: 'boldFont', sans-serif;
+      font-size: 20vw;
+
+      .textCon {
+        .textItem {
+          line-height: 80%;
+        }
+      }
+    }
+
+    .imageCon {
+      height: 700px;
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+      .img {
+        height: 100%;
+        width: 500px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    @media only screen and (max-width: 800px) {
+      .imageCon {
+        height: 500px;
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      .imageCon {
+        height: 400px;
+      }
+    }
+  }
+
+
+}
+
+.About::-webkit-scrollbar {
+  display: none;
 }

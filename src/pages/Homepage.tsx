@@ -10,6 +10,7 @@ import cafeEunoia from '../mockups/cafe.png'
 import ulc from '../mockups/ulcImg.jpg'
 import pcup from '../mockups/pcupIt.jpg'
 import melchoraIRS from '../mockups/melchoraScanner.jpg'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -66,8 +67,8 @@ const Homepage: React.FC = () => {
         scrollTrigger: {
           trigger: itm,
           start: 'top 80%',
-          end: 'bottom 80%',
-          scrub: 1
+          end: 'bottom 50%',
+          scrub: 1,
         }
       });
 
@@ -123,13 +124,19 @@ const Homepage: React.FC = () => {
       allowed: img.height >= 250
     }));
 
+
   useEffect(() => {
     hoverImageSources.forEach((image) => {
       if (image.allowed && prefImgs.some(prefImg => prefImg.src === image.src)) {
         allowedToHover.add(image.src);
+
       }
     });
   }, [prefImgs, hoverImageSources]);
+
+  useEffect(() => {
+    console.log(hoverImageSources)
+  }, [hoverImageSources])
 
 
   const handleMouseEnter = useCallback((showImg: Element) => {
@@ -139,8 +146,9 @@ const Homepage: React.FC = () => {
     const hoverImageSources: string[] = imgs.map(img => img.src);
     const storedImageSources: string[] = imgArr.map(img => img.src);
 
-    // Check if any hovered image sources are included in the stored images
+
     const anyImgIncluded = Array.from(allowedToHover).some(src => hoverImageSources.includes(src));
+
 
     if (anyImgIncluded) {
       gsap.to(showImg.querySelectorAll('img'), { opacity: 1, duration: 0 });
@@ -172,7 +180,7 @@ const Homepage: React.FC = () => {
       return [...prevImgs, ...updatedImgs];
     });
 
-  }, [imgArr]);
+  }, [imgArr, hoverImageSources]);
 
 
 
@@ -247,24 +255,28 @@ const Homepage: React.FC = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-      gsap.to('.workItem .date span', {
-        y: '-2vw',
-        scrollTrigger: {
-          trigger: '.workItem .date',
-          start: 'top 80%',
-          end: 'bottom',
-          scrub: 1
-        }
-      })
+    gsap.to('.workItem .date span', {
+      y: '-2vw',
+      scrollTrigger: {
+        trigger: '.workItem .date',
+        start: 'top 80%',
+        end: 'bottom',
+        scrub: 1
+      }
+    })
   }, [])
+
+
+  const nav = useNavigate()
+
 
   return (
     <div className='Homepage'>
       <Header />
       <div className="perc">
-          <div className="percentage">
-            MUSIC ON
-          </div>
+        <div className="percentage">
+          MUSIC ON
+        </div>
       </div>
       <div className="content">
         <div className="landing">
@@ -349,11 +361,10 @@ const Homepage: React.FC = () => {
                   Melchora High School<br />
                 </div>
                 <div className="gridItem">
-                  PCUP (GOV) <br />
-                  BPI Telesales<br />
-                  Cafe Eunoia<br />
-                  Riri's WRS<br />
-                  Web Development<br />
+                  PEOPLE<br />
+                  OVER<br />
+                  PROFIT<br />
+
                 </div>
               </div>
             </div>
@@ -366,12 +377,16 @@ const Homepage: React.FC = () => {
           <div className="workItem">
             SELECTED WORKS
             <div className="date">
-            <span>('24)</span>
+              <span>('24)</span>
               <span>('23?)</span>
             </div> -
           </div>
           <div className="workItem">
-            <div className="con">
+            <div
+              onClick={() => {
+                nav(`selectedwork/Cafe Eunoia`)
+              }}
+              className="con">
               <div className="imageCon item">
                 <img className='outerImg' src={cafeEunoia} alt="" />
                 <div className="absoImg">
@@ -390,7 +405,11 @@ const Homepage: React.FC = () => {
             </div>
           </div>
           <div className="workItem">
-            <div className="con">
+            <div
+              onClick={() => {
+                nav(`selectedwork/Riri's WRS`)
+              }}
+              className="con">
               <div className="imageCon item">
                 <img className='outerImg' src={riri} alt="" />
                 <div className="absoImg">
@@ -409,7 +428,11 @@ const Homepage: React.FC = () => {
             </div>
           </div>
           <div className="workItem">
-            <div className="con">
+            <div
+              onClick={() => {
+                nav(`selectedwork/ULC Telesales`)
+              }}
+              className="con">
               <div className="imageCon item">
                 <img className='outerImg' src={ulc} alt="" />
                 <div className="absoImg">
@@ -428,7 +451,11 @@ const Homepage: React.FC = () => {
             </div>
           </div>
           <div className="workItem">
-            <div className="con">
+            <div
+              onClick={() => {
+                nav(`selectedwork/PCUP`)
+              }}
+              className="con">
               <div className="imageCon item">
                 <img className='outerImg' src={pcup} alt="" />
                 <div className="absoImg">
@@ -447,7 +474,11 @@ const Homepage: React.FC = () => {
             </div>
           </div>
           <div className="workItem">
-            <div className="con">
+            <div
+              onClick={() => {
+                nav(`selectedwork/MELCHORA IRS`)
+              }}
+              className="con">
               <div className="imageCon item">
                 <img className='outerImg' src={melchoraIRS} alt="" />
                 <div className="absoImg">
