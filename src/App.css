@@ -51,18 +51,28 @@ header {
   color: #f4f3ed;
   mix-blend-mode: difference;
   z-index: 999999999999999999999999999999999999999999999999999999999999990;
+  background-color: transparent;
 
   .logo {
-    font-family: 'boldFont', sans-serif;
+    font-family: 'regularFont', sans-serif;
   }
 
   .midCon {
     display: flex;
     gap: 10px;
     font-size: .9rem;
-    font-family: 'boldFont', sans-serif;
+    font-family: 'mediumFont', sans-serif;
+
     .item {
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: .9rem;
+      overflow: hidden;
+
+      span {
+        transform: translateY(-1.1rem);
+      }
     }
   }
 }
@@ -1239,6 +1249,7 @@ html::-webkit-scrollbar {
   left: 0;
   width: 100%;
   z-index: 999999999;
+  padding-inline: 10px;
 
   .footer {
     border-top: 2px solid black;
@@ -1255,7 +1266,8 @@ html::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-width: 100%;
+  width: 100%;
+
   .firstLayer {
     width: 100%;
     gap: 10px;
@@ -1351,3 +1363,97 @@ width: 100%;
   }
 }
 
+.ContactPage {
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #171717;
+  padding-inline: 10px;
+  z-index: 200000000000000000000000000000;
+}
+
+.ContactPage .ContentContact {
+  height: 100dvh;
+  color: #f4f3ed;
+  display: flex;
+  flex-direction: column;
+}
+
+.ContactPage .ContentContact .marq {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-family: 'boldFont', sans-serif;
+  font-size: 20vw;
+  gap: 20px;
+
+  .item {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 1px solid rgb(78, 78, 78);
+  }
+}
+
+.ContactPage .footerContact {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  padding-top: 30px;
+  font-family: 'mediumFont', sans-serif;
+  padding: 50px 0px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.ContactPage .footerContact .header {
+  width: 100%;
+  max-width: 600px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.ContactPage .footerContact .flexCon {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.ContactPage .footerContact .flexCon .item {
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.ContactPage .footerContact .flexCon .item .headerTitle {
+  color: rgb(78, 78, 78);
+  font-family: 'boldFont', sans-serif;
+}
+
+@media only screen and (max-width: 1300px) {
+  .ContactPage .footerContact .flexCon {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  .ContactPage .footerContact .flexCon {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .ContactPage .footerContact {
+    flex-direction: row-reverse;
+  }
+
+}

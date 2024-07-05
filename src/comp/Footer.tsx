@@ -25,21 +25,18 @@ const Footer = () => {
     const footerItems = document.querySelectorAll('.footer .firstLayer .midCon .item');
 
     footerItems.forEach((item) => {
-
       item.addEventListener('mouseover', () => {
         gsap.to(item.querySelectorAll('span'), {
           duration: 0.5,
           y: '0px',
-          ease: 'bounceAtEnd',
-          yoyo: true
+      ease: 'bounce',          yoyo: true
         });
       });
       item.addEventListener('mouseleave', () => {
         gsap.to(item.querySelectorAll('span'), {
           duration: 0.5,
           y: '-20px',
-          ease: 'bounceAtEnd',
-          yoyo: true
+      ease: 'bounce',          yoyo: true
         });
       });
     });

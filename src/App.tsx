@@ -7,6 +7,7 @@ import Lenis from 'lenis'
 import SelectedWork from './pages/SelectedWork';
 import About from './pages/About';
 import ScrollToTop from './comp/ScrollToTop';
+import Contact from './pages/Contact';
 
 const App: React.FC = () => {
 
@@ -29,6 +30,7 @@ const App: React.FC = () => {
 
           <Route path='/' element={<Homepage />} />
           <Route path='/About' element={<About />} />
+          <Route path='/Contact' element={<Contact />} />
           <Route path='/SelectedWork/:workID' element={<SelectedWork />} />
         </Routes>
       </div>
