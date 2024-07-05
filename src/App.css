@@ -1254,7 +1254,7 @@ html::-webkit-scrollbar {
   left: 0;
   width: 100%;
   z-index: 99;
-
+padding-inline: 10px;
   .footer {
     border-top: 2px solid black;
   }
