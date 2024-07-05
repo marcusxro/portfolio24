@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage';
 import Lenis from 'lenis'
 import SelectedWork from './pages/SelectedWork';
 import About from './pages/About';
+import ScrollToTop from './comp/ScrollToTop';
 
 const App: React.FC = () => {
 
@@ -23,7 +24,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
+      <ScrollToTop />
         <Routes>
+
           <Route path='/' element={<Homepage />} />
           <Route path='/About' element={<About />} />
           <Route path='/SelectedWork/:workID' element={<SelectedWork />} />

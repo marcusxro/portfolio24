@@ -11,6 +11,7 @@ import ulc from '../mockups/ulcImg.jpg'
 import pcup from '../mockups/pcupIt.jpg'
 import melchoraIRS from '../mockups/melchoraScanner.jpg'
 import { useNavigate } from 'react-router-dom';
+import Footer from '../comp/Footer';
 
 
 
@@ -516,71 +517,7 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="footer">
-        <div className="firstLayer">
-          <div className="item address">
-            <span>Area 5B</span>
-            <span>(Sauyo/Quezon City)</span>
-          </div>
-          <div className="midCon">
-            <div className="item">
-              <span>GitHub</span>
-              <span>GitHub</span>
-            </div>
-            <div className="item">
-              <span>Instagram</span>
-              <span>Instagram</span>
-            </div>
-            <div className="item">
-              <span>Facebook</span>
-              <span>Facebook</span>
-            </div>
-            <div className="item">
-              <span>Email</span>
-              <span>Email</span>
-            </div>
-          </div>
-          <div className="item">
-            <span>Developed & Designed by</span>
-            <span>Marcus S.</span>
-          </div>
-        </div>
-
-        <div className="hiddenLayer">
-          <div className="firstCon">
-            <div className="item address">
-              <span>Area 5B</span>
-              <span>(Sauyo/Quezon City)</span>
-            </div>
-            <div className="item">
-              <span>Developed & Designed by</span>
-              <span>Marcus S.</span>
-            </div>
-          </div>
-          <div className="secCon">
-            <div className="midCon">
-              <div className="item">
-                GitHub
-              </div>
-              <div className="item">
-                Instagram
-              </div>
-              <div className="item">
-                Facebook
-              </div>
-              <div className="item">
-                Email
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="secLayer">
-          <div className="text">
-            MR©S
-          </div>
-        </div>
-      </div>
+     <Footer />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment-timezone';
+import { useNavigate } from 'react-router-dom';
 
 
 const Header: React.FC = () => {
@@ -13,19 +14,29 @@ const Header: React.FC = () => {
 
         getPhTime()
         const intervalSec = setInterval(getPhTime, 60000);
-        return () => {clearInterval(intervalSec)}
+        return () => { clearInterval(intervalSec) }
     }, [])
-  return (
-    <header>
-        <div className="logo">
-        MR©S
-        </div>
+    const nav = useNavigate()
 
-        <div className="time">
-            {phTime} GMT+8
-        </div>
-    </header>
-  )
+    return (
+        <header>
+            <div className="logo">
+                MR©S
+            </div>
+            <div className="midCon">
+                <div className="item" onClick={() => { nav('/') }}>Work(5)</div>
+                <div className="item" 
+                onClick={() => {
+                    nav('/about');
+                    window.scrollTo(0,0)
+
+                }}>About</div>
+            </div>
+            <div className="time">
+                {phTime} PH
+            </div>
+        </header>
+    )
 }
 
 export default Header
