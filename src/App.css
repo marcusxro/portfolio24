@@ -60,7 +60,7 @@ header {
     display: flex;
     gap: 10px;
     font-size: .9rem;
-
+    font-family: 'boldFont', sans-serif;
     .item {
       cursor: pointer;
     }
@@ -1216,7 +1216,7 @@ html::-webkit-scrollbar {
 
 .About .outerCon {
   z-index: 2000000;
-
+  pointer-events: none;
 }
 
 .filler {
@@ -1351,13 +1351,3 @@ width: 100%;
   }
 }
 
-.About {
-  header {
-    color: white;
-    mix-blend-mode: difference;
-    position: fixed;
-    z-index: 999999999999999999999999999;
-    .logo {
-      z-index: 999999999999999999999999999;
-    }   }
-}
