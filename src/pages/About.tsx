@@ -8,12 +8,9 @@ import me2 from '../mockups/me/photo1713682323.jpeg'
 import cafeImg from '../mockups/cafe.png'
 import Header from '../comp/Header';
 import Footer from '../comp/Footer';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const About: React.FC = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-
     const { pathname } = useLocation();
 
     useEffect(() => {
@@ -22,30 +19,29 @@ const About: React.FC = () => {
 
 
 
-    const [percScroll, setPercScroll] = useState<number>(0)
-
     useEffect(() => {
-
         document.title = "ABOUT - MR©S"
-        const updateScrollPercentage = () => {
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-            const percentage = (scrollTop / scrollHeight) * 100;
-            setPercScroll(percentage);
-        };
-
-        window.addEventListener('scroll', updateScrollPercentage);
-
-        return () => {
-            window.removeEventListener('scroll', updateScrollPercentage);
-        };
     }, [])
 
 
     useEffect(() => {
-        gsap.to('header', {
-            opacity: 1
+        const wordStagg: NodeListOf<HTMLDivElement> = document.querySelectorAll('.About .Landing .textCon .textItem .word')
+
+        gsap.to(wordStagg, {
+            opacity: 1,
+            stagger: 0.3,
+            duration: 0,
+            delay: 0.5,
+            onComplete: () => {
+                gsap.to(['.imageCon', 'header', '.headerText', '.services',
+                    '.textCenterCon', '.beliefs', '.certif', '.est'], {
+                    opacity: 1,
+                    delay: 1
+                })
+
+            }
         })
+
     }, [])
 
 
@@ -56,8 +52,8 @@ const About: React.FC = () => {
                 <div className="content outerCon">
                     <div className="Landing">
                         <div className="textCon">
-                            <div className="textItem">BORN IN</div>
-                            <div className="textItem">DIGITAL</div>
+                            <div className="textItem"><div className="word">BORN</div> <div className="word">IN</div></div>
+                            <div className="textItem"><div className="word">DIGITAL</div></div>
                         </div>
                     </div>
                     <div className="imageCon">
@@ -99,7 +95,7 @@ const About: React.FC = () => {
                             <div className="flexCon">
                                 <div className="title">BRANDING</div>
                                 <div className="listItem">
-                                <div className="item">UI/UX Design</div>
+                                    <div className="item">UI/UX Design</div>
                                     <div className="item">Visual Identity</div>
                                     <div className="item">Logo Design </div>
                                     <div className="item">Motion Design </div>

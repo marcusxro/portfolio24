@@ -7,7 +7,7 @@ import Footer from '../comp/Footer'
 
 const Contact: React.FC = () => {
     useEffect(() => {
-        
+        document.title = "CONTACT - MR©S"
 
     gsap.to('header', {
         opacity: 1,
@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
                             SAY HELLO
                         </div>
                         <div className="item">
-                            SAY HOLA
+                            SAY こんにちは
                         </div>
                         <div className="item">
                             SAY BONJOUR
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
                             SAY CIAO
                         </div>
                         <div className="item">
-                            SAY  こんにちは
+                            SAY HOLA
                         </div>
                     </Marquee>
                 </div>

@@ -215,6 +215,7 @@ header {
         overflow: hidden;
         line-height: 90%;
 
+   
         span {
           transform: translateY(-7vw);
           transition: translateY 1 ease-in-out;
@@ -841,6 +842,8 @@ html::-webkit-scrollbar {
       .textCon {
         .textItem {
           line-height: 80%;
+          display: flex;
+          gap: 10px;
         }
       }
     }
@@ -1248,7 +1251,7 @@ html::-webkit-scrollbar {
   position: fixed;
   left: 0;
   width: 100%;
-  z-index: 999999999;
+  z-index: 99999;
   padding-inline: 10px;
 
   .footer {
@@ -1370,7 +1373,7 @@ html::-webkit-scrollbar {
   flex-direction: column;
   background-color: #171717;
   padding-inline: 10px;
-  z-index: 200000000000000000000000000000;
+  z-index: 2000000000000000000000000;
 }
 
 .ContactPage .ContentContact {
@@ -1456,4 +1459,32 @@ html::-webkit-scrollbar {
     flex-direction: row-reverse;
   }
 
+}
+
+
+.About {
+  .word {
+    opacity: 0;
+  }
+  .imageCon{
+    opacity: 0;
+  }
+  .headerText {
+    opacity: 0;
+  }
+  .services{
+    opacity: 0;
+  }
+  .textCenterCon {
+    opacity: 0;
+  }
+  .beliefs {
+    opacity: 0;
+  }
+  .certif {
+    opacity: 0;
+  }
+  .est {
+    opacity: 0;
+  }
 }

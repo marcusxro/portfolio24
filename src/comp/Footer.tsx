@@ -11,7 +11,7 @@ const Footer = () => {
           stagger: 0.1,
           duration: 0,
           onComplete: () => {
-            gsap.to(['.landing .descContent', 'header', '.homepage-kinetic', '.selectedWorks', '.footer', '.more'], {
+            gsap.to(['.landing .descContent', '.homepage-kinetic', '.selectedWorks', '.footer', '.more'], {
               opacity: 1,
               delay: .7
             })
