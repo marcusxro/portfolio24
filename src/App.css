@@ -1392,14 +1392,15 @@ padding-inline: 10px;
   display: flex;
   align-items: center;
   font-family: 'boldFont', sans-serif;
-  font-size: 20vw;
+  font-size: 17vw;
   z-index: 20000000000000000;
   position: relative;
   gap: 20px;
+  opacity: 0;
 
   .item {
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 40px;
     border-left: 1px solid rgb(78, 78, 78);
   }
 }
