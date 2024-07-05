@@ -1251,8 +1251,7 @@ html::-webkit-scrollbar {
   position: fixed;
   left: 0;
   width: 100%;
-  z-index: 99999;
-  padding-inline: 10px;
+  z-index: 99;
 
   .footer {
     border-top: 2px solid black;
@@ -1373,7 +1372,7 @@ html::-webkit-scrollbar {
   flex-direction: column;
   background-color: #171717;
   padding-inline: 10px;
-  z-index: 2000000000000000000000000;
+  z-index: 9999999999;
 }
 
 .ContactPage .ContentContact {
@@ -1381,6 +1380,9 @@ html::-webkit-scrollbar {
   color: #f4f3ed;
   display: flex;
   flex-direction: column;
+  position: relative;
+  pointer-events: none;
+  z-index: 20000000000000000;
 }
 
 .ContactPage .ContentContact .marq {
@@ -1389,6 +1391,8 @@ html::-webkit-scrollbar {
   align-items: center;
   font-family: 'boldFont', sans-serif;
   font-size: 20vw;
+  z-index: 20000000000000000;
+  position: relative;
   gap: 20px;
 
   .item {
@@ -1406,9 +1410,11 @@ html::-webkit-scrollbar {
   font-family: 'mediumFont', sans-serif;
   padding: 50px 0px;
   align-items: center;
+  position: relative;
   justify-content: space-between;
   gap: 20px;
   overflow: hidden;
+  z-index: 20000000000000000;
 }
 
 .ContactPage .footerContact .header {
