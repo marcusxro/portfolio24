@@ -197,7 +197,7 @@ const SelectedWorks: React.FC = () => {
 
 
     return (
-        <div className="SelectedWorks" style={{ height: leftColumnRef.current?.scrollHeight + 'px' }}>
+        <div className="SelectedWorks slctd" style={{ height: leftColumnRef.current?.scrollHeight + 'px' }}>
             <div className="header">
                 <div className="logo">MR©S</div>
                 <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0); window.location.reload() }}>Close</div>
