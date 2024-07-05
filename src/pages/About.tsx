@@ -99,7 +99,8 @@ const About: React.FC = () => {
                             <div className="flexCon">
                                 <div className="title">BRANDING</div>
                                 <div className="listItem">
-                                    <div className="item">Visual Identity </div>
+                                <div className="item">UI/UX Design</div>
+                                    <div className="item">Visual Identity</div>
                                     <div className="item">Logo Design </div>
                                     <div className="item">Motion Design </div>
                                     <div className="item">3D Design </div>

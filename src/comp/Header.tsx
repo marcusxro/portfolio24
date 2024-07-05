@@ -28,8 +28,6 @@ const Header: React.FC = () => {
                 <div className="item" 
                 onClick={() => {
                     nav('/about');
-                    window.scrollTo(0,0)
-
                 }}>About</div>
             </div>
             <div className="time">
