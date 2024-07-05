@@ -215,7 +215,7 @@ header {
         overflow: hidden;
         line-height: 90%;
 
-   
+
         span {
           transform: translateY(-7vw);
           transition: translateY 1 ease-in-out;
@@ -389,6 +389,8 @@ header {
             object-fit: cover;
             object-position: bottom;
             display: flex;
+            position: relative;
+            z-index: 10;
 
             /* Center the image */
           }
@@ -1412,6 +1414,7 @@ html::-webkit-scrollbar {
   align-items: center;
   position: relative;
   justify-content: space-between;
+
   gap: 20px;
   overflow: hidden;
   z-index: 20000000000000000;
@@ -1463,34 +1466,65 @@ html::-webkit-scrollbar {
 
   .ContactPage .footerContact {
     flex-direction: row-reverse;
-  }
+    height: auto;
 
+  }
 }
 
+@media only screen and (max-width: 600px) {
+  .ContactPage {
+    height: auto;
+  }
+
+  .flexCon {
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 100px;
+    margin-right: auto;
+  }
+
+  .ContactPage .footerContact {
+    flex-direction: column;
+
+  }
+}
 
 .About {
   .word {
     opacity: 0;
   }
-  .imageCon{
+
+  .imageCon {
     opacity: 0;
   }
+
   .headerText {
     opacity: 0;
   }
-  .services{
+
+  .services {
     opacity: 0;
   }
+
   .textCenterCon {
     opacity: 0;
   }
+
   .beliefs {
     opacity: 0;
   }
+
   .certif {
     opacity: 0;
   }
+
   .est {
     opacity: 0;
   }
+}
+
+
+img {
+  position: relative;
+  z-index: 10;
 }
