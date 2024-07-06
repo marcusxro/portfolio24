@@ -592,7 +592,7 @@ html::-webkit-scrollbar {
   cursor: pointer;
   rotate: -90deg;
   mix-blend-mode: difference;
-  z-index: 999999999999999999999999999999;
+  z-index: 1241251251296812967125;
   font-family: 'boldFont', sans-serif;
 }
 

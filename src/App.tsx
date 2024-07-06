@@ -38,24 +38,28 @@ const App: React.FC = () => {
     })
   }, [])
 
+
   return (
-    <Router>
-    <ScrollToTop />
-    <MusicPlayer />
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/SelectedWork/:workID" element={<SelectedWork />} />
-        <Route path="/SelectedWork/cafeeunoia" element={<CafeEunoia />} />
-        <Route path="/SelectedWork/ririswrs" element={<Riri />} />
-        <Route path="/SelectedWork/ulctelesales" element={<UlcTelesales />} />
-        <Route path="/SelectedWork/pcup" element={<Pcup />} />
-        <Route path="/SelectedWork/melchorairs" element={<MelchoraIRS />} />
-      </Routes>
-    </div>
-  </Router>
+    <>
+      <MusicPlayer />
+      <Router>
+        <ScrollToTop />
+
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/SelectedWork/:workID" element={<SelectedWork />} />
+            <Route path="/SelectedWork/cafeeunoia" element={<CafeEunoia />} />
+            <Route path="/SelectedWork/ririswrs" element={<Riri />} />
+            <Route path="/SelectedWork/ulctelesales" element={<UlcTelesales />} />
+            <Route path="/SelectedWork/pcup" element={<Pcup />} />
+            <Route path="/SelectedWork/melchorairs" element={<MelchoraIRS />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 }
 
