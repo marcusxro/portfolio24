@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="item">
-          <span>Developed & Designed by</span>
+          <span>Developed by</span>
           <span>Marcus S.</span>
         </div>
       </div>
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
             <span>(Sauyo/Quezon City)</span>
           </div>
           <div className="item">
-            <span>Developed & Designed by</span>
+            <span>Developed by</span>
             <span>Marcus S.</span>
           </div>
         </div>

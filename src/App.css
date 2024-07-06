@@ -43,7 +43,7 @@ header {
   font-family: 'regularFont', sans-serif;
   font-size: 1.7rem;
   gap: 10px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -535,7 +535,7 @@ header {
   }
 
   .more {
-    margin-inline: 30px;
+    margin-inline: 10px;
     padding: 10vh 0px;
     display: flex;
     flex-direction: column;
@@ -580,7 +580,7 @@ html::-webkit-scrollbar {
 
 .perc {
   position: fixed;
-  top: 80%;
+  top: 70%;
   right: -35px;
   background-color: #171717;
   color: #f4f3ed;
@@ -591,6 +591,7 @@ html::-webkit-scrollbar {
   width: 100px;
   cursor: pointer;
   rotate: -90deg;
+  z-index: 999999999999999999999999999999;
 }
 
 .slctd {
@@ -1294,6 +1295,7 @@ html::-webkit-scrollbar {
   width: 100%;
   gap: 10px;
   display: flex;
+  padding-inline: 10px;
   justify-content: space-between;
 }
 
