@@ -173,17 +173,22 @@ const MelchoraIRS: React.FC = () => {
 
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
-        { loop: false }, // Carousel options
-        [AutoScroll({ startDelay: 200, stopOnInteraction: false, })] // Plugin configuration
+        { loop: true }, // Carousel options
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] // Plugin configuration
     );
+
+
+    const [docuHeigth, setDocuHeight] = useState<number | string>(0)
     useEffect(() => {
-        if (emblaApi) {
-            console.log(emblaApi.slideNodes())
-        }
-    }, [emblaApi])
+        const heightForEl = scrollWidthDoc >= 1100 ? leftColumnRef.current?.scrollHeight + 'px' : '100dvh'
+        setDocuHeight(heightForEl)
+
+    }, [scrollWidthDoc])
+
+
 
     return (
-        <div className="SelectedWorks slctd" style={{ height: leftColumnRef.current?.scrollHeight + 'px' }}>
+        <div className="SelectedWorks slctd" style={{ height:docuHeigth}}>
             <Opacity />
             <div className="header">
                 <div className="logo">MR©S</div>

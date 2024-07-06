@@ -15,7 +15,8 @@ const Riri: React.FC = () => {
     const { workID } = useParams<{ workID: string }>();
     const leftColumnRef = useRef<HTMLDivElement>(null);
     const rightColumnRef = useRef<HTMLDivElement>(null);
-
+    const [scrollWidthDoc, setScrollWidthDoc] = useState<number>(0);
+    const prevScrollWidth = useRef<number>(0);
 
     useEffect(() => {
         if (MyWorks.length > 0) {
@@ -35,7 +36,7 @@ const Riri: React.FC = () => {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        console.log(MyWorks[1])
+
 
         const updateScrollPercentage = () => {
             const scrollHeight = leftColumnRef.current?.scrollHeight || 0;
@@ -47,12 +48,15 @@ const Riri: React.FC = () => {
                 0;
             const percentage = (scrollTop / scrollHeight) * 100;
 
+
             gsap.to('.left', {
                 y: -percentage + '%',
                 duration: 0.5,
 
             });
-        };
+
+
+        }; 
 
         const scrollToTop = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -95,6 +99,9 @@ const Riri: React.FC = () => {
         };
 
         window.addEventListener('scroll', updateScrollPercentage);
+
+
+
         window.addEventListener('scroll', handleUserScroll);
 
         // Initial auto-scroll setup
@@ -112,19 +119,19 @@ const Riri: React.FC = () => {
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
             ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Clean up all ScrollTriggers
         };
-    }, [workID]);
+
+    }, [workID, prevScrollWidth]);
 
 
 
 
     const nav = useNavigate()
-    const [scrollWidthDoc, setScrollWidthDoc] = useState<number>(0);
-    const prevScrollWidth = useRef<number>(0); // Ref to store the previous scroll width
+
 
     useEffect(() => {
         const handleResize = () => {
             const docScrollWidth = document.documentElement.scrollWidth || document.body.scrollWidth;
-            console.log('Document Scroll Width:', docScrollWidth);
+
 
             // Check if scroll width has changed significantly
             if (docScrollWidth !== prevScrollWidth.current) {
@@ -154,7 +161,6 @@ const Riri: React.FC = () => {
 
     useEffect(() => {
         if (prevScrollWidth.current !== 0 && scrollWidthDoc !== prevScrollWidth.current) {
-            console.log('Width changed, reloading page...');
             window.location.reload();
         }
 
@@ -168,15 +174,11 @@ const Riri: React.FC = () => {
         const hasReloaded = localStorage.getItem('hasReloaded');
         if (!hasReloaded) {
             localStorage.setItem('hasReloaded', 'true');
-            console.log('Page will reload now.');
             window.location.reload();
         } else {
             console.log('Page has already reloaded.');
         }
     }, []); // Empty dependency array means this effect runs once on mo
-
-
-
 
 
 
@@ -196,18 +198,23 @@ const Riri: React.FC = () => {
 
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
-        { loop: false }, // Carousel options
-        [AutoScroll({startDelay: 2000, stopOnInteraction: false,  })] // Plugin configuration
+        { loop: true }, // Carousel options
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] // Plugin configuration
     );
+
+
+    const [docuHeigth, setDocuHeight] = useState<number | string>(0)
     useEffect(() => {
-        if (emblaApi) {
-            console.log(emblaApi.slideNodes())
-        }
-    }, [emblaApi])
+        const heightForEl = scrollWidthDoc >= 1100 ? leftColumnRef.current?.scrollHeight + 'px' : '100dvh'
+        setDocuHeight(heightForEl)
+
+    }, [scrollWidthDoc])
+
+
 
     return (
-        <div className="SelectedWorks slctd" style={{ height: leftColumnRef.current?.scrollHeight + 'px' }}>
-           <Opacity />
+        <div className="SelectedWorks slctd" style={{ height:docuHeigth}}>
+            <Opacity />
             <div className="header">
                 <div className="logo">MR©S</div>
                 <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0); }}>Close</div>
@@ -274,7 +281,7 @@ const Riri: React.FC = () => {
                         </div>
                     </div>
                     <div className="navigation">
-                    <VisitProject linkToProject={MyWorks[1].link} />
+                        <VisitProject linkToProject={MyWorks[1].link} />
 
                         <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>
