@@ -582,8 +582,8 @@ html::-webkit-scrollbar {
   position: fixed;
   top: 70%;
   right: -35px;
-  background-color: #171717;
-  color: #f4f3ed;
+  background-color: #f4f3ed;
+  color: #171717;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -591,7 +591,9 @@ html::-webkit-scrollbar {
   width: 100px;
   cursor: pointer;
   rotate: -90deg;
+  mix-blend-mode: difference;
   z-index: 999999999999999999999999999999;
+  font-family: 'boldFont', sans-serif;
 }
 
 .slctd {
@@ -1616,3 +1618,4 @@ img {
 .slctd::-webkit-scrollbar {
   display: none;
 }
+

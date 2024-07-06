@@ -245,11 +245,6 @@ const Homepage: React.FC = () => {
     <div className='Homepage'>
       <Header />
       <ScrollToTop />
-      <div className="perc">
-        <div className="percentage">
-          MUSIC ON
-        </div>
-      </div>
       <div className="content">
         <div className="landing">
           <div className="landingCon">

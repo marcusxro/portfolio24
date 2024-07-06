@@ -21,7 +21,6 @@ const Opacity = () => {
                         opacity: 1,
                         duration: 0.3,
                         delay: 1,
-                        stagger: 0.1,
                     }
                 );
             },

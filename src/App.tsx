@@ -15,6 +15,7 @@ import Pcup from './pages/SelectedWorks/Pcup';
 import MelchoraIRS from './pages/SelectedWorks/MelchoraIRS';
 import Header from './comp/Header';
 import gsap from 'gsap';
+import MusicPlayer from './comp/MusicPlayer';
 
 
 
@@ -40,6 +41,7 @@ const App: React.FC = () => {
   return (
     <Router>
     <ScrollToTop />
+    <MusicPlayer />
     <div className="App">
       <Routes>
         <Route path="/" element={<Homepage />} />

@@ -153,12 +153,12 @@ const About: React.FC = () => {
                                     FUN AND ENGAGING PROCESS
                                 </div>
                                 <div className="contentOne">
-                                    When you start a new project with us,
-                                    we always want to learn as much about your business,
+                                    When you start a new project with me,
+                                    I always want to learn as much about your business,
                                     your vision and your dreams as we possible can.
-                                    We do this the best by having different workshops
+                                    I do this the best by having different workshops
                                     tailored for your needs - where we together dive
-                                    deep into the world of design. This way we make sure
+                                    deep into the world of design. This way I make sure
                                     that we hit exactly what you're looking for.
                                 </div>
                             </div>
