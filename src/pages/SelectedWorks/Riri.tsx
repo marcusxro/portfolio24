@@ -18,7 +18,7 @@ interface MyWorksType {
     next: string;
 }
 
-const CafeEunoia: React.FC = () => {
+const Riri: React.FC = () => {
     const { workID } = useParams<{ workID: string }>();
     const [filteredObj, setFiltered] = useState<MyWorksType[]>([]);
     const leftColumnRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ const CafeEunoia: React.FC = () => {
 
 
         if (filtered.length > 0) {
-            document.title = `MR©S - ${filtered[0]?.title}`;
+            document.title = `MR©S - ${filtered[1]?.title}`;
         }
     }, [workID]);
 
@@ -57,7 +57,7 @@ const CafeEunoia: React.FC = () => {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        console.log(MyWorks[0])
+        console.log(MyWorks[1])
 
         const updateScrollPercentage = () => {
             const scrollHeight = leftColumnRef.current?.scrollHeight || 0;
@@ -200,6 +200,8 @@ const CafeEunoia: React.FC = () => {
 
 
 
+
+
     const nextBtn = () => {
         gsap.to([`.header`, '.imageItem',
             '.slctd .content .right .content .title',
@@ -209,7 +211,7 @@ const CafeEunoia: React.FC = () => {
             opacity: 0,
             duration: 0,
             onComplete: () => {
-                nav(`/selectedwork/${MyWorks[0]?.next}`);
+                nav(`/selectedwork/${MyWorks[1]?.next}`);
                 window.scrollTo(0, 0)
             }
         })
@@ -227,15 +229,15 @@ const CafeEunoia: React.FC = () => {
 
     return (
         <div className="SelectedWorks slctd" style={{ height: leftColumnRef.current?.scrollHeight + 'px' }}>
-            <Opacity />
+           <Opacity />
             <div className="header">
                 <div className="logo">MR©S</div>
                 <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0); window.location.reload() }}>Close</div>
             </div>
             <div className="content">
                 <div className="left" ref={leftColumnRef}>
-                    {MyWorks.length > 0 && MyWorks[0]?.images.length > 0 &&
-                        MyWorks[0].images.map((image, index) => (
+                    {MyWorks.length > 0 && MyWorks[1]?.images.length > 0 &&
+                        MyWorks[1].images.map((image, index) => (
                             image.type === 'img' ?
                                 <div className="imageItem" key={index}>
                                     <img src={image.src} alt={`Image ${index + 1}`} />
@@ -254,8 +256,8 @@ const CafeEunoia: React.FC = () => {
 
                 <div className="embla SmallLeft" ref={emblaRef}>
                     <div className="embla__container">
-                        {MyWorks.length > 0 && MyWorks[0]?.images.length > 0 &&
-                            MyWorks[0].images.map((image, index) => (
+                        {MyWorks.length > 0 && MyWorks[1]?.images.length > 0 &&
+                            MyWorks[1].images.map((image, index) => (
                                 <div className="embla__slide imageItem" key={index}>
                                     {image.type === 'img' ? (
                                         <img src={image.src} alt={`Image ${index + 1}`} />
@@ -273,21 +275,21 @@ const CafeEunoia: React.FC = () => {
 
                 <div className="right" ref={rightColumnRef}>
                     <div className="content">
-                        <div className="title">{MyWorks[0]?.title}</div>
+                        <div className="title">{MyWorks[1]?.title}</div>
                         <div className="innerCon">
                             <div className="info">
                                 <div className="headerText">INFO</div>
-                                <div className="text">{MyWorks[0]?.info}</div>
+                                <div className="text">{MyWorks[1]?.info}</div>
                             </div>
                             <div className="role">
                                 <div className="headerText">ROLES</div>
-                                {MyWorks[0]?.role.map((itm, index) => (
+                                {MyWorks[1]?.role.map((itm, index) => (
                                     <div className="roles" key={index}>{itm}</div>
                                 ))}
                             </div>
                             <div className="tech">
                                 <div className="headerText">TECHNOLOGIES</div>
-                                {MyWorks[0]?.techs.map((itm, index) => (
+                                {MyWorks[1]?.techs.map((itm, index) => (
                                     <div className="roles" key={index}>{itm}</div>
                                 ))}
                             </div>
@@ -304,4 +306,4 @@ const CafeEunoia: React.FC = () => {
     );
 };
 
-export default CafeEunoia;
+export default Riri;

@@ -9,6 +9,10 @@ import About from './pages/About';
 import ScrollToTop from './comp/ScrollToTop';
 import Contact from './pages/Contact';
 import CafeEunoia from './pages/SelectedWorks/CafeEunoia';
+import Riri from './pages/SelectedWorks/Riri';
+import UlcTelesales from './pages/SelectedWorks/UlcTelesales';
+import Pcup from './pages/SelectedWorks/Pcup';
+import MelchoraIRS from './pages/SelectedWorks/MelchoraIRS';
 
 const App: React.FC = () => {
 
@@ -35,6 +39,10 @@ const App: React.FC = () => {
           <Route path='/SelectedWork/:workID' element={<SelectedWork />} />
 
           <Route path='/SelectedWork/cafeeunoia' element={<CafeEunoia />} />
+          <Route path='/SelectedWork/ririswrs' element={<Riri />} />
+          <Route path='/SelectedWork/ulctelesales' element={<UlcTelesales />} />
+          <Route path='/SelectedWork/pcup' element={<Pcup />} />
+          <Route path='/SelectedWork/melchorairs' element={<MelchoraIRS />} />
 
         </Routes>
       </div>

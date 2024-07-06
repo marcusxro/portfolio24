@@ -1588,3 +1588,7 @@ img {
   
 }
 
+
+.slctd::-webkit-scrollbar {
+  display: none;
+}

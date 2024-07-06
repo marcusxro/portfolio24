@@ -18,7 +18,7 @@ interface MyWorksType {
     next: string;
 }
 
-const CafeEunoia: React.FC = () => {
+const MelchoraIRS: React.FC = () => {
     const { workID } = useParams<{ workID: string }>();
     const [filteredObj, setFiltered] = useState<MyWorksType[]>([]);
     const leftColumnRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ const CafeEunoia: React.FC = () => {
 
 
         if (filtered.length > 0) {
-            document.title = `MR©S - ${filtered[0]?.title}`;
+            document.title = `MR©S - ${filtered[4]?.title}`;
         }
     }, [workID]);
 
@@ -52,12 +52,12 @@ const CafeEunoia: React.FC = () => {
     const scrollSpeed = useRef<number>(100);
 
 
-    const outerDiv = useRef<HTMLDivElement>(null)
+
 
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        console.log(MyWorks[0])
+        console.log(MyWorks[1])
 
         const updateScrollPercentage = () => {
             const scrollHeight = leftColumnRef.current?.scrollHeight || 0;
@@ -161,19 +161,15 @@ const CafeEunoia: React.FC = () => {
             resizeTimeout = setTimeout(handleResize, 200); // Adjust debounce time as needed
         };
 
-        // Initial call to set the scroll width
         handleResize();
 
-        // Add event listener with debounced function
         window.addEventListener('resize', debouncedResize);
 
-        // Cleanup event listener on component unmount
         return () => {
             clearTimeout(resizeTimeout);
             window.removeEventListener('resize', debouncedResize);
         };
-    }, []); // Only run once on mount
-
+    }, []); 
     useEffect(() => {
         if (prevScrollWidth.current !== 0 && scrollWidthDoc !== prevScrollWidth.current) {
             console.log('Width changed, reloading page...');
@@ -209,7 +205,7 @@ const CafeEunoia: React.FC = () => {
             opacity: 0,
             duration: 0,
             onComplete: () => {
-                nav(`/selectedwork/${MyWorks[0]?.next}`);
+                nav(`/selectedwork/${MyWorks[4]?.next}`);
                 window.scrollTo(0, 0)
             }
         })
@@ -234,8 +230,8 @@ const CafeEunoia: React.FC = () => {
             </div>
             <div className="content">
                 <div className="left" ref={leftColumnRef}>
-                    {MyWorks.length > 0 && MyWorks[0]?.images.length > 0 &&
-                        MyWorks[0].images.map((image, index) => (
+                    {MyWorks.length > 0 && MyWorks[4]?.images.length > 0 &&
+                        MyWorks[4].images.map((image, index) => (
                             image.type === 'img' ?
                                 <div className="imageItem" key={index}>
                                     <img src={image.src} alt={`Image ${index + 1}`} />
@@ -254,8 +250,8 @@ const CafeEunoia: React.FC = () => {
 
                 <div className="embla SmallLeft" ref={emblaRef}>
                     <div className="embla__container">
-                        {MyWorks.length > 0 && MyWorks[0]?.images.length > 0 &&
-                            MyWorks[0].images.map((image, index) => (
+                        {MyWorks.length > 0 && MyWorks[4]?.images.length > 0 &&
+                            MyWorks[4].images.map((image, index) => (
                                 <div className="embla__slide imageItem" key={index}>
                                     {image.type === 'img' ? (
                                         <img src={image.src} alt={`Image ${index + 1}`} />
@@ -273,21 +269,21 @@ const CafeEunoia: React.FC = () => {
 
                 <div className="right" ref={rightColumnRef}>
                     <div className="content">
-                        <div className="title">{MyWorks[0]?.title}</div>
+                        <div className="title">{MyWorks[4]?.title}</div>
                         <div className="innerCon">
                             <div className="info">
                                 <div className="headerText">INFO</div>
-                                <div className="text">{MyWorks[0]?.info}</div>
+                                <div className="text">{MyWorks[4]?.info}</div>
                             </div>
                             <div className="role">
                                 <div className="headerText">ROLES</div>
-                                {MyWorks[0]?.role.map((itm, index) => (
+                                {MyWorks[4]?.role.map((itm, index) => (
                                     <div className="roles" key={index}>{itm}</div>
                                 ))}
                             </div>
                             <div className="tech">
                                 <div className="headerText">TECHNOLOGIES</div>
-                                {MyWorks[0]?.techs.map((itm, index) => (
+                                {MyWorks[4]?.techs.map((itm, index) => (
                                     <div className="roles" key={index}>{itm}</div>
                                 ))}
                             </div>
@@ -304,4 +300,4 @@ const CafeEunoia: React.FC = () => {
     );
 };
 
-export default CafeEunoia;
+export default MelchoraIRS;

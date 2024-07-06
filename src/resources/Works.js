@@ -73,7 +73,7 @@ export const MyWorks = [
             {src: CUSignin, type: 'img'},
             {src: CUInventory, type: 'img'},
         ],
-        next: "Riri's WRS"
+        next: "ririswrs"
     },
     {
         title: "Riri's WRS",
@@ -100,7 +100,7 @@ export const MyWorks = [
             {src: RRProfile, type: 'img'},
             {src: RRSIgnin, type: 'img'},
         ],
-        next: "ULC Telesales"
+        next: "ulctelesales"
     },
     {
         title: "ULC Telesales",
@@ -126,7 +126,7 @@ export const MyWorks = [
             {src: ULCSearch, type: 'img'},
             {src: ULCSearchedItem, type: 'img'},
         ],
-        next: 'PCUP'
+        next: 'pcup'
     },
     {
         title: "PCUP",
@@ -155,7 +155,7 @@ export const MyWorks = [
             {src: PCUPcontent, type: 'img'},
             {src: PCUPmodal, type: 'img'},
         ],
-        next: "MELCHORA IRS"
+        next: "melchorairs"
     },
     {
         title: "MELCHORA IRS",
@@ -183,6 +183,6 @@ export const MyWorks = [
             {src: CUSignin, type: 'img'},
             {src: CUInventory, type: 'img'},
         ],
-        next: "Cafe Eunoia"
+        next: "cafeeunoia"
     },
 ]
