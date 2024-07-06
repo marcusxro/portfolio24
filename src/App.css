@@ -50,8 +50,7 @@ header {
   opacity: 0;
   color: #f4f3ed;
   mix-blend-mode: difference;
-  z-index: 999999999999999999999999999999999999999999999999999999999999990;
-  background-color: transparent;
+  z-index: 99999999999999999999999999999999999999999999999999999999999999999999999990;
 
   .logo {
     font-family: 'regularFont', sans-serif;
@@ -826,10 +825,6 @@ html::-webkit-scrollbar {
   position: relative;
   z-index: 20;
 
-  header {
-    padding-inline: 10px;
-  }
-
   .content {
     padding-top: 70px;
     padding-inline: 10px;
@@ -1225,41 +1220,50 @@ html::-webkit-scrollbar {
 .About {
   overflow: hidden;
   position: relative;
-  z-index: 20000000000000000;
+  z-index: 200;
 }
 
 .About .outerCon {
-  z-index: 2000000;
+  z-index: 200;
   pointer-events: none;
 }
 
 .filler {
-  height: 70dvh;
-  z-index: 99;
+  height: 100dvh;
+  z-index: 9;
   position: relative;
-  background-color: transparent;
+  background-color: black;
 }
 
 .footers {
   background-color: #f4f3ed;
-  height: 100vh;
+  height: 100dvh;
   position: fixed;
   top: 0;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 10px;
   color: #171717;
   position: fixed;
   left: 0;
   width: 100%;
   z-index: 99;
   padding-inline: 10px;
+  flex-direction: column;
 
   .footer {
     border-top: 2px solid black;
   }
 }
-
+.upwork {
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: 'mediumFont', sans-serif;
+}
 .footerContainer {
   height: auto;
   font-family: 'mediumFont', sans-serif;
@@ -1368,8 +1372,10 @@ html::-webkit-scrollbar {
   flex-direction: column;
   background-color: #171717;
   padding-inline: 10px;
-  z-index: 9999999999;
+  z-index: 999999;
+
 }
+
 
 .ContactPage .ContentContact {
   height: 100dvh;
@@ -1378,7 +1384,7 @@ html::-webkit-scrollbar {
   flex-direction: column;
   position: relative;
   pointer-events: none;
-  z-index: 20000000000000000;
+  z-index: 20000;
 }
 
 .ContactPage .ContentContact .marq {
@@ -1409,7 +1415,7 @@ html::-webkit-scrollbar {
   align-items: center;
   position: relative;
   justify-content: space-between;
-
+  opacity: 0;
   gap: 20px;
   overflow: hidden;
   z-index: 20000000000000000;
@@ -1578,8 +1584,7 @@ img {
     object-fit: cover;
   }
   
-  
-  
+
   
   .SmallLeft .imageItem video {
     height: 100%;

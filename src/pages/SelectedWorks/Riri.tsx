@@ -210,7 +210,7 @@ const Riri: React.FC = () => {
            <Opacity />
             <div className="header">
                 <div className="logo">MR©S</div>
-                <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0); window.location.reload() }}>Close</div>
+                <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0); }}>Close</div>
             </div>
             <div className="content">
                 <div className="left" ref={leftColumnRef}>

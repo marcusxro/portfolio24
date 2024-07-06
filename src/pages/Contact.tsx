@@ -3,6 +3,7 @@ import Header from '../comp/Header'
 import gsap from 'gsap'
 import Marquee from 'react-fast-marquee'
 import Footer from '../comp/Footer'
+import ScrollToTop from '../comp/ScrollToTop'
 
 
 const Contact: React.FC = () => {
@@ -12,10 +13,7 @@ const Contact: React.FC = () => {
 
     useEffect(() => {
         document.title = "CONTACT - MR©S"
-
-        gsap.to('header', {
-            opacity: 1,
-        })
+        window.scrollTo(0, 0)
 
 
         gsap.to('.ContactPage .ContentContact .marq', {
@@ -23,6 +21,12 @@ const Contact: React.FC = () => {
             delay: 1,
             duration: 0,
             onComplete: () => {
+
+                gsap.to(['header','.footer', '.footerContact'], {
+                    opacity: 1,
+                    delay: 1
+                })
+
                 setTimeout(() => {
                     setSpeed(300)
                 }, 1000);
@@ -34,8 +38,9 @@ const Contact: React.FC = () => {
 
     return (
         <>
+            <Header />
             <div className='ContactPage'>
-                <Header />sd
+                <ScrollToTop />
                 <div className="ContentContact">
                     <div className="marq">
                         <Marquee ref={hagoo} speed={speedScroll} autoFill>
@@ -89,10 +94,14 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="filler">
 
+            <div className="filler">
             </div>
+
             <div className="footers">
+                <div className="upwork">
+                    Upwork/Salopaso M.
+                </div>
                 <Footer />
             </div>
         </>

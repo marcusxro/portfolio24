@@ -9,6 +9,7 @@ import cafeImg from '../mockups/cafe.png'
 import Header from '../comp/Header';
 import Footer from '../comp/Footer';
 import { useLocation } from 'react-router-dom';
+import ScrollToTop from '../comp/ScrollToTop';
 
 const About: React.FC = () => {
     const { pathname } = useLocation();
@@ -34,7 +35,7 @@ const About: React.FC = () => {
             delay: 0.5,
             onComplete: () => {
                 gsap.to(['.imageCon', 'header', '.headerText', '.services',
-                    '.textCenterCon', '.beliefs', '.certif', '.est'], {
+                    '.textCenterCon', '.beliefs', '.certif', '.est', '.footer'], {
                     opacity: 1,
                     delay: 1
                 })
@@ -47,8 +48,9 @@ const About: React.FC = () => {
 
     return (
         <>
+            <Header />
             <div className='About'>
-                <Header />
+                <ScrollToTop />
                 <div className="content outerCon">
                     <div className="Landing">
                         <div className="textCon">
@@ -212,7 +214,7 @@ const About: React.FC = () => {
                         </div>
                     </div>
                     <div className="est">
-                        EST.2024
+                        DEV.2024
                     </div>
                 </div>
             </div>
@@ -220,6 +222,9 @@ const About: React.FC = () => {
             <div className="filler"></div>
 
             <div className="footers">
+                <div className="upwork">
+                    Upwork/Salopaso M.
+                </div>
                 <Footer />
             </div>
         </>

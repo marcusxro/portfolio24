@@ -10,8 +10,11 @@ import cafeEunoia from '../mockups/cafe.png'
 import ulc from '../mockups/ulcImg.jpg'
 import pcup from '../mockups/pcupIt.jpg'
 import melchoraIRS from '../mockups/melchoraScanner.jpg'
+
+
 import { useNavigate } from 'react-router-dom';
 import Footer from '../comp/Footer';
+import ScrollToTop from '../comp/ScrollToTop';
 
 
 
@@ -45,10 +48,12 @@ const Homepage: React.FC = () => {
       if (percScroll >= 3) {
         gsap.to(itm.querySelectorAll('span'), 1, {
           translateY: '0vw',
+          ease: 'bounce'
         })
       } else {
         gsap.to(itm.querySelectorAll('span'), 1, {
           translateY: '-7vw',
+          ease: 'bounce'
         })
       }
     })
@@ -75,8 +80,6 @@ const Homepage: React.FC = () => {
 
     });
   }, []);
-
-
 
 
   const [imgArr, setImgArr] = useState<HTMLImageElement[]>([])
@@ -203,10 +206,6 @@ const Homepage: React.FC = () => {
 
 
 
-
-
-
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.to('.workItem .date span', {
@@ -224,9 +223,28 @@ const Homepage: React.FC = () => {
   const nav = useNavigate()
 
 
+  useEffect(() => {
+
+    const itemShow: NodeListOf<Element> = document.querySelectorAll('.landing .landingCon .textCon span .word');
+    window.scrollTo(0, 0)
+    gsap.to(itemShow, {
+      opacity: 1,
+      stagger: 0.1,
+      duration: 0,
+      onComplete: () => {
+        gsap.to(['.landing .descContent', '.homepage-kinetic', '.selectedWorks', '.footer', 'header', '.more'], {
+          opacity: 1,
+          delay: .7
+        })
+      }
+    })
+  }, []);
+
+
   return (
     <div className='Homepage'>
       <Header />
+      <ScrollToTop />
       <div className="perc">
         <div className="percentage">
           MUSIC ON
@@ -470,7 +488,7 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </div>
-     <Footer />
+      <Footer />
     </div>
   )
 }
