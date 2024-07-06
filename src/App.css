@@ -699,7 +699,7 @@ html::-webkit-scrollbar {
 
 .slctd .content .right .content .title {
   font-size: 5vw;
-    opacity: 0;
+  opacity: 0;
 }
 
 .slctd .content .right .content .headerText {
@@ -1215,8 +1215,6 @@ html::-webkit-scrollbar {
   }
 }
 
-.about {}
-
 .est {
   font-size: 22.2vw;
   font-family: 'boldFont', sans-serif;
@@ -1525,3 +1523,68 @@ img {
   position: relative;
   z-index: 10;
 }
+
+
+.SmallLeft {
+  display: none;
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .slctd .content .left {
+    display: none;
+  }
+
+  .SmallLeft {
+    display: flex;
+  }
+
+  .embla {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+  }
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+  
+  
+  .SmallLeft {
+   display: flex;
+   height: 500px;
+   width: 100%;
+   padding: 25px;
+   gap: 20px;
+   align-items: center;
+  }
+  
+  
+  .SmallLeft .imageItem {
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+    padding-right: 20px;
+    aspect-ratio: 16 / 9; /* 16:9 aspect ratio */
+  }
+  
+  
+  .SmallLeft .imageItem img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  
+  
+  
+  
+  .SmallLeft .imageItem video {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+}
+

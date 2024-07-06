@@ -8,6 +8,7 @@ import SelectedWork from './pages/SelectedWork';
 import About from './pages/About';
 import ScrollToTop from './comp/ScrollToTop';
 import Contact from './pages/Contact';
+import CafeEunoia from './pages/SelectedWorks/CafeEunoia';
 
 const App: React.FC = () => {
 
@@ -32,6 +33,9 @@ const App: React.FC = () => {
           <Route path='/About' element={<About />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/SelectedWork/:workID' element={<SelectedWork />} />
+
+          <Route path='/SelectedWork/cafeeunoia' element={<CafeEunoia />} />
+
         </Routes>
       </div>
     </Router>

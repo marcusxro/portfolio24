@@ -10,6 +10,8 @@
     "@types/node": "^16.18.101",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "embla-carousel-auto-scroll": "^8.1.6",
+    "embla-carousel-react": "^8.1.6",
     "gsap": "^3.12.5",
     "lenis": "^1.1.5",
     "moment-timezone": "^0.5.45",
