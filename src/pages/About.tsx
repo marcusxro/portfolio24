@@ -48,8 +48,8 @@ const About: React.FC = () => {
 
     return (
         <>
-            <Header />
             <div className='About'>
+            <Header />
                 <ScrollToTop />
                 <div className="content outerCon">
                     <div className="Landing">
@@ -223,7 +223,8 @@ const About: React.FC = () => {
 
             <div className="footers">
                 <div className="upwork">
-                    Upwork/Salopaso M.
+                    <div className="headerTitle">UPWORK</div>
+                    <div className="text">Salopaso M.</div>
                 </div>
                 <Footer />
             </div>

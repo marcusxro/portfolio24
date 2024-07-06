@@ -38,8 +38,8 @@ const Contact: React.FC = () => {
 
     return (
         <>
-            <Header />
             <div className='ContactPage'>
+            <Header />
                 <ScrollToTop />
                 <div className="ContentContact">
                     <div className="marq">
@@ -100,7 +100,8 @@ const Contact: React.FC = () => {
 
             <div className="footers">
                 <div className="upwork">
-                    Upwork/Salopaso M.
+                    <div className="headerTitle">UPWORK</div>
+                    <div className="text">Salopaso M.</div>
                 </div>
                 <Footer />
             </div>
