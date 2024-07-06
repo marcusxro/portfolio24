@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import gsap from 'gsap';
+import gsap from 'gsap'
+import logoImg from '../mockups/LogoImg.jpg'
 
 
 const Footer: React.FC = () => {
@@ -93,7 +94,7 @@ const Footer: React.FC = () => {
 
       <div className="secLayer">
         <div className="text">
-          MR©S
+          <img src={logoImg} alt="" />
         </div>
       </div>
     </div>

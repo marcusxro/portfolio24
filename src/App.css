@@ -1217,6 +1217,13 @@ html::-webkit-scrollbar {
   border-bottom: 1px solid rgb(78, 78, 78);
 }
 
+@media only screen and (max-width: 900px) {
+  .est {
+    font-size: 21.3vw;
+    padding: 10px 0px;
+  }
+  
+}
 .About {
   overflow: hidden;
   position: relative;
@@ -1287,7 +1294,6 @@ html::-webkit-scrollbar {
   width: 100%;
   gap: 10px;
   display: flex;
-  padding-inline: 25px;
   justify-content: space-between;
 }
 
@@ -1322,20 +1328,22 @@ html::-webkit-scrollbar {
 
 .footerContainer .secLayer {
   font-family: 'boldFont', sans-serif;
-  height: 27vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 28vw;
+  text-align: left;
+  overflow: hidden;
 }
 
+
 .footerContainer .secLayer .text {
-  font-size: 33vw;
-  color: #171717;
-  transform-origin: center;
-  line-height: 90%;
-  width: 100%;
-  letter-spacing: -1vw;
+height: 30vw;
 }
+
+.footerContainer .secLayer .text img{
+height: 100%;
+width: 100%;
+object-fit: contain;
+}
+
 
 @media only screen and (max-width: 850px) {
   .footerContainer .secLayer .text {
@@ -1369,7 +1377,7 @@ html::-webkit-scrollbar {
 
 @media only screen and (max-width:850px) {
   .footerContainer {
-    padding: 25px;
+    padding: 10px;
   }
 }
 
