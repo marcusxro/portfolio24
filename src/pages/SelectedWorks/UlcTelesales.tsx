@@ -8,40 +8,18 @@ import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
 
-interface MyWorksType {
-    title: string;
-    info: string;
-    role: string[];
-    techs: string[];
-    link: string;
-    images: { src: string; type: string }[];
-    next: string;
-}
+
 
 const UlcTelesales: React.FC = () => {
+ 
     const { workID } = useParams<{ workID: string }>();
-    const [filteredObj, setFiltered] = useState<MyWorksType[]>([]);
     const leftColumnRef = useRef<HTMLDivElement>(null);
     const rightColumnRef = useRef<HTMLDivElement>(null);
 
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-        const filtered = MyWorks.filter((item) =>
-            item.title.toLowerCase() === workID?.toLowerCase()
-        );
-
-
-        const transformedFiltered = filtered.map(item => ({
-            ...item,
-            images: item.images.map(img => ({ src: img.src, type: img.type }))
-        }));
-
-        setFiltered(transformedFiltered);
-
-
-        if (filtered.length > 0) {
-            document.title = `MR©S - ${filtered[2]?.title}`;
+        if (MyWorks.length > 0) {
+            document.title = `${MyWorks[1]?.title} - MR©S`;
         }
     }, [workID]);
 
@@ -50,8 +28,6 @@ const UlcTelesales: React.FC = () => {
     const isUserScrolling = useRef<boolean>(false);
     const animationFrameId = useRef<number | null>(null);
     const scrollSpeed = useRef<number>(100);
-
-
 
 
 
@@ -169,7 +145,7 @@ const UlcTelesales: React.FC = () => {
             clearTimeout(resizeTimeout);
             window.removeEventListener('resize', debouncedResize);
         };
-    }, []); 
+    }, []);
     useEffect(() => {
         if (prevScrollWidth.current !== 0 && scrollWidthDoc !== prevScrollWidth.current) {
             console.log('Width changed, reloading page...');
@@ -216,8 +192,9 @@ const UlcTelesales: React.FC = () => {
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: false }, // Carousel options
-        [AutoScroll({startDelay: 1500, stopOnInteraction: false,  })] // Plugin configuration
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] // Plugin configuration
     );
+    
     useEffect(() => {
         if (emblaApi) {
             console.log(emblaApi.slideNodes())
@@ -226,7 +203,7 @@ const UlcTelesales: React.FC = () => {
 
     return (
         <div className="SelectedWorks slctd" style={{ height: leftColumnRef.current?.scrollHeight + 'px' }}>
-           <Opacity />
+            <Opacity />
             <div className="header">
                 <div className="logo">MR©S</div>
                 <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0); window.location.reload() }}>Close</div>

@@ -8,40 +8,17 @@ import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
 
-interface MyWorksType {
-    title: string;
-    info: string;
-    role: string[];
-    techs: string[];
-    link: string;
-    images: { src: string; type: string }[];
-    next: string;
-}
 
 const Riri: React.FC = () => {
+
     const { workID } = useParams<{ workID: string }>();
-    const [filteredObj, setFiltered] = useState<MyWorksType[]>([]);
     const leftColumnRef = useRef<HTMLDivElement>(null);
     const rightColumnRef = useRef<HTMLDivElement>(null);
 
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-        const filtered = MyWorks.filter((item) =>
-            item.title.toLowerCase() === workID?.toLowerCase()
-        );
-
-
-        const transformedFiltered = filtered.map(item => ({
-            ...item,
-            images: item.images.map(img => ({ src: img.src, type: img.type }))
-        }));
-
-        setFiltered(transformedFiltered);
-
-
-        if (filtered.length > 0) {
-            document.title = `MR©S - ${filtered[1]?.title}`;
+        if (MyWorks.length > 0) {
+            document.title = `${MyWorks[1]?.title} - MR©S`;
         }
     }, [workID]);
 
@@ -219,7 +196,7 @@ const Riri: React.FC = () => {
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: false }, // Carousel options
-        [AutoScroll({startDelay: 1500, stopOnInteraction: false,  })] // Plugin configuration
+        [AutoScroll({startDelay: 2000, stopOnInteraction: false,  })] // Plugin configuration
     );
     useEffect(() => {
         if (emblaApi) {

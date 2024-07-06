@@ -7,7 +7,7 @@ const Opacity = () => {
         gsap.to('.slctd .content .right .content .title', {
             opacity: 1,
             duration: 0,
-            delay: 1,
+            delay: .5,
             onComplete: () => {
                 gsap.to(
                     [
@@ -19,7 +19,7 @@ const Opacity = () => {
                     ],
                     {
                         opacity: 1,
-                        duration: 0.5,
+                        duration: 0.3,
                         delay: 1,
                         stagger: 0.1,
                     }
