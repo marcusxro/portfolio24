@@ -22,7 +22,7 @@ const MusicPlayer = () => {
     };
 
     return (
-        <div className="perc">
+        <div className="perc musicPlayerDiv">
             <audio loop src={musicSrc} ref={audioRef} />
             <div className="percentage" onClick={togglePlayPause}>
                 MUSIC <span>{isPlaying ? 'OFF' : "ON"}</span>

@@ -245,6 +245,7 @@ const Homepage: React.FC = () => {
     <div className='Homepage'>
       <Header />
       <ScrollToTop />
+
       <div className="content">
         <div className="landing">
           <div className="landingCon">

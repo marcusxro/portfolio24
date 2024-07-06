@@ -49,6 +49,7 @@ const About: React.FC = () => {
     return (
         <>
             <div className='About'>
+
             <Header />
                 <ScrollToTop />
                 <div className="content outerCon">

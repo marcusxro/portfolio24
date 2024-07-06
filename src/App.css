@@ -578,7 +578,7 @@ html::-webkit-scrollbar {
 
 
 
-.perc {
+.musicPlayerDiv  {
   position: fixed;
   top: 70%;
   right: -35px;

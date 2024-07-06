@@ -21,4 +21,3 @@ const VisitProject: React.FC<VisitProjectProps> = ({ linkToProject }) => {
 
 export default VisitProject
 
-{/* <VisitProject linkToProject={MyWorks[4].link} /> */}
