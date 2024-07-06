@@ -41,7 +41,7 @@ const App: React.FC = () => {
     <Router>
     <ScrollToTop />
     <div className="App">
-    <MusicPlayer />
+          <MusicPlayer />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/About" element={<About />} />

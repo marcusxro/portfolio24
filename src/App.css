@@ -50,10 +50,13 @@ header {
   opacity: 0;
   color: #f4f3ed;
   mix-blend-mode: difference;
-  z-index: 99999999999999999999999999999999999999999999999999999999999999999999999990;
+  z-index: 20000000;
 
   .logo {
     font-family: 'boldFont', sans-serif;
+    word-spacing: -2vw;
+    cursor: pointer;
+    letter-spacing: -3px;
   }
 
   .midCon {
@@ -578,7 +581,7 @@ html::-webkit-scrollbar {
 
 
 
-.musicPlayerDiv  {
+.musicPlayerDiv {
   position: fixed;
   top: 70%;
   right: -35px;
@@ -1225,8 +1228,9 @@ html::-webkit-scrollbar {
     font-size: 21.3vw;
     padding: 10px 0px;
   }
-  
+
 }
+
 .About {
   overflow: hidden;
   position: relative;
@@ -1266,6 +1270,7 @@ html::-webkit-scrollbar {
     border-top: 2px solid black;
   }
 }
+
 .upwork {
   height: 40%;
   display: flex;
@@ -1282,6 +1287,7 @@ html::-webkit-scrollbar {
   line-height: 90%;
   cursor: pointer;
 }
+
 .footerContainer {
   height: auto;
   font-family: 'mediumFont', sans-serif;
@@ -1339,13 +1345,13 @@ html::-webkit-scrollbar {
 
 
 .footerContainer .secLayer .text {
-height: 30vw;
+  height: 30vw;
 }
 
-.footerContainer .secLayer .text img{
-height: 100%;
-width: 100%;
-object-fit: contain;
+.footerContainer .secLayer .text img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 
@@ -1568,54 +1574,56 @@ img {
   .embla {
     overflow: hidden;
   }
+
   .embla__container {
     display: flex;
   }
+
   .embla__slide {
     flex: 0 0 100%;
     min-width: 0;
   }
-  
-  
+
+
   .SmallLeft {
-   display: flex;
-   height: 500px;
-   width: 100%;
-   padding: 25px;
-   gap: 20px;
-   align-items: center;
+    display: flex;
+    height: 500px;
+    width: 100%;
+    padding: 25px;
+    gap: 20px;
+    align-items: center;
   }
-  
-  
+
+
   .SmallLeft .imageItem {
     height: 80%;
     width: 100%;
     overflow: hidden;
     padding-right: 20px;
-    aspect-ratio: 16 / 9; /* 16:9 aspect ratio */
+    aspect-ratio: 16 / 9;
+    /* 16:9 aspect ratio */
     opacity: 0;
   }
-  
-  
+
+
   .SmallLeft .imageItem img {
     height: 100%;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
   }
-  
 
-  
+
+
   .SmallLeft .imageItem video {
     height: 100%;
     width: 100%;
   }
-  
-  
+
+
 }
 
 
 .slctd::-webkit-scrollbar {
   display: none;
 }
-

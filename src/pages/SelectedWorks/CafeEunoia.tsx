@@ -21,6 +21,7 @@ const CafeEunoia: React.FC = () => {
         if (MyWorks.length > 0) {
             document.title = `CAFE EUNOIA INV - MR©S`;
         }
+
     }, [workID]);
 
 

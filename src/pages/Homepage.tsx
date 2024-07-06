@@ -138,9 +138,6 @@ const Homepage: React.FC = () => {
     });
   }, [prefImgs, hoverImageSources]);
 
-  useEffect(() => {
-    console.log(hoverImageSources)
-  }, [hoverImageSources])
 
 
   const handleMouseEnter = useCallback((showImg: Element) => {
