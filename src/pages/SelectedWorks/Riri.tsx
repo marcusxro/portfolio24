@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
+import VisitProject from '../../comp/VisitProject';
 
 
 const Riri: React.FC = () => {
@@ -273,7 +274,7 @@ const Riri: React.FC = () => {
                         </div>
                     </div>
                     <div className="navigation">
-                        <div className="item">VISIT</div>
+                    <VisitProject linkToProject={MyWorks[1].link} />
 
                         <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>

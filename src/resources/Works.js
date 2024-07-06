@@ -1,10 +1,3 @@
-import firstImage from '../mockups/branding.jpg'
-import secImage from '../mockups/cafe.png'
-import thirdImage from '../mockups/creativeDev.jpg'
-import fourthImage from '../mockups/devanImg.jpg'
-import fifth from '../mockups/oldPort.jpg'
-
-
 
 //cuimages
 import CUImage from '../mockups/cafe.png'
@@ -116,7 +109,7 @@ export const MyWorks = [
             'Gsap',
             'Firebase',
         ],
-        link: 'https://cafeeunoia.onrender.com/',
+        link: 'https://ulctelesales.com/',
         
          images: [
             {src: ULCImage, type: 'img'},
@@ -146,7 +139,7 @@ export const MyWorks = [
             'MongoDB'
         ],
 
-        link: 'https://cafeeunoia.onrender.com/',
+        link: 'https://pcupit.onrender.com/',
          images: [
             {src: PCUPImage, type: 'img'},
             {src: PCUPsignin, type: 'img'},
@@ -174,7 +167,7 @@ export const MyWorks = [
             'Firebase',
             'MongoDB'
         ],
-        link: 'https://cafeeunoia.onrender.com/',
+        link: 'https://melchoraclient.onrender.com/',
         images: [
             {src: CUImage, type: 'img'},
             {src: CULanding, type: 'img'},

@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
+import VisitProject from '../../comp/VisitProject';
 
 
 
@@ -173,7 +174,6 @@ const UlcTelesales: React.FC = () => {
     const [isAvail, setIsAvail] = useState<boolean>(false)
 
 
-
     const nextBtn = () => {
         gsap.to([`.header`, '.imageItem',
             '.slctd .content .right .content .title',
@@ -270,7 +270,7 @@ const UlcTelesales: React.FC = () => {
                         </div>
                     </div>
                     <div className="navigation">
-                        <div className="item">VISIT</div>
+                    <VisitProject linkToProject={MyWorks[2].link} />
 
                         <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>

@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
+import VisitProject from '../../comp/VisitProject';
 
 
 const CafeEunoia: React.FC = () => {
@@ -205,6 +206,8 @@ const CafeEunoia: React.FC = () => {
     return (
         <div className="SelectedWorks slctd" style={{ height: leftColumnRef.current?.scrollHeight + 'px' }}>
             <Opacity />
+
+
             <div className="header">
                 <div className="logo">MR©S</div>
                 <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0); window.location.reload() }}>Close</div>
@@ -271,7 +274,7 @@ const CafeEunoia: React.FC = () => {
                         </div>
                     </div>
                     <div className="navigation">
-                        <div className="item">VISIT</div>
+                    <VisitProject linkToProject={MyWorks[0].link} />
 
                         <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>

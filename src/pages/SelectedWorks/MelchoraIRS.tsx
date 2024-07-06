@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
+import VisitProject from '../../comp/VisitProject';
 
 
 const MelchoraIRS: React.FC = () => {
@@ -84,21 +85,17 @@ const MelchoraIRS: React.FC = () => {
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
             userScrollTimeout.current = setTimeout(() => {
                 isUserScrolling.current = false;
-                handleAutoScroll(); // Resume auto-scroll after 2 seconds of inactivity
-            }, 2000); // Adjust the timeout as needed
+                handleAutoScroll();
+            }, 2000);
         };
 
         window.addEventListener('scroll', updateScrollPercentage);
         window.addEventListener('scroll', handleUserScroll);
 
-        // Initial auto-scroll setup
         setTimeout(() => {
             handleAutoScroll();
         }, 2000);
 
-        // Set up ScrollTrigger for pinning
-
-        // Clean up on component unmount
         return () => {
             window.removeEventListener('scroll', updateScrollPercentage);
             window.removeEventListener('scroll', handleUserScroll);
@@ -107,9 +104,6 @@ const MelchoraIRS: React.FC = () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Clean up all ScrollTriggers
         };
     }, [workID]);
-
-
-
 
     const nav = useNavigate()
     const [scrollWidthDoc, setScrollWidthDoc] = useState<number>(0);
@@ -141,7 +135,7 @@ const MelchoraIRS: React.FC = () => {
             clearTimeout(resizeTimeout);
             window.removeEventListener('resize', debouncedResize);
         };
-    }, []); 
+    }, []);
     useEffect(() => {
         if (prevScrollWidth.current !== 0 && scrollWidthDoc !== prevScrollWidth.current) {
             console.log('Width changed, reloading page...');
@@ -150,8 +144,6 @@ const MelchoraIRS: React.FC = () => {
 
         prevScrollWidth.current = scrollWidthDoc;
     }, [scrollWidthDoc, prevScrollWidth]); // Only run when scrollWidthDoc changes
-
-
 
 
     useEffect(() => {
@@ -164,9 +156,6 @@ const MelchoraIRS: React.FC = () => {
             console.log('Page has already reloaded.');
         }
     }, []); // Empty dependency array means this effect runs once on mo
-
-
-
 
     const nextBtn = () => {
         gsap.to([`.header`, '.imageItem',
@@ -185,7 +174,7 @@ const MelchoraIRS: React.FC = () => {
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: false }, // Carousel options
-        [AutoScroll({startDelay: 200, stopOnInteraction: false,  })] // Plugin configuration
+        [AutoScroll({ startDelay: 200, stopOnInteraction: false, })] // Plugin configuration
     );
     useEffect(() => {
         if (emblaApi) {
@@ -262,7 +251,7 @@ const MelchoraIRS: React.FC = () => {
                         </div>
                     </div>
                     <div className="navigation">
-                        <div className="item">VISIT</div>
+                    <VisitProject linkToProject={MyWorks[4].link} />
 
                         <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>

@@ -6,6 +6,7 @@ import { MyWorks } from '../../resources/Works';
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
+import VisitProject from '../../comp/VisitProject';
 
 
 const Pcup: React.FC = () => {
@@ -266,7 +267,7 @@ const Pcup: React.FC = () => {
                         </div>
                     </div>
                     <div className="navigation">
-                        <div className="item">VISIT</div>
+                    <VisitProject linkToProject={MyWorks[3].link} />
 
                         <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>
