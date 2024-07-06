@@ -53,7 +53,7 @@ header {
   z-index: 99999999999999999999999999999999999999999999999999999999999999999999999990;
 
   .logo {
-    font-family: 'regularFont', sans-serif;
+    font-family: 'boldFont', sans-serif;
   }
 
   .midCon {
