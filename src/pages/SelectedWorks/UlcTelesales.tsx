@@ -20,9 +20,9 @@ const UlcTelesales: React.FC = () => {
 
     useEffect(() => {
         if (MyWorks.length > 0) {
-            document.title = `${MyWorks[1]?.title} - MR©S`;
+            document.title = `ULC TELESALES KW - MR©S`;
         }
-    }, [workID]);
+    }, [MyWorks]);
 
 
     const userScrollTimeout = useRef<NodeJS.Timeout | null>(null);

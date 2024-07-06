@@ -19,7 +19,7 @@ const Riri: React.FC = () => {
 
     useEffect(() => {
         if (MyWorks.length > 0) {
-            document.title = `${MyWorks[1]?.title} - MR©S`;
+            document.title = `Riri's WRS - MR©S`;
         }
     }, [workID]);
 

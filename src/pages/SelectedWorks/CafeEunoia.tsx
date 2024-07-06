@@ -19,7 +19,7 @@ const CafeEunoia: React.FC = () => {
 
     useEffect(() => {
         if (MyWorks.length > 0) {
-            document.title = `${MyWorks[0]?.title} - MR©S`;
+            document.title = `CAFE EUNOIA INV - MR©S`;
         }
     }, [workID]);
 
@@ -195,7 +195,7 @@ const CafeEunoia: React.FC = () => {
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: false }, // Carousel options
-        [AutoScroll({startDelay: 2000, stopOnInteraction: false,  })] // Plugin configuration
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] // Plugin configuration
     );
     useEffect(() => {
         if (emblaApi) {
@@ -210,7 +210,7 @@ const CafeEunoia: React.FC = () => {
 
             <div className="header">
                 <div className="logo">MR©S</div>
-                <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0); window.location.reload() }}>Close</div>
+                <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0);  }}>Close</div>
             </div>
             <div className="content">
                 <div className="left" ref={leftColumnRef}>
@@ -274,8 +274,7 @@ const CafeEunoia: React.FC = () => {
                         </div>
                     </div>
                     <div className="navigation">
-                    <VisitProject linkToProject={MyWorks[0].link} />
-
+                        <VisitProject linkToProject={MyWorks[0].link} />
                         <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const Pcup: React.FC = () => {
 
     useEffect(() => {
         if (MyWorks.length > 0) {
-            document.title = `${MyWorks[3]?.title} - MR©S`;
+            document.title = `PCUP INV - MR©S`;
         }
     }, [workID]);
 

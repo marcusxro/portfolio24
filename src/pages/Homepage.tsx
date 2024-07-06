@@ -203,56 +203,9 @@ const Homepage: React.FC = () => {
 
 
 
-  useEffect(() => {
-    gsap.registerPlugin(CustomEase)
-
-    const footerItems = document.querySelectorAll('.footer .firstLayer .midCon .item');
-
-    footerItems.forEach((item) => {
-
-      item.addEventListener('mouseover', () => {
-        gsap.to(item.querySelectorAll('span'), {
-          duration: 0.5,
-          y: '0px',
-          ease: 'bounceAtEnd',
-          yoyo: true
-        });
-      });
-      item.addEventListener('mouseleave', () => {
-        gsap.to(item.querySelectorAll('span'), {
-          duration: 0.5,
-          y: '-20px',
-          ease: 'bounceAtEnd',
-          yoyo: true
-        });
-      });
-    });
-    return () => {
-      footerItems.forEach((item) => {
-        item.removeEventListener('mouseover', () => {
-          // we are removing the listeners
-        });
-      });
-    };
-  }, []);
 
 
-  useEffect(() => {
-    const itemShow: NodeListOf<Element> = document.querySelectorAll('.landing .landingCon .textCon span .word');
-    window.scrollTo(0, 0)
-    gsap.to(itemShow, {
-      opacity: 1,
-      stagger: 0.1,
-      duration: 0,
-      onComplete: () => {
-        gsap.to(['.landing .descContent', 'header', '.homepage-kinetic', '.selectedWorks', '.footer', '.more'], {
-          opacity: 1,
-          delay: .7
-        })
-      }
-    })
 
-  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -385,7 +338,7 @@ const Homepage: React.FC = () => {
           <div className="workItem">
             <div
               onClick={() => {
-                nav(`selectedwork/Cafe Eunoia`)
+                nav(`selectedwork/cafeeunoia`)
               }}
               className="con">
               <div className="imageCon item">
@@ -408,7 +361,7 @@ const Homepage: React.FC = () => {
           <div className="workItem">
             <div
               onClick={() => {
-                nav(`selectedwork/Riri's WRS`)
+                nav(`selectedwork/ririswrs`)
               }}
               className="con">
               <div className="imageCon item">
@@ -431,7 +384,7 @@ const Homepage: React.FC = () => {
           <div className="workItem">
             <div
               onClick={() => {
-                nav(`selectedwork/ULC Telesales`)
+                nav(`selectedwork/ulctelesales`)
               }}
               className="con">
               <div className="imageCon item">
@@ -454,7 +407,7 @@ const Homepage: React.FC = () => {
           <div className="workItem">
             <div
               onClick={() => {
-                nav(`selectedwork/PCUP`)
+                nav(`selectedwork/pcup`)
               }}
               className="con">
               <div className="imageCon item">
@@ -477,7 +430,7 @@ const Homepage: React.FC = () => {
           <div className="workItem">
             <div
               onClick={() => {
-                nav(`selectedwork/MELCHORA IRS`)
+                nav(`selectedwork/melchorairs`)
               }}
               className="con">
               <div className="imageCon item">
