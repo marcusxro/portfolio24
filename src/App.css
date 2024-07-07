@@ -1850,7 +1850,7 @@ img {
 }
 
 .About .outerCon .textCenterCon .textItem .word .char{
-  transform: translateY(20px);
+  transform: translateY(24px);
 }
 
 .About .outerCon .services .container .flexCon .listItem  .item{
@@ -2006,4 +2006,9 @@ transform: translateY(29px);
   .About .outerCon .est .word .char{
     transform: translateY(19);
   }
+}
+
+
+.About .outerCon .imageCon img{
+  max-height: 0%;
 }

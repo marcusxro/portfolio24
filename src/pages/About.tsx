@@ -87,6 +87,20 @@ const About: React.FC = () => {
             
 
             gsap.registerPlugin(ScrollTrigger)
+
+
+
+            gsap.to('.About .outerCon .imageCon img', {
+                maxHeight: '100%',
+                stagger: .2,
+                ease: 'bounce',
+                scrollTrigger: {
+                    trigger: '.About .outerCon .imageCon',
+                    start: 'top 80%',
+                    end: 'bottom',
+                }
+            })
+
             gsap.to('.About .outerCon .headerText .word .char', {
                 y: 0,
                 stagger: 0.01,
@@ -177,6 +191,7 @@ const About: React.FC = () => {
                 maxHeight: '100%',
                 duration: 1,
                 delay: 0.2,
+                ease: 'bounce',
                 scrollTrigger: {
                     trigger: '.About .outerCon .beliefs .imgCon img',
                     start: 'top 80%',
