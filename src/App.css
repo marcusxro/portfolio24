@@ -1728,37 +1728,35 @@ img {
   font-size: 10vw;
   justify-content: center;
   cursor: pointer;
-  
+
 }
 
 
 .AllPages .content .imageCon .imageContainer .imageItem .circle .rfm-marquee-container {
-display: flex;
-align-items: center;
-height: 100%;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
 }
 
 
-.AllPages .content .imageCon .imageContainer 
-.imageItem .circle .rfm-marquee-container .item {
+.AllPages .content .imageCon .imageContainer .imageItem .circle .rfm-marquee-container .item {
 
   height: 20vw;
   width: 100%;
   padding-right: 20px;
   display: flex;
-align-items: center;
-  }
-  
+  align-items: center;
+}
 
-  .AllPages .content .imageCon .imageContainer 
-  .imageItem .circle .rfm-marquee-container .item img {
-  
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    }
-    
+
+.AllPages .content .imageCon .imageContainer .imageItem .circle .rfm-marquee-container .item img {
+
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 
 .AllPages .content .imageCon .imageContainer .imageItem .overlay {
   position: absolute;
@@ -2063,12 +2061,14 @@ align-items: center;
 .more .textCon {
   text-align: center;
 }
+
 .AllPages .content .imageCon .imageContainer .imageItem {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
 }
-.AllPages .content .imageCon .imageContainer .imageItem img{
+
+.AllPages .content .imageCon .imageContainer .imageItem img {
   height: 0px;
 }
 
@@ -2096,8 +2096,6 @@ align-items: center;
 
 .AllPages .footer {
   opacity: 0;
-  border-top: 2px solid black;
-  padding-inline: 10px;
 }
 
 
@@ -2115,4 +2113,34 @@ align-items: center;
 
 .header .close {
   cursor: pointer;
+}
+
+.AllPages .content .hovs {
+  height: auto;
+  padding: 20px 0px;
+  border-top: 2px solid #171717;
+  margin-inline: 10px;
+  border-bottom: 2px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 5vw;
+  line-height: 90%;
+  font-family: 'boldFont', sans-serif;
+}
+
+
+
+.AllPages .content .hovs .textCon {
+  height: 4vw;
+  overflow: hidden;
+  line-height: 90%;
+
+}
+
+
+.AllPages .content .hovs .textCon .item {
+  transform: translateY(-5vw);
 }

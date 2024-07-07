@@ -127,6 +127,28 @@ const AllPages: React.FC = () => {
     }, [isAllowed, hoveredIndex]);
 
 
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger)
+
+        if(isAllowed) {
+            const itemHover: NodeListOf<Element> = document.querySelectorAll('.AllPages .content .hovs .textCon');
+
+            itemHover.forEach((itm, index, array) => {
+              const duration = index === 0 || index === array.length - 1 ? .5 : 1;
+              gsap.to(itm.querySelectorAll('.item'), {
+                delay: duration - .3,
+                translateY: '0vw',
+                scrollTrigger: {
+                  trigger: itm,
+                  start: 'top 80%',
+                  end: 'bottom 65%',
+                  scrub: 1,
+                }
+              });
+        
+            });
+        }
+    }, [isAllowed])
     return (
         <div className='AllPages'>
             <ScrollToTop />
@@ -145,7 +167,7 @@ const AllPages: React.FC = () => {
 
                 <div className="imageCon">
                     <div className="imageContainer">
-                        <div className="imageItem" onClick={() => {alert("coming soon")}}>
+                        <div className="imageItem" onClick={() => { alert("coming soon") }}>
                             <img src={mingleImg} alt="" />
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
@@ -155,7 +177,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem" onClick={() => {window.open('https://cafeeunoia.onrender.com/', '_blank')}}>
+                        <div className="imageItem" onClick={() => { window.open('https://cafeeunoia.onrender.com/', '_blank') }}>
                             <img src={projectOne} alt="" />
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
@@ -165,7 +187,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem" onClick={() => {window.open('https://ulctelesales.com', '_blank')}}>
+                        <div className="imageItem" onClick={() => { window.open('https://ulctelesales.com', '_blank') }}>
 
                             <img src={projectTwo} alt="" />
                             <div className="circle">
@@ -176,7 +198,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                             <div className="imageItem" onClick={() => {window.open('https://devancinema.onrender.com/', '_blank')}}>
+                        <div className="imageItem" onClick={() => { window.open('https://devancinema.onrender.com/', '_blank') }}>
 
                             <img src={projectFour} alt="" />
                             <div className="circle">
@@ -187,7 +209,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                             <div className="imageItem" onClick={() => {window.open('https://melchoraclient.onrender.com/', '_blank')}}>
+                        <div className="imageItem" onClick={() => { window.open('https://melchoraclient.onrender.com/', '_blank') }}>
 
                             <img src={projectFive} alt="" />
                             <div className="circle">
@@ -198,7 +220,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                             <div className="imageItem" onClick={() => {window.open('https://marcusxro.github.io/', '_blank')}}>
+                        <div className="imageItem" onClick={() => { window.open('https://marcusxro.github.io/', '_blank') }}>
 
                             <img src={projectSix} alt="" />
                             <div className="circle">
@@ -209,7 +231,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                             <div className="imageItem" onClick={() => {window.open('https://pcupit.onrender.com/', '_blank')}}>
+                        <div className="imageItem" onClick={() => { window.open('https://pcupit.onrender.com/', '_blank') }}>
 
                             <img src={projectSeven} alt="" />
 
@@ -221,7 +243,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                             <div className="imageItem" onClick={() => {window.open('https://forcast-dev.netlify.app/', '_blank')}}>
+                        <div className="imageItem" onClick={() => { window.open('https://forcast-dev.netlify.app/', '_blank') }}>
 
                             <img src={projectTen} alt="" />
                             <div className="circle">
@@ -232,7 +254,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                             <div className="imageItem" onClick={() => {window.open('https://chaatai.netlify.app/', '_blank')}}>
+                        <div className="imageItem" onClick={() => { window.open('https://chaatai.netlify.app/', '_blank') }}>
 
                             <img src={projectNine} alt="" />
                             <div className="circle">
@@ -243,7 +265,7 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem" onClick={() => {alert("coming soon")}}>                            <img src={projectEigth} alt="" />
+                        <div className="imageItem" onClick={() => { alert("coming soon") }}>                            <img src={projectEigth} alt="" />
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
@@ -252,6 +274,25 @@ const AllPages: React.FC = () => {
                                 </Marquee>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+                <div className="hovs">
+                    <div className="textCon">
+                        <div className="item">AN ART WHERE CREATIVITY</div>
+                        <div className="item">AN ART WHERE CREATIVITY</div>
+                    </div>
+                    <div className="textCon">
+                        <div className="item">MEETS FUNCTIONALITY</div>
+                        <div className="item">MEETS FUNCTIONALITY</div>
+                    </div>
+                    <div className="textCon">
+                        <div className="item">AND INNOVATION DRIVES</div>
+                        <div className="item">AND INNOVATION DRIVES</div>
+                    </div>
+                    <div className="textCon">
+                    <div className="item">TRANSFORMATIVE EXPERIENCES</div>
+                        <div className="item">TRANSFORMATIVE EXPERIENCES</div>
                     </div>
                 </div>
                 <Footer />
