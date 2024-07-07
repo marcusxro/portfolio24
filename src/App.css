@@ -2012,3 +2012,7 @@ transform: translateY(29px);
 .About .outerCon .imageCon img{
   max-height: 0%;
 }
+
+.more .textCon {
+  text-align: center;
+}

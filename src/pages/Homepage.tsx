@@ -92,7 +92,7 @@ const Homepage: React.FC = () => {
     itemHover.forEach((showImg) => {
       gsap.to(showImg, {
         height: '100%',
-        ease: 'power1.in',
+        ease: 'bounce',
         onComplete: () => {
 
           const imgElement = showImg as HTMLImageElement;
@@ -260,7 +260,7 @@ const Homepage: React.FC = () => {
 
         gsap.to(['.landing .descContent', '.homepage-kinetic', '.selectedWorks', '.footer', 'header', '.more'], {
           opacity: 1,
-          delay: .7
+          delay: 0.8,
         })
       }
     })
@@ -568,19 +568,19 @@ const Homepage: React.FC = () => {
         </div>
         <div className="more">
           <div className="textCon">
+            <span>PASSIONATE ABOUT INNOVATION</span>
             <span>OVER 2 YEARS OF EXPERIENCE</span>
-            <span>OVER 2 YEARS OF EXPERIENCE</span>
           </div>
           <div className="textCon">
+            <span>DRIVEN BY TECHNOLOGY</span>
             <span>IN FULL-STACK FREELANCING</span>
-            <span>IN FULL-STACK FREELANCING</span>
           </div>
           <div className="textCon">
-            <span>CRAFTING WEBSITES AND DESIGN</span>
+            <span>CREATING SOLUTIONS THAT INSPIRE</span>
             <span>CRAFTING WEBSITES AND DESIGN</span>
           </div>
           <div className="textCon">
-            <span>WORK FOR CLIENTS OF ALL SIZES.</span>
+            <span>AND TRANSFORM THE DIGITAL WORLD.</span>
             <span>WORK FOR CLIENTS OF ALL SIZES.</span>
           </div>
         </div>
