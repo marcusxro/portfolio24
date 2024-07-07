@@ -36,6 +36,16 @@ import PCUPmodal from '../mockups/pcupimages/modal.JPG'
 import PCUPreport from '../mockups/pcupimages/report.JPG'
 import PCUPvideo from '../mockups/pcupimages/video.mp4'
 
+//melchora images
+import MELImg from '../mockups/melchoraScanner.jpg'
+import MELRes from '../mockups/melchoraimages/content.JPG'
+import MELResTwo from '../mockups/melchoraimages/resultTwo.JPG'
+import MELResThree from '../mockups/melchoraimages/resultThree.JPG'
+import MELSystem from '../mockups/melchoraimages/system.JPG'
+import MELScanner from '../mockups/melchoraimages/scanner.JPG'
+
+
+
 
 export const MyWorks = [
     {
@@ -168,13 +178,15 @@ export const MyWorks = [
             'MongoDB'
         ],
         link: 'https://melchoraclient.onrender.com/',
+
+
         images: [
-            {src: CUImage, type: 'img'},
-            {src: CULanding, type: 'img'},
-            {src: CUVideo, type: 'vid'},
-            {src: CUSystem, type: 'img'},
-            {src: CUSignin, type: 'img'},
-            {src: CUInventory, type: 'img'},
+            {src: MELImg, type: 'img'},
+            {src: MELSystem, type: 'img'},
+            {src: MELScanner, type: 'img'},
+            {src: MELRes, type: 'img'},
+            {src: MELResTwo, type: 'img'},
+            {src: MELResThree, type: 'img'},
         ],
         next: "cafeeunoia"
     },

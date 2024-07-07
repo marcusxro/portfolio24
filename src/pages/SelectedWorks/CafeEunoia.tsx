@@ -8,6 +8,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
 import VisitProject from '../../comp/VisitProject';
+import ScrollToTop from '../../comp/ScrollToTop';
 
 
 const CafeEunoia: React.FC = () => {
@@ -212,7 +213,7 @@ const CafeEunoia: React.FC = () => {
     return (
         <div className="SelectedWorks slctd" style={{ height:docuHeigth}}>
             <Opacity />
-
+        <ScrollToTop />
 
             <div className="header">
                 <div className="logo">MR©S</div>

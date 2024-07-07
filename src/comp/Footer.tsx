@@ -41,19 +41,22 @@ const Footer: React.FC = () => {
           <span>(Quezon City, PH)</span>
         </div>
         <div className="midCon">
-          <div className="item">
+          <div className="item" onClick={() => { window.open('https://github.com/marcusxro/', '_blank') }}>
             <span>GitHub</span>
             <span>GitHub</span>
           </div>
-          <div className="item">
+          <div className="item" onClick={() => { window.open('https://www.instagram.com/mrcsxro/', '_blank') }}>
+
             <span>Instagram</span>
             <span>Instagram</span>
           </div>
-          <div className="item">
+          <div className="item" onClick={() => { window.open('https://www.facebook.com/marcuss09', '_blank') }}>
+
             <span>Facebook</span>
             <span>Facebook</span>
           </div>
-          <div className="item">
+          <div className="item" onClick={() => { window.location.href = "mailto:marcussalopaso1@gmail.com?subject=Hello&body=Let's work?"; }}>
+
             <span>Email</span>
             <span>Email</span>
           </div>
@@ -76,16 +79,19 @@ const Footer: React.FC = () => {
         </div>
         <div className="secCon">
           <div className="midCon">
-            <div className="item">
+            <div className="item" onClick={() => { window.open('https://github.com/marcusxro/', '_blank') }}>
+
               GitHub
             </div>
-            <div className="item">
+            <div className="item" onClick={() => { window.open('https://www.instagram.com/mrcsxro/', '_blank') }}>
+
               Instagram
             </div>
-            <div className="item">
+            <div className="item" onClick={() => { window.open('https://www.facebook.com/marcuss09', '_blank') }}>
+
               Facebook
             </div>
-            <div className="item">
+            <div className="item" onClick={() => { window.location.href = "mailto:marcussalopaso1@gmail.com?subject=Hello&body=Let's work?"; }}>
               Email
             </div>
           </div>

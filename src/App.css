@@ -583,7 +583,7 @@ html::-webkit-scrollbar {
 
 .musicPlayerDiv {
   position: fixed;
-  top: 70%;
+  top: 80%;
   right: -35px;
   background-color: #f4f3ed;
   color: #171717;
@@ -2111,4 +2111,8 @@ align-items: center;
     padding-top: 10px;
   }
 
+}
+
+.header .close {
+  cursor: pointer;
 }
