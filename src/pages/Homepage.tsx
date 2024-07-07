@@ -15,6 +15,7 @@ import melchoraIRS from '../mockups/melchoraScanner.jpg'
 import { useNavigate } from 'react-router-dom';
 import Footer from '../comp/Footer';
 import ScrollToTop from '../comp/ScrollToTop';
+import SplitType from 'split-type'
 
 
 
@@ -184,7 +185,6 @@ const Homepage: React.FC = () => {
   }, [imgArr, hoverImageSources]);
 
 
-
   useEffect(() => {
     const itemHovers = document.querySelectorAll('.selectedWorks .workItem .imageCon .absoImg');
 
@@ -222,13 +222,42 @@ const Homepage: React.FC = () => {
 
   useEffect(() => {
 
+    new SplitType('.quote', { types: 'words,chars' })
+
+    new SplitType('.gridItem', { types: 'words' })
+
+    new SplitType('.descContent .secLayer .item', { types: 'words' })
+
+
     const itemShow: NodeListOf<Element> = document.querySelectorAll('.landing .landingCon .textCon span .word');
     window.scrollTo(0, 0)
     gsap.to(itemShow, {
       opacity: 1,
       stagger: 0.1,
       duration: 0,
+      delay: 0.5,
       onComplete: () => {
+
+
+        gsap.to('.quote .word .char', {
+          y: 0,
+          stagger: 0.01,
+          duration: 0.5,
+          delay: 0.8,
+        })
+        gsap.to('.descContent .gridItem .word ', {
+          y: 0,
+          stagger: 0.03,
+          duration: 0.5,
+          delay: 0.8,
+        })
+        gsap.to('.descContent .secLayer .item .word', {
+          y: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          delay: 0.8,
+        })
+
         gsap.to(['.landing .descContent', '.homepage-kinetic', '.selectedWorks', '.footer', 'header', '.more'], {
           opacity: 1,
           delay: .7
@@ -236,6 +265,44 @@ const Homepage: React.FC = () => {
       }
     })
   }, []);
+
+
+  useEffect(() => {
+    const parentDiv = document.querySelector('.lastworkItem .button ')
+    const itemHover: NodeListOf<Element> = document.querySelectorAll('.lastworkItem .button .textCon span');
+
+    itemHover.forEach((itm) => {
+
+      const animate = () => {
+        gsap.to(itm, {
+          y: '0rem',
+          ease: 'bounce'
+        })
+      }
+      const RemoveAnimate = () => {
+        gsap.to(itm, {
+          y: '-2rem',
+          ease: 'bounce'
+        })
+      }
+
+
+
+      parentDiv?.addEventListener("mouseover", animate)
+      parentDiv?.addEventListener("mouseleave", RemoveAnimate)
+
+      return () => {
+
+
+        parentDiv?.removeEventListener("mouseover", animate)
+        parentDiv?.removeEventListener("mouseleave", RemoveAnimate)
+      }
+
+    })
+
+  }, [])
+
+
 
 
   return (
@@ -311,30 +378,59 @@ const Homepage: React.FC = () => {
               </div>
               <div className="gridCon">
                 <div className="gridItem">
-                  Web Design<br />
-                  UX/UI Design<br />
-                  3D Design<br />
-                  Branding<br />
-                  Motion Design<br />
-                  Web Development<br />
+                  <div className="item">
+                    Web Design
+                  </div>
+                  <div className="item">
+                    UX/UI Design
+                  </div>
+                  <div className="item">
+                    3D Design
+                  </div>
+                  <div className="item">
+                    Branding
+                  </div>
+                  <div className="item">
+                    Motion Design
+                  </div>
+                  <div className="item">
+                    Web Development
+                  </div>
                 </div>
                 <div className="gridItem">
-                  PCUP (GOV) <br />
-                  BPI Telesales<br />
-                  Cafe Eunoia<br />
-                  Riri's WRS<br />
-                  Melchora High School<br />
+                  <div className="item">
+                    PCUP (GOV)
+                  </div>
+                  <div className="item">
+                    BPI Telesales
+                  </div>
+                  <div className="item">
+                    Cafe Eunoia
+                  </div>
+                  <div className="item">
+                    Riri's WRS
+                  </div>
+                  <div className="item">
+                    Melchora High School
+                  </div>
                 </div>
                 <div className="gridItem">
-                  PEOPLE<br />
-                  OVER<br />
-                  PROFIT<br />
-
+                  <div className="item">
+                    PEOPLE
+                  </div>
+                  <div className="item">
+                    OVER
+                  </div>
+                  <div className="item">
+                    PROFIT
+                  </div>
                 </div>
               </div>
             </div>
             <div className="secLayer">
-              SCROLL DOWN
+            <div className="item">
+            SCROLL DOWN
+            </div>
             </div>
           </div>
         </div>
@@ -458,6 +554,14 @@ const Homepage: React.FC = () => {
                 <div className="num item">
                     //05
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="workItem lastworkItem">
+            <div className="button">
+              <div className="textCon">
+                <span>   + VIEW ALL PROJECTS </span>
+                <span>    VIEW ALL PROJECTS +</span>
               </div>
             </div>
           </div>

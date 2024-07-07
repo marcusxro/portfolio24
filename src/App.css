@@ -1216,12 +1216,7 @@ html::-webkit-scrollbar {
   }
 }
 
-.est {
-  font-size: 22.2vw;
-  font-family: 'boldFont', sans-serif;
-  line-height: 90%;
-  border-bottom: 1px solid rgb(78, 78, 78);
-}
+
 
 @media only screen and (max-width: 900px) {
   .est {
@@ -1626,4 +1621,389 @@ img {
 
 .slctd::-webkit-scrollbar {
   display: none;
+}
+
+
+.lastworkItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lastworkItem .button {
+  font-family: 'boldFont', sans-serif;
+  padding: 20px 30px;
+  border: 1px solid rgb(78, 78, 78);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.lastworkItem .button .textCon {
+  display: flex;
+  font-size: 1.5rem;
+  flex-direction: column;
+  height: 1.5rem;
+  overflow: hidden;
+}
+
+
+.lastworkItem .button .textCon span {
+  transform: translateY(-2rem);
+}
+
+.AllPages {
+  height: auto;
+  background-color: #f4f3ed;
+  color: #171717;
+}
+
+.AllPages .content {
+  height: auto;
+  padding-top: 50px;
+}
+
+.AllPages .content .landingText {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.AllPages .content .landingText .paragraph {
+  font-family: 'mediumFont', sans-serif;
+  color: rgb(78, 78, 78);
+}
+
+.AllPages .content .landingText .big {
+  font-family: 'boldFont', sans-serif;
+  font-size: 10vw;
+  line-height: 90%;
+  cursor: pointer;
+}
+
+
+.AllPages .content .imageCon .imageContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.AllPages .content .imageCon .imageContainer .imageItem {
+  height: 30vw;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.AllPages .content .imageCon .imageContainer .imageItem::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #171717;
+  /* Semi-transparent black overlay */
+  transition: opacity 0.3s ease;
+  display: flex;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* Text color for any overlay content */
+  z-index: 20;
+  font-size: 2vw;
+  /* Responsive font size */
+  pointer-events: none;
+}
+
+.AllPages .content .imageCon .imageContainer .imageItem:hover::after {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.AllPages .content .imageCon .imageContainer .imageItem .circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  background-color: #171717;
+  color: #f4f3ed;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  font-family: 'mediumFont', sans-serif;
+  text-align: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+
+  .title {
+    opacity: 0;
+  }
+
+  .roles {
+    opacity: 0;
+  }
+}
+
+
+.AllPages .content .imageCon .imageContainer .imageItem .overlay {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  z-index: 10;
+  background-color: #171717;
+  width: 100%;
+  height: 30vw;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+}
+
+
+.bg {
+  position: fixed;
+  height: 200vh;
+  width: 200vw;
+  top: -50%;
+  left: -50%;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: 2;
+  z-index: 999999999;
+  pointer-events: none;
+}
+
+
+@keyframes bg-animation {
+  0% { transform: translate(0,0) }
+  10% { transform: translate(-5%,-5%) }
+  20% { transform: translate(-10%,5%) }
+  30% { transform: translate(5%,-10%) }
+  40% { transform: translate(-5%,15%) }
+  50% { transform: translate(-10%,5%) }
+  60% { transform: translate(15%,0) }
+  70% { transform: translate(0,10%) }
+  80% { transform: translate(-15%,0) }
+  90% { transform: translate(10%,5%) }
+  100% { transform: translate(5%,0) }
+}
+
+.quote {
+  line-height: 95%;
+}
+.quote .word {
+  overflow: hidden;
+}
+
+.quote .word .char{
+  transform: translateY(20px);
+}
+
+.descContent .gridItem  {
+  display: flex;
+  flex-direction: column;
+  line-height: 95%;
+}
+
+.descContent .gridItem .item {
+  overflow: hidden;
+}
+
+
+.gridItem .word {
+  overflow: hidden;
+  transform: translateY(20px);
+}
+
+.descContent .secLayer .item{
+  overflow: hidden;
+}
+
+
+.descContent .secLayer .item .word{
+  transform: translateY(20px);
+}
+
+.About .outerCon .headerText .word {
+  all: unset;
+  overflow: hidden;
+}
+
+.About .outerCon .headerText .word .char{
+  transform: translateY(20px);
+}
+
+.About .outerCon .textCenterCon .textItem .word {
+  all: unset;
+  overflow: hidden;
+  line-height: 95%;
+}
+
+.About .outerCon .textCenterCon .textItem .word .char{
+  transform: translateY(20px);
+}
+
+.About .outerCon .services .container .flexCon .listItem  .item{
+  overflow: hidden;
+}
+.About .outerCon .services .container .flexCon .listItem .item .word {
+  all: unset;
+  transform: translateY(25px);
+}
+  
+.About .outerCon .headerTitle .headerText{
+  font-family: 'boldFont', sans-serif;
+  font-size: 2rem;
+  overflow: hidden;
+  color: #f4f3ed;
+}
+
+.About .outerCon .services .headerTitle .headerText .word {
+  all: unset;
+  transform: translateY(27px);
+}
+.About .outerCon .services .textCon .item  {
+  line-height: 90%;
+}
+
+.About .outerCon .services .textCon .item .word {
+  all: unset;
+  overflow: hidden;
+}
+
+.About .outerCon .services .textCon .item .word .char{
+  transform: translateY(25px);
+}
+
+.About .outerCon .beliefs .headerTitle .headerText .word{
+  all: unset;
+  transform: translateY(27px);
+}
+
+.About .outerCon .beliefs .txts .word {
+  all: unset;
+  overflow: hidden;
+}
+
+
+.About .outerCon .beliefs .txts .word .char {
+transform: translateY(20px);
+}
+
+.uniqueImgCon {
+  position: relative;
+  transform-origin: bottom;
+  max-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+
+.uniqueImgCon img {
+
+  max-height: 0px;
+}
+
+
+.About .outerCon .certif .headerTitle .headerText{
+  font-family: 'boldFont', sans-serif;
+  font-size: 2rem;
+  overflow: hidden;
+  color: #f4f3ed;
+}
+
+.About .outerCon .certif .headerTitle .headerText .word{
+transform: translateY(29px);
+}
+.About .outerCon .certif .list .item {
+  overflow: hidden;
+}
+.About .outerCon .certif .list .word {
+  all: unset;
+  transform: translateY(29px);
+}
+
+.About .outerCon .certif .textCon .item .word {
+  all: unset;
+  overflow: hidden;
+}
+
+.About .outerCon .certif .textCon .item .word .char{
+  transform: translateY(25px);
+}
+
+.About .outerCon .beliefs .txtss .word {
+  all: unset;
+  overflow: hidden;
+}
+
+.About .outerCon .beliefs .txtss .word .char{
+  transform: translateY(25px);
+}
+
+.textCenterCon{
+  line-height: 90%;
+}
+.est {
+  font-size: 21vw;
+  font-family: 'boldFont', sans-serif;
+  line-height: 90%;
+  border-bottom: 1px solid rgb(78, 78, 78);
+}
+
+.About .outerCon .est .word {
+  all: unset;
+  overflow: hidden;
+}
+.About .outerCon .est .word .char{
+  transform: translateY(21vw);
+}
+
+
+@media only screen and (max-width: 1676px) {
+  .est {
+    font-size: 20.5vw;
+  }
+  .About .outerCon .est .word .char{
+    transform: translateY( 20.5vw);
+  }
+  
+}
+
+
+@media only screen and (max-width: 830px) {
+  .est {
+    font-size: 20vw;
+  }
+  .About .outerCon .est .word .char{
+    transform: translateY(20vw);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .est {
+    font-size: 19.5vw;
+  }
+  .About .outerCon .est .word .char{
+    transform: translateY(19.5);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .est {
+    font-size: 19vw;
+  }
+  .About .outerCon .est .word .char{
+    transform: translateY(19);
+  }
 }

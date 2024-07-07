@@ -16,6 +16,8 @@ import MelchoraIRS from './pages/SelectedWorks/MelchoraIRS';
 import Header from './comp/Header';
 import gsap from 'gsap';
 import MusicPlayer from './comp/MusicPlayer';
+import AllPages from './pages/AllPages';
+import StaticEffect from './comp/StaticEffect';
 
 
 const App: React.FC = () => {
@@ -39,22 +41,26 @@ const App: React.FC = () => {
 
   return (
     <Router>
-    <ScrollToTop />
-    <div className="App">
-          <MusicPlayer />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/SelectedWork/:workID" element={<SelectedWork />} />
-        <Route path="/SelectedWork/cafeeunoia" element={<CafeEunoia />} />
-        <Route path="/SelectedWork/ririswrs" element={<Riri />} />
-        <Route path="/SelectedWork/ulctelesales" element={<UlcTelesales />} />
-        <Route path="/SelectedWork/pcup" element={<Pcup />} />
-        <Route path="/SelectedWork/melchorairs" element={<MelchoraIRS />} />
-      </Routes>
-    </div>
-  </Router>
+      <ScrollToTop />
+      <div className="App">
+        <MusicPlayer />
+        <StaticEffect />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+
+          <Route path="/SelectedWork/:workID" element={<SelectedWork />} />
+          <Route path="/SelectedWork/cafeeunoia" element={<CafeEunoia />} />
+          <Route path="/SelectedWork/ririswrs" element={<Riri />} />
+          <Route path="/SelectedWork/ulctelesales" element={<UlcTelesales />} />
+          <Route path="/SelectedWork/pcup" element={<Pcup />} />
+          <Route path="/SelectedWork/melchorairs" element={<MelchoraIRS />} />
+          <Route path="/allworks" element={<AllPages />} />
+
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

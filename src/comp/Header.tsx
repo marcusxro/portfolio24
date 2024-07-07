@@ -67,8 +67,8 @@ const Header: React.FC = () => {
             </div>
             <div className="midCon">
                 <div className="item" onClick={() => { nav('/') }}>
-                    <span>Works(5)</span>
-                    <span>Works(5)</span>
+                    <span>Home</span>
+                    <span>Home</span>
                 </div>
                 <div className="item" onClick={() => { nav('/about'); }}>
                     <span>About</span>
