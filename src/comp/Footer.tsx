@@ -37,8 +37,8 @@ const Footer: React.FC = () => {
     <div className="footer footerContainer">
       <div className="firstLayer">
         <div className="item address">
-          <span>Area 5B</span>
-          <span>(Sauyo/Quezon City)</span>
+          <span>Sauyo</span>
+          <span>(Quezon City, PH)</span>
         </div>
         <div className="midCon">
           <div className="item">

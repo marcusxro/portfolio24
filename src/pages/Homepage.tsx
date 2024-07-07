@@ -558,7 +558,7 @@ const Homepage: React.FC = () => {
             </div>
           </div>
           <div className="workItem lastworkItem">
-            <div className="button">
+            <div className="button" onClick={() => {nav('/allworks')}}>
               <div className="textCon">
                 <span>   + VIEW ALL PROJECTS </span>
                 <span>    VIEW ALL PROJECTS +</span>

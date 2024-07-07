@@ -1674,6 +1674,10 @@ img {
 .AllPages .content .landingText .paragraph {
   font-family: 'mediumFont', sans-serif;
   color: rgb(78, 78, 78);
+  width: 100%;
+  max-width: 400px;
+  line-height: 90%;
+  padding-top: 10px;
 }
 
 .AllPages .content .landingText .big {
@@ -1703,58 +1707,58 @@ img {
   }
 }
 
-.AllPages .content .imageCon .imageContainer .imageItem::after {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #171717;
-  /* Semi-transparent black overlay */
-  transition: opacity 0.3s ease;
-  display: flex;
-  opacity: 0;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  /* Text color for any overlay content */
-  z-index: 20;
-  font-size: 2vw;
-  /* Responsive font size */
-  pointer-events: none;
-}
-
-.AllPages .content .imageCon .imageContainer .imageItem:hover::after {
-  opacity: 0.3;
-  cursor: pointer;
-}
 
 .AllPages .content .imageCon .imageContainer .imageItem .circle {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 0%;
+  top: 0%;
   z-index: 10;
   background-color: #171717;
+  opacity: 0;
   color: #f4f3ed;
   padding: 10px;
-  transform: translate(-50%, -50%);
-  font-family: 'mediumFont', sans-serif;
+  font-family: 'boldFont', sans-serif;
   text-align: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 100%;
+  height: 100%;
+  max-height: 30vw;
   overflow: hidden;
-  border-radius: 50%;
-
-  .title {
-    opacity: 0;
-  }
-
-  .roles {
-    opacity: 0;
-  }
+  display: flex;
+  align-items: center;
+  font-size: 10vw;
+  justify-content: center;
+  cursor: pointer;
+  
 }
 
+
+.AllPages .content .imageCon .imageContainer .imageItem .circle .rfm-marquee-container {
+display: flex;
+align-items: center;
+height: 100%;
+justify-content: center;
+}
+
+
+.AllPages .content .imageCon .imageContainer 
+.imageItem .circle .rfm-marquee-container .item {
+
+  height: 20vw;
+  width: 100%;
+  padding-right: 20px;
+  display: flex;
+align-items: center;
+  }
+  
+
+  .AllPages .content .imageCon .imageContainer 
+  .imageItem .circle .rfm-marquee-container .item img {
+  
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    }
+    
 
 .AllPages .content .imageCon .imageContainer .imageItem .overlay {
   position: absolute;
@@ -1785,31 +1789,64 @@ img {
 
 
 @keyframes bg-animation {
-  0% { transform: translate(0,0) }
-  10% { transform: translate(-5%,-5%) }
-  20% { transform: translate(-10%,5%) }
-  30% { transform: translate(5%,-10%) }
-  40% { transform: translate(-5%,15%) }
-  50% { transform: translate(-10%,5%) }
-  60% { transform: translate(15%,0) }
-  70% { transform: translate(0,10%) }
-  80% { transform: translate(-15%,0) }
-  90% { transform: translate(10%,5%) }
-  100% { transform: translate(5%,0) }
+  0% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -5%)
+  }
+
+  20% {
+    transform: translate(-10%, 5%)
+  }
+
+  30% {
+    transform: translate(5%, -10%)
+  }
+
+  40% {
+    transform: translate(-5%, 15%)
+  }
+
+  50% {
+    transform: translate(-10%, 5%)
+  }
+
+  60% {
+    transform: translate(15%, 0)
+  }
+
+  70% {
+    transform: translate(0, 10%)
+  }
+
+  80% {
+    transform: translate(-15%, 0)
+  }
+
+  90% {
+    transform: translate(10%, 5%)
+  }
+
+  100% {
+    transform: translate(5%, 0)
+  }
 }
 
 .quote {
   line-height: 95%;
 }
+
 .quote .word {
   overflow: hidden;
 }
 
-.quote .word .char{
+.quote .word .char {
   transform: translateY(20px);
 }
 
-.descContent .gridItem  {
+.descContent .gridItem {
   display: flex;
   flex-direction: column;
   line-height: 95%;
@@ -1825,12 +1862,12 @@ img {
   transform: translateY(20px);
 }
 
-.descContent .secLayer .item{
+.descContent .secLayer .item {
   overflow: hidden;
 }
 
 
-.descContent .secLayer .item .word{
+.descContent .secLayer .item .word {
   transform: translateY(20px);
 }
 
@@ -1839,7 +1876,7 @@ img {
   overflow: hidden;
 }
 
-.About .outerCon .headerText .word .char{
+.About .outerCon .headerText .word .char {
   transform: translateY(20px);
 }
 
@@ -1849,19 +1886,20 @@ img {
   line-height: 95%;
 }
 
-.About .outerCon .textCenterCon .textItem .word .char{
+.About .outerCon .textCenterCon .textItem .word .char {
   transform: translateY(24px);
 }
 
-.About .outerCon .services .container .flexCon .listItem  .item{
+.About .outerCon .services .container .flexCon .listItem .item {
   overflow: hidden;
 }
+
 .About .outerCon .services .container .flexCon .listItem .item .word {
   all: unset;
   transform: translateY(25px);
 }
-  
-.About .outerCon .headerTitle .headerText{
+
+.About .outerCon .headerTitle .headerText {
   font-family: 'boldFont', sans-serif;
   font-size: 2rem;
   overflow: hidden;
@@ -1872,7 +1910,8 @@ img {
   all: unset;
   transform: translateY(27px);
 }
-.About .outerCon .services .textCon .item  {
+
+.About .outerCon .services .textCon .item {
   line-height: 90%;
 }
 
@@ -1881,11 +1920,11 @@ img {
   overflow: hidden;
 }
 
-.About .outerCon .services .textCon .item .word .char{
+.About .outerCon .services .textCon .item .word .char {
   transform: translateY(25px);
 }
 
-.About .outerCon .beliefs .headerTitle .headerText .word{
+.About .outerCon .beliefs .headerTitle .headerText .word {
   all: unset;
   transform: translateY(27px);
 }
@@ -1897,7 +1936,7 @@ img {
 
 
 .About .outerCon .beliefs .txts .word .char {
-transform: translateY(20px);
+  transform: translateY(20px);
 }
 
 .uniqueImgCon {
@@ -1915,19 +1954,21 @@ transform: translateY(20px);
 }
 
 
-.About .outerCon .certif .headerTitle .headerText{
+.About .outerCon .certif .headerTitle .headerText {
   font-family: 'boldFont', sans-serif;
   font-size: 2rem;
   overflow: hidden;
   color: #f4f3ed;
 }
 
-.About .outerCon .certif .headerTitle .headerText .word{
-transform: translateY(29px);
+.About .outerCon .certif .headerTitle .headerText .word {
+  transform: translateY(29px);
 }
+
 .About .outerCon .certif .list .item {
   overflow: hidden;
 }
+
 .About .outerCon .certif .list .word {
   all: unset;
   transform: translateY(29px);
@@ -1938,7 +1979,7 @@ transform: translateY(29px);
   overflow: hidden;
 }
 
-.About .outerCon .certif .textCon .item .word .char{
+.About .outerCon .certif .textCon .item .word .char {
   transform: translateY(25px);
 }
 
@@ -1947,13 +1988,14 @@ transform: translateY(29px);
   overflow: hidden;
 }
 
-.About .outerCon .beliefs .txtss .word .char{
+.About .outerCon .beliefs .txtss .word .char {
   transform: translateY(25px);
 }
 
-.textCenterCon{
+.textCenterCon {
   line-height: 90%;
 }
+
 .est {
   font-size: 21vw;
   font-family: 'boldFont', sans-serif;
@@ -1965,7 +2007,8 @@ transform: translateY(29px);
   all: unset;
   overflow: hidden;
 }
-.About .outerCon .est .word .char{
+
+.About .outerCon .est .word .char {
   transform: translateY(21vw);
 }
 
@@ -1974,10 +2017,11 @@ transform: translateY(29px);
   .est {
     font-size: 20.5vw;
   }
-  .About .outerCon .est .word .char{
-    transform: translateY( 20.5vw);
+
+  .About .outerCon .est .word .char {
+    transform: translateY(20.5vw);
   }
-  
+
 }
 
 
@@ -1985,7 +2029,8 @@ transform: translateY(29px);
   .est {
     font-size: 20vw;
   }
-  .About .outerCon .est .word .char{
+
+  .About .outerCon .est .word .char {
     transform: translateY(20vw);
   }
 }
@@ -1994,7 +2039,8 @@ transform: translateY(29px);
   .est {
     font-size: 19.5vw;
   }
-  .About .outerCon .est .word .char{
+
+  .About .outerCon .est .word .char {
     transform: translateY(19.5);
   }
 }
@@ -2003,16 +2049,66 @@ transform: translateY(29px);
   .est {
     font-size: 19vw;
   }
-  .About .outerCon .est .word .char{
+
+  .About .outerCon .est .word .char {
     transform: translateY(19);
   }
 }
 
 
-.About .outerCon .imageCon img{
+.About .outerCon .imageCon img {
   max-height: 0%;
 }
 
 .more .textCon {
   text-align: center;
+}
+.AllPages .content .imageCon .imageContainer .imageItem {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.AllPages .content .imageCon .imageContainer .imageItem img{
+  height: 0px;
+}
+
+.AllPages .content .landingText .big {
+  width: auto;
+  overflow: hidden;
+}
+
+
+.AllPages .content .landingText .big .word {
+  opacity: 0;
+}
+
+.AllPages .content .landingText .paragraph .word {
+  overflow: hidden;
+}
+
+.AllPages .content .landingText .paragraph .word .char {
+  transform: translateY(15px);
+}
+
+.AllPages .imageCon {
+  padding-bottom: 30px;
+}
+
+.AllPages .footer {
+  opacity: 0;
+  border-top: 2px solid black;
+  padding-inline: 10px;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .AllPages .content .landingText {
+    height: 40vh;
+  }
+
+  .AllPages .content .landingText .paragraph {
+    max-width: 340px;
+    padding-top: 10px;
+  }
+
 }

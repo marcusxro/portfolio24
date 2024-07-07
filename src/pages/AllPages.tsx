@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../comp/Header'
 import gsap from 'gsap'
+
+
+import mingleImg from '../mockups/Mingle/mingleMockup.jpg'
 
 import projectOne from '../mockups/cafe.png'
 import projectTwo from '../mockups/ulcImg.jpg'
@@ -9,88 +12,125 @@ import projectFour from '../mockups/devanImg.jpg'
 import projectFive from '../mockups/melchoraScanner.jpg'
 import projectSix from '../mockups/oldPort.jpg'
 import projectSeven from '../mockups/pcupIt.jpg'
-import projectEigth from '../mockups/ulcImg.jpg'
+import projectEigth from '../mockups/orderingAPp.jpg'
 import projectNine from '../mockups/branding.jpg'
-import projectTen from '../mockups/orderingAPp.jpg'
+import projectTen from '../mockups/ForCast.jpg'
+
+import SplitType from 'split-type'
+import Footer from '../comp/Footer'
+import { ScrollTrigger } from 'gsap/all'
+
+import Marquee from 'react-fast-marquee'
+import ScrollToTop from '../comp/ScrollToTop'
 
 const AllPages: React.FC = () => {
 
-    useEffect(() => {
-        gsap.to('header', {
-            opacity: 1
-        })
-    }, [])
+    const [isAllowed, setIsAllowed] = useState<boolean>(false)
+
     useEffect(() => {
 
-        const itemHover: NodeListOf<Element> =
-            document.querySelectorAll('.AllPages .content .imageCon .imageContainer .imageItem ');
+        new SplitType('.AllPages .content .landingText .big', { types: 'words' })
 
-        itemHover.forEach((itm) => {
+        new SplitType('.AllPages .content .landingText .paragraph', { types: 'words,chars' })
 
-            const revealText = () => {
-                gsap.to(itm.querySelector('.circle'), {
-                    width: 'auto',
-                    height: '3.5rem',
-                    borderRadius: '2rem',
-                    ease: 'bounce'
-                })
-                gsap.to(itm.querySelector('.title'), {
+
+
+        gsap.to('.AllPages .content .landingText .big .word', {
+            opacity: 1,
+            duration: 0,
+            stagger: .5,
+            delay: 0.5,
+            onComplete: () => {
+                gsap.to('.AllPages header', {
                     opacity: 1,
-                    delay: 0.6
+                    delay: 1
                 })
-                gsap.to(itm.querySelector('.roles'), {
+
+                setTimeout(() => {
+                    setIsAllowed(true)
+                }, 1000);
+
+                gsap.to('.AllPages .content .landingText .paragraph .word .char', {
+                    y: 0,
+                    stagger: 0.01,
+                    delay: 1
+                })
+                gsap.to('.AllPages .footer', {
                     opacity: 1,
-                    delay: 0.6
-                })
-            }
-            const hideText = () => {
-                gsap.to(itm.querySelector('.circle'), {
-                    width: '3.5rem',
-                    height: '3.5rem',
-                    borderRadius: '50%',
-                    ease: 'bounce'
-                })
-                gsap.to(itm.querySelector('.title'), {
-                    opacity: 0,
-                    duration: 0,
-                    ease: 'none'
-                })
-                gsap.to(itm.querySelector('.roles'), {
-                    opacity: 0,
-                    duration: 0,
-                            ease: 'none'
-                })
-            }
-
-
-            itm.addEventListener("mouseover", () => {
-                revealText()
-            })
-
-            itm.addEventListener("mouseleave", () => {
-                hideText()
-            })
-
-            return () => {
-                itm.removeEventListener("mouseover", () => {
-                    revealText()
-                })
-
-                itm.removeEventListener("mouseleave", () => {
-                    hideText()
+                    delay: 1
                 })
             }
         })
 
-
     }, [])
 
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger)
+        const itemHover: NodeListOf<HTMLElement> = document.querySelectorAll('.AllPages .content .imageCon .imageContainer .imageItem')
+        if (isAllowed) {
+
+            itemHover.forEach((itm) => {
+                gsap.to(itm.querySelector('img'), {
+                    height: '100%',
+                    ease: 'bounce',
+                    stagger: 0.5,
+                    scrollTrigger: {
+                        trigger: itm,
+                        start: 'top 80%',
+                        end: 'bottom',
+                    }
+                })
+
+            })
+
+
+        }
+    }, [isAllowed])
+
+
+
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
+
+    useEffect(() => {
+        if (isAllowed) {
+            const itemHover = document.querySelectorAll('.AllPages .content .imageCon .imageContainer .imageItem');
+
+            const revealText = (itm: Element) => {
+                gsap.to(itm.querySelector('.circle'), {
+                    opacity: 1,
+                    duration: 0.5
+                });
+            };
+
+
+            itemHover.forEach((itm, index) => {
+                const mouseOverHandler = () => {
+                    setHoveredIndex(index);
+                    revealText(itm);
+                };
+
+
+                itm.addEventListener('mouseover', mouseOverHandler);
+                itm.addEventListener('mouseout', () => {
+                    gsap.to(itm.querySelector('.circle'), {
+                        opacity: 0,
+                        duration: 0.5
+                    });
+                });
+
+                // Cleanup function to remove event listeners
+                return () => {
+                    itm.removeEventListener('mouseover', mouseOverHandler);
+                };
+            });
+        }
+    }, [isAllowed, hoveredIndex]);
 
 
     return (
         <div className='AllPages'>
+            <ScrollToTop />
             <Header />
-
             <div className="content">
                 <div className="landingText">
                     <div className="big">
@@ -105,79 +145,116 @@ const AllPages: React.FC = () => {
 
                 <div className="imageCon">
                     <div className="imageContainer">
-                        <div className="imageItem">
+                        <div className="imageItem" onClick={() => {alert("coming soon")}}>
+                            <img src={mingleImg} alt="" />
+                            <div className="circle">
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={mingleImg} alt="" />
+                                    </div>
+                                </Marquee>
+                            </div>
+                        </div>
+                        <div className="imageItem" onClick={() => {window.open('https://cafeeunoia.onrender.com/', '_blank')}}>
                             <img src={projectOne} alt="" />
                             <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectOne} alt="" />
+                                    </div>
+                                </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem">
+                        <div className="imageItem" onClick={() => {window.open('https://ulctelesales.com', '_blank')}}>
+
                             <img src={projectTwo} alt="" />
                             <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectTwo} alt="" />
+                                    </div>
+                                </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem">
-                            <img src={projectThree} alt="" />
-                            <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
-                            </div>
-                        </div>
-                        <div className="imageItem">
+                             <div className="imageItem" onClick={() => {window.open('https://devancinema.onrender.com/', '_blank')}}>
+
                             <img src={projectFour} alt="" />
                             <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectFour} alt="" />
+                                    </div>
+                                </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem">
+                             <div className="imageItem" onClick={() => {window.open('https://melchoraclient.onrender.com/', '_blank')}}>
+
                             <img src={projectFive} alt="" />
                             <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectFive} alt="" />
+                                    </div>
+                                </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem">
+                             <div className="imageItem" onClick={() => {window.open('https://marcusxro.github.io/', '_blank')}}>
+
                             <img src={projectSix} alt="" />
                             <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectSix} alt="" />
+                                    </div>
+                                </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem">
+                             <div className="imageItem" onClick={() => {window.open('https://pcupit.onrender.com/', '_blank')}}>
+
                             <img src={projectSeven} alt="" />
 
                             <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectSeven} alt="" />
+                                    </div>
+                                </Marquee>
                             </div>
                         </div>
-                        <div className="imageItem">
-                            <img src={projectEigth} alt="" />
-                            <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
-                            </div>
-                        </div>
-                        <div className="imageItem">
-                            <img src={projectNine} alt="" />
-                            <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
-                            </div>
-                        </div>
-                        <div className="imageItem">
+                             <div className="imageItem" onClick={() => {window.open('https://forcast-dev.netlify.app/', '_blank')}}>
+
                             <img src={projectTen} alt="" />
                             <div className="circle">
-                                <div className="title">Cafe Eunoia</div>
-                                <div className="roles">Designer & Developer</div>
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectTen} alt="" />
+                                    </div>
+                                </Marquee>
+                            </div>
+                        </div>
+                             <div className="imageItem" onClick={() => {window.open('https://chaatai.netlify.app/', '_blank')}}>
+
+                            <img src={projectNine} alt="" />
+                            <div className="circle">
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectNine} alt="" />
+                                    </div>
+                                </Marquee>
+                            </div>
+                        </div>
+                        <div className="imageItem" onClick={() => {alert("coming soon")}}>                            <img src={projectEigth} alt="" />
+                            <div className="circle">
+                                <Marquee speed={100} autoFill>
+                                    <div className="item">
+                                        <img src={projectEigth} alt="" />
+                                    </div>
+                                </Marquee>
                             </div>
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         </div>
     )
