@@ -272,7 +272,9 @@ const Riri: React.FC = () => {
                         </div>
                     </div>
                     <div className="navigation">
-                        <VisitProject linkToProject={MyWorks[1].link} />
+                                <div className="item">
+                                    COMING SOON
+                                </div>
 
                         <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
                     </div>

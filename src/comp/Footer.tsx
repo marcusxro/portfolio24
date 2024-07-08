@@ -69,8 +69,8 @@ const Footer: React.FC = () => {
       <div className="hiddenLayer">
         <div className="firstCon">
           <div className="item address">
-            <span>Area 5B</span>
-            <span>(Sauyo/Quezon City)</span>
+          <span>Sauyo</span>
+          <span>(Quezon City, PH)</span>
           </div>
           <div className="item">
             <span>Developed by</span>

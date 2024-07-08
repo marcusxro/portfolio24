@@ -2144,3 +2144,22 @@ img {
 .AllPages .content .hovs .textCon .item {
   transform: translateY(-5vw);
 }
+
+@media only screen and (max-width: 500px) {
+    .slctd .content .right .innerCon .info{
+      font-size: 10px;
+    }
+    .slctd .content .right .innerCon .role{
+      font-size: 10px;
+    }
+    .slctd .content .right .innerCon .tech{
+      font-size: 10px;
+    }
+}
+
+
+.slctd .header {
+  .logo {
+    letter-spacing: -3px;
+  }
+}
