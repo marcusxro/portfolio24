@@ -110,10 +110,10 @@ const Homepage: React.FC = () => {
           start: 'top 90%',
           end: 'bottom',
         },
-        duration: 0.7, // Duration of the animation
+        duration: 0.7, 
       });
     });
-  }, []); // Run on initial rener
+  }, []); 
 
 
   const [prefImgs, setPrefsImgs] = useState<{ src: string; index: number }[]>([]);
@@ -192,15 +192,13 @@ const Homepage: React.FC = () => {
       showImg.addEventListener('mouseenter', () => handleMouseEnter(showImg));
     });
 
-    // Clean up event listeners to prevent memory leaks
+
     return () => {
       itemHovers.forEach((showImg) => {
         showImg.removeEventListener('mouseenter', () => handleMouseEnter(showImg));
       });
     };
-  }, [handleMouseEnter, allowedToHover]); // Ensure handleMouseEnter is stable
-
-
+  }, [handleMouseEnter, allowedToHover]); 
 
 
   useEffect(() => {
@@ -219,15 +217,11 @@ const Homepage: React.FC = () => {
 
   const nav = useNavigate()
 
-
   useEffect(() => {
 
     new SplitType('.quote', { types: 'words,chars' })
-
     new SplitType('.gridItem', { types: 'words' })
-
     new SplitType('.descContent .secLayer .item', { types: 'words' })
-
 
     const itemShow: NodeListOf<Element> = document.querySelectorAll('.landing .landingCon .textCon span .word');
     window.scrollTo(0, 0)
@@ -237,8 +231,6 @@ const Homepage: React.FC = () => {
       duration: 0,
       delay: 0.5,
       onComplete: () => {
-
-
         gsap.to('.quote .word .char', {
           y: 0,
           stagger: 0.01,
@@ -257,7 +249,6 @@ const Homepage: React.FC = () => {
           duration: 0.5,
           delay: 0.8,
         })
-
         gsap.to(['.landing .descContent', '.homepage-kinetic', '.selectedWorks', '.footer', 'header', '.more'], {
           opacity: 1,
           delay: 0.8,
@@ -265,7 +256,6 @@ const Homepage: React.FC = () => {
       }
     })
   }, []);
-
 
   useEffect(() => {
     const parentDiv = document.querySelector('.lastworkItem .button ')
@@ -286,14 +276,10 @@ const Homepage: React.FC = () => {
         })
       }
 
-
-
       parentDiv?.addEventListener("mouseover", animate)
       parentDiv?.addEventListener("mouseleave", RemoveAnimate)
 
       return () => {
-
-
         parentDiv?.removeEventListener("mouseover", animate)
         parentDiv?.removeEventListener("mouseleave", RemoveAnimate)
       }
@@ -301,9 +287,6 @@ const Homepage: React.FC = () => {
     })
 
   }, [])
-
-
-
 
   return (
     <div className='Homepage'>

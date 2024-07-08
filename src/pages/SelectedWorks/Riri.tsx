@@ -90,13 +90,13 @@ const Riri: React.FC = () => {
 
         const handleUserScroll = () => {
             isUserScrolling.current = true;
-            stopAutoScroll(); // Stop auto-scroll when the user scrolls
+            stopAutoScroll(); 
 
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
             userScrollTimeout.current = setTimeout(() => {
                 isUserScrolling.current = false;
-                handleAutoScroll(); // Resume auto-scroll after 2 seconds of inactivity
-            }, 2000); // Adjust the timeout as needed
+                handleAutoScroll();
+            }, 2000); 
         };
 
         window.addEventListener('scroll', updateScrollPercentage);
@@ -105,20 +105,18 @@ const Riri: React.FC = () => {
 
         window.addEventListener('scroll', handleUserScroll);
 
-        // Initial auto-scroll setup
+
         setTimeout(() => {
             handleAutoScroll();
         }, 2000);
 
-        // Set up ScrollTrigger for pinning
 
-        // Clean up on component unmount
         return () => {
             window.removeEventListener('scroll', updateScrollPercentage);
             window.removeEventListener('scroll', handleUserScroll);
             if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Clean up all ScrollTriggers
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
 
     }, [workID, prevScrollWidth]);
@@ -133,40 +131,33 @@ const Riri: React.FC = () => {
         const handleResize = () => {
             const docScrollWidth = document.documentElement.scrollWidth || document.body.scrollWidth;
 
-
-            // Check if scroll width has changed significantly
             if (docScrollWidth !== prevScrollWidth.current) {
                 setScrollWidthDoc(docScrollWidth);
             }
         };
 
-        // Debounce the resize handler
         let resizeTimeout: NodeJS.Timeout;
         const debouncedResize = () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(handleResize, 200); // Adjust debounce time as needed
+            resizeTimeout = setTimeout(handleResize, 200);
         };
-
-        // Initial call to set the scroll width
         handleResize();
 
-        // Add event listener with debounced function
+
         window.addEventListener('resize', debouncedResize);
 
-        // Cleanup event listener on component unmount
         return () => {
             clearTimeout(resizeTimeout);
             window.removeEventListener('resize', debouncedResize);
         };
-    }, []); // Only run once on mount
+    }, []); 
 
     useEffect(() => {
         if (prevScrollWidth.current !== 0 && scrollWidthDoc !== prevScrollWidth.current) {
             window.location.reload();
         }
-
         prevScrollWidth.current = scrollWidthDoc;
-    }, [scrollWidthDoc, prevScrollWidth]); // Only run when scrollWidthDoc changes
+    }, [scrollWidthDoc, prevScrollWidth]);
 
 
 
@@ -179,9 +170,7 @@ const Riri: React.FC = () => {
         } else {
             console.log('Page has already reloaded.');
         }
-    }, []); // Empty dependency array means this effect runs once on mo
-
-
+    }, []); 
 
     const nextBtn = () => {
         gsap.to([`.header`, '.imageItem',
@@ -199,8 +188,8 @@ const Riri: React.FC = () => {
 
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
-        { loop: true }, // Carousel options
-        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] // Plugin configuration
+        { loop: true }, 
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] 
     );
 
 

@@ -267,7 +267,7 @@ const About: React.FC = () => {
                         </div>
                     </div>
                     <div className="headerText">
-                        HELLO, IM MARCUS SALOPASO. AN INDEPENDENT DIGITAL-FIRST DEVELOPER, COMBINING BRANDING,
+                        HELLO, I'M MARCUS SALOPASO. AN INDEPENDENT DIGITAL-FIRST DEVELOPER, COMBINING BRANDING,
                         MOTION DESIGN & DIGITAL DESIGN TO HELP AMAZING CLIENTS STAND OUT FROM
                         THE CROWD IN A DIGITAL FIRST WORLD.
                     </div>
@@ -359,7 +359,7 @@ const About: React.FC = () => {
                                 <div className="contentOne txtss">
                                     When you start a new project with me,
                                     I always want to learn as much about your business,
-                                    your vision and your dreams as we possible can.
+                                    your vision and your dreams as I possible can.
                                     I do this the best by having different workshops
                                     tailored for your needs - where we together dive
                                     deep into the world of design. This way I make sure

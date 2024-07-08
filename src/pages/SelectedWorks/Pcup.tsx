@@ -28,10 +28,6 @@ const Pcup: React.FC = () => {
     const animationFrameId = useRef<number | null>(null);
     const scrollSpeed = useRef<number>(100);
 
-
-
-
-
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         console.log(MyWorks[1])
@@ -84,32 +80,29 @@ const Pcup: React.FC = () => {
 
         const handleUserScroll = () => {
             isUserScrolling.current = true;
-            stopAutoScroll(); // Stop auto-scroll when the user scrolls
+            stopAutoScroll(); 
 
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
             userScrollTimeout.current = setTimeout(() => {
                 isUserScrolling.current = false;
-                handleAutoScroll(); // Resume auto-scroll after 2 seconds of inactivity
-            }, 2000); // Adjust the timeout as needed
+                handleAutoScroll(); 
+            }, 2000); 
         };
 
         window.addEventListener('scroll', updateScrollPercentage);
         window.addEventListener('scroll', handleUserScroll);
 
-        // Initial auto-scroll setup
+
         setTimeout(() => {
             handleAutoScroll();
         }, 2000);
 
-        // Set up ScrollTrigger for pinning
-
-        // Clean up on component unmount
         return () => {
             window.removeEventListener('scroll', updateScrollPercentage);
             window.removeEventListener('scroll', handleUserScroll);
             if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Clean up all ScrollTriggers
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
         };
     }, [workID]);
 
@@ -118,24 +111,22 @@ const Pcup: React.FC = () => {
 
     const nav = useNavigate()
     const [scrollWidthDoc, setScrollWidthDoc] = useState<number>(0);
-    const prevScrollWidth = useRef<number>(0); // Ref to store the previous scroll width
+    const prevScrollWidth = useRef<number>(0);
 
     useEffect(() => {
         const handleResize = () => {
             const docScrollWidth = document.documentElement.scrollWidth || document.body.scrollWidth;
             console.log('Document Scroll Width:', docScrollWidth);
 
-            // Check if scroll width has changed significantly
             if (docScrollWidth !== prevScrollWidth.current) {
                 setScrollWidthDoc(docScrollWidth);
             }
         };
 
-        // Debounce the resize handler
         let resizeTimeout: NodeJS.Timeout;
         const debouncedResize = () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(handleResize, 200); // Adjust debounce time as needed
+            resizeTimeout = setTimeout(handleResize, 200);
         };
 
         handleResize();
@@ -154,7 +145,7 @@ const Pcup: React.FC = () => {
         }
 
         prevScrollWidth.current = scrollWidthDoc;
-    }, [scrollWidthDoc, prevScrollWidth]); // Only run when scrollWidthDoc changes
+    }, [scrollWidthDoc, prevScrollWidth]); 
 
 
 
@@ -168,7 +159,7 @@ const Pcup: React.FC = () => {
         } else {
             console.log('Page has already reloaded.');
         }
-    }, []); // Empty dependency array means this effect runs once on mo
+    }, []); 
 
 
 
@@ -191,7 +182,7 @@ const Pcup: React.FC = () => {
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: true }, // Carousel options
-        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] // Plugin configuration
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] 
     );
 
 
