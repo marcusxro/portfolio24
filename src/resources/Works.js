@@ -166,8 +166,6 @@ export const MyWorks = [
         role: [
             'Full-Stack Developer',
             'Web Designer',
-            'Motion Designer',
-            '3D Designer'
         ],
         techs: [
             'React',

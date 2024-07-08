@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
                                     BUSINESS INQUIRIES
                                 </div>
                                 <div className="text">
-                                    (+63) 905 701 430
+                                    (+63) 9053 701 430
                                 </div>
                             </div>
                         </div>

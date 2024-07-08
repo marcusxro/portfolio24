@@ -59,6 +59,10 @@ const AllPages: React.FC = () => {
                     opacity: 1,
                     delay: 1
                 })
+                gsap.to('.AllPages .hovs', {
+                    opacity: 1,
+                    delay: 1
+                })
             }
         })
 
@@ -172,7 +176,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={mingleImg} alt="" />
+                                        <img
+                                        loading='lazy'
+                                         src={mingleImg} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -182,7 +188,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectOne} alt="" />
+                                        <img 
+                                                      loading='lazy'
+                                        src={projectOne} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -193,7 +201,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectTwo} alt="" />
+                                        <img
+                                                      loading='lazy'
+                                         src={projectTwo} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -204,7 +214,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectFour} alt="" />
+                                        <img 
+                                                      loading='lazy'
+                                        src={projectFour} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -215,7 +227,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectFive} alt="" />
+                                        <img 
+                                                      loading='lazy'
+                                        src={projectFive} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -226,7 +240,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectSix} alt="" />
+                                        <img 
+                                                      loading='lazy'
+                                        src={projectSix} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -238,7 +254,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectSeven} alt="" />
+                                        <img
+                                                      loading='lazy'
+                                         src={projectSeven} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -249,7 +267,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectTen} alt="" />
+                                        <img
+                                                      loading='lazy'
+                                         src={projectTen} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -260,7 +280,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectNine} alt="" />
+                                        <img
+                                                      loading='lazy'
+                                         src={projectNine} alt="" />
                                     </div>
                                 </Marquee>
                             </div>
@@ -269,7 +291,9 @@ const AllPages: React.FC = () => {
                             <div className="circle">
                                 <Marquee speed={100} autoFill>
                                     <div className="item">
-                                        <img src={projectEigth} alt="" />
+                                        <img 
+                                                      loading='lazy'
+                                        src={projectEigth} alt="" />
                                     </div>
                                 </Marquee>
                             </div>

@@ -18,6 +18,7 @@ import gsap from 'gsap';
 import MusicPlayer from './comp/MusicPlayer';
 import AllPages from './pages/AllPages';
 import StaticEffect from './comp/StaticEffect';
+import Cursor from './comp/Cursor';
 
 
 const App: React.FC = () => {
@@ -45,6 +46,7 @@ const App: React.FC = () => {
       <div className="App">
         <MusicPlayer />
         <StaticEffect />
+        <Cursor />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/About" element={<About />} />

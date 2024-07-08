@@ -16,6 +16,7 @@ import Footer from '../comp/Footer';
 import ScrollToTop from '../comp/ScrollToTop';
 import SplitType from 'split-type'
 import Marquee from 'react-fast-marquee'
+import Cursor from '../comp/Cursor'
 
 
 const Homepage: React.FC = () => {
@@ -374,7 +375,7 @@ const Homepage: React.FC = () => {
               <span>('23?)</span>
             </div> -
           </div>
-          <div className="workItem">
+          <div className="workItem contentWorkItem">
             <div
               onClick={() => {
                 nav(`selectedwork/cafeeunoia`)
@@ -407,13 +408,13 @@ const Homepage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="workItem">
+          <div className="workItem contentWorkItem">
             <div
               onClick={() => {
                 nav(`selectedwork/ririswrs`)
               }}
               className="con">
-              <div className="imageCon item">
+              <div className="imageCon item ">
                 <img className='outerImg' src={riri} alt="" />
                 <div className="absoImg">
                   <Marquee autoFill speed={100} direction='right'>
@@ -437,7 +438,7 @@ const Homepage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="workItem">
+          <div className="workItem contentWorkItem">
             <div
               onClick={() => {
                 nav(`selectedwork/ulctelesales`)
@@ -466,7 +467,7 @@ const Homepage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="workItem">
+          <div className="workItem contentWorkItem">
             <div
               onClick={() => {
                 nav(`selectedwork/pcup`)
@@ -495,7 +496,7 @@ const Homepage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="workItem">
+          <div className="workItem contentWorkItem">
             <div
               onClick={() => {
                 nav(`selectedwork/melchoraas`)
@@ -524,6 +525,13 @@ const Homepage: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className="workItem workItemmarqs">
+            <Marquee speed={200} autoFill>
+              <div className="item">
+                <span>PEOPLE</span> OVER PROFIT-
+              </div>
+            </Marquee>
+          </div>
           <div className="workItem lastworkItem">
             <div className="button" onClick={() => { nav('/allworks') }}>
               <div className="textCon">
@@ -533,6 +541,7 @@ const Homepage: React.FC = () => {
             </div>
           </div>
         </div>
+
         <div className="more">
           <div className="textCon">
             <span>PASSIONATE ABOUT INNOVATION</span>

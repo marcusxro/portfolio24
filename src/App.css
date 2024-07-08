@@ -2094,6 +2094,7 @@ img {
   font-size: 5vw;
   line-height: 90%;
   font-family: 'boldFont', sans-serif;
+  opacity: 0;
 }
 
 
@@ -2218,5 +2219,60 @@ img {
 
   .absoImg {
     opacity: 1;
+  }
+}
+
+
+.workItemmarqs {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10vw;
+  font-family: 'boldFont', sans-serif;
+}
+.workItemmarqs .item {
+  display: flex;
+}
+
+.workItemmarqs .item span {
+  border: 1px solid black;
+  padding-left: 20px;
+  border-radius: 5vw;
+  padding-right: 20px;
+  background-color: #171717;
+  color: #f4f3ed;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color:#f4f3ed;
+  position: fixed;
+  pointer-events: none;
+  z-index: 200000;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+html {
+  cursor: none;
+}
+
+
+.cursor .itme {
+  font-size: 5px;
+  font-family: 'boldFont', sans-serif;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .cursor {
+    display: none;
   }
 }
