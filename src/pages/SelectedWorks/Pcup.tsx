@@ -82,13 +82,13 @@ const Pcup: React.FC = () => {
 
         const handleUserScroll = () => {
             isUserScrolling.current = true;
-            stopAutoScroll(); 
+            stopAutoScroll();
 
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
             userScrollTimeout.current = setTimeout(() => {
                 isUserScrolling.current = false;
-                handleAutoScroll(); 
-            }, 2000); 
+                handleAutoScroll();
+            }, 2000);
         };
 
         window.addEventListener('scroll', updateScrollPercentage);
@@ -104,7 +104,7 @@ const Pcup: React.FC = () => {
             window.removeEventListener('scroll', handleUserScroll);
             if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, [workID]);
 
@@ -139,7 +139,7 @@ const Pcup: React.FC = () => {
             clearTimeout(resizeTimeout);
             window.removeEventListener('resize', debouncedResize);
         };
-    }, []); 
+    }, []);
     useEffect(() => {
         if (prevScrollWidth.current !== 0 && scrollWidthDoc !== prevScrollWidth.current) {
             console.log('Width changed, reloading page...');
@@ -147,7 +147,7 @@ const Pcup: React.FC = () => {
         }
 
         prevScrollWidth.current = scrollWidthDoc;
-    }, [scrollWidthDoc, prevScrollWidth]); 
+    }, [scrollWidthDoc, prevScrollWidth]);
 
 
 
@@ -161,7 +161,7 @@ const Pcup: React.FC = () => {
         } else {
             console.log('Page has already reloaded.');
         }
-    }, []); 
+    }, []);
 
 
 
@@ -184,7 +184,7 @@ const Pcup: React.FC = () => {
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: true }, // Carousel options
-        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] 
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })]
     );
 
 
@@ -198,17 +198,19 @@ const Pcup: React.FC = () => {
 
 
     return (
-        <div className="SelectedWorks slctd" style={{ height:docuHeigth}}>
+        <div className="SelectedWorks slctd" style={{ height: docuHeigth }}>
             <ScrollToTop />
-           <Opacity />
-        <ProjectHeader />
+            <Opacity />
+            <ProjectHeader />
             <div className="content">
                 <div className="left" ref={leftColumnRef}>
                     {MyWorks.length > 0 && MyWorks[3]?.images.length > 0 &&
                         MyWorks[3].images.map((image, index) => (
                             image.type === 'img' ?
                                 <div className="imageItem" key={index}>
-                                    <img src={image.src} alt={`Image ${index + 1}`} />
+                                    <img
+                                        loading="lazy"  // Added lazy loading here
+                                        src={image.src} alt={`Image ${index + 1}`} />
                                 </div> :
                                 <div className="imageItem videos" key={index}>
                                     {image.type === 'vid' &&
@@ -228,7 +230,9 @@ const Pcup: React.FC = () => {
                             MyWorks[3].images.map((image, index) => (
                                 <div className="embla__slide imageItem" key={index}>
                                     {image.type === 'img' ? (
-                                        <img src={image.src} alt={`Image ${index + 1}`} />
+                                        <img
+                                        loading="lazy"  // Added lazy loading here
+                                         src={image.src} alt={`Image ${index + 1}`} />
                                     ) : image.type === 'vid' ? (
                                         <video autoPlay muted loop playsInline>
                                             <source src={image.src} type="video/mp4" />

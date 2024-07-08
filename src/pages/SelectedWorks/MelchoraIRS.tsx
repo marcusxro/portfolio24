@@ -199,7 +199,9 @@ const MelchoraIRS: React.FC = () => {
                         MyWorks[4].images.map((image, index) => (
                             image.type === 'img' ?
                                 <div className="imageItem" key={index}>
-                                    <img src={image.src} alt={`Image ${index + 1}`} />
+                                    <img 
+                                        loading="lazy"  // Added lazy loading here
+                                    src={image.src} alt={`Image ${index + 1}`} />
                                 </div> :
                                 <div className="imageItem videos" key={index}>
                                     {image.type === 'vid' &&
@@ -219,7 +221,9 @@ const MelchoraIRS: React.FC = () => {
                             MyWorks[4].images.map((image, index) => (
                                 <div className="embla__slide imageItem" key={index}>
                                     {image.type === 'img' ? (
-                                        <img src={image.src} alt={`Image ${index + 1}`} />
+                                        <img src={image.src} 
+                                        loading="lazy"  
+                                        alt={`Image ${index + 1}`} />
                                     ) : image.type === 'vid' ? (
                                         <video autoPlay muted loop playsInline>
                                             <source src={image.src} type="video/mp4" />
