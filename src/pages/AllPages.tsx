@@ -86,8 +86,21 @@ const AllPages: React.FC = () => {
                 })
 
             })
-
-
+            return () => {
+                itemHover.forEach((itm) => {
+                    gsap.to(itm.querySelector('img'), {
+                        height: '100%',
+                        ease: 'bounce',
+                        stagger: 0.5,
+                        scrollTrigger: {
+                            trigger: itm,
+                            start: 'top 80%',
+                            end: 'bottom',
+                        }
+                    })
+    
+                })
+            }
         }
     }, [isAllowed])
 
@@ -115,6 +128,7 @@ const AllPages: React.FC = () => {
 
 
                 itm.addEventListener('mouseover', mouseOverHandler);
+
                 itm.addEventListener('mouseout', () => {
                     gsap.to(itm.querySelector('.circle'), {
                         opacity: 0,
@@ -122,9 +136,15 @@ const AllPages: React.FC = () => {
                     });
                 });
 
-                // Cleanup function to remove event listeners
                 return () => {
                     itm.removeEventListener('mouseover', mouseOverHandler);
+                         
+                itm.addEventListener('mouseout', () => {
+                    gsap.to(itm.querySelector('.circle'), {
+                        opacity: 0,
+                        duration: 0.5
+                    });
+                });
                 };
             });
         }
@@ -151,6 +171,22 @@ const AllPages: React.FC = () => {
               });
         
             });
+            return () => {
+                itemHover.forEach((itm, index, array) => {
+                    const duration = index === 0 || index === array.length - 1 ? .5 : 1;
+                    gsap.to(itm.querySelectorAll('.item'), {
+                      delay: duration - .3,
+                      translateY: '0vw',
+                      scrollTrigger: {
+                        trigger: itm,
+                        start: 'top 80%',
+                        end: 'bottom 65%',
+                        scrub: 1,
+                      }
+                    });
+              
+                  });
+            }
         }
     }, [isAllowed])
     return (

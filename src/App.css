@@ -2223,16 +2223,26 @@ img {
 }
 
 
-.workItemmarqs {
-  height: auto;
+.selectedWorks .workItemmarqs {
+  all: unset;
+  height: 20vw;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 10vw;
+  overflow: hidden;
+  border-top: 2px solid black;
   font-family: 'boldFont', sans-serif;
+
+}
+.selectedWorks .workItemmarqs .rfm-marquee-container {
+  overflow: hidden;
+  height: 100%;
 }
 .workItemmarqs .item {
   display: flex;
+  transform: scaleY(1.5);
+  overflow: hidden;
 }
 
 .workItemmarqs .item span {
@@ -2242,6 +2252,7 @@ img {
   padding-right: 20px;
   background-color: #171717;
   color: #f4f3ed;
+  display: inline;
 }
 
 .cursor {
@@ -2251,7 +2262,7 @@ img {
   background-color:#f4f3ed;
   position: fixed;
   pointer-events: none;
-  z-index: 200000;
+  z-index: 20000000;
   transform: translate(-50%, -50%);
   mix-blend-mode: difference;
   display: flex;
@@ -2265,7 +2276,7 @@ html {
 }
 
 
-.cursor .itme {
+.cursor .item {
   font-size: 5px;
   font-family: 'boldFont', sans-serif;
 }

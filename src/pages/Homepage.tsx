@@ -78,8 +78,23 @@ const Homepage: React.FC = () => {
           scrub: 1,
         }
       });
-
     });
+
+    return () => {
+      itemHover.forEach((itm, index, array) => {
+        const duration = index === 0 || index === array.length - 1 ? .5 : 1;
+        gsap.to(itm.querySelectorAll('span'), {
+          delay: duration - .3,
+          translateY: '0vw',
+          scrollTrigger: {
+            trigger: itm,
+            start: 'top 80%',
+            end: 'bottom 50%',
+            scrub: 1,
+          }
+        });
+      });
+    }
   }, []);
 
 
@@ -525,7 +540,7 @@ const Homepage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="workItem workItemmarqs">
+          <div className="workItemmarqs">
             <Marquee speed={200} autoFill>
               <div className="item">
                 <span>PEOPLE</span> OVER PROFIT-

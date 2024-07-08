@@ -84,7 +84,7 @@ const About: React.FC = () => {
             new SplitType('.About .outerCon .certif .list', { types: 'words' })
             new SplitType('.About .outerCon .certif .textCon .item', { types: 'words,chars' })
             new SplitType('.About .outerCon .est', { types: 'words,chars' })
-            
+
 
             gsap.registerPlugin(ScrollTrigger)
 
@@ -230,7 +230,7 @@ const About: React.FC = () => {
                 }
             })
 
-            
+
 
             gsap.to('.About .outerCon .est .word .char', {
                 y: 0,
@@ -388,7 +388,7 @@ const About: React.FC = () => {
                                     <div className="item">Typescript (5mnths)</div>
                                     <div className="item">Tailwind(5mnths)</div>
                                     <div className="item">Gsap(3yrs)</div>
-                                    <div className="item">CSS</div>
+                                    <div className="item">CSS(3yrs)</div>
                                     <div className="item">HTML(3yrs)</div>
                                 </div>
                             </div>
@@ -411,6 +411,7 @@ const About: React.FC = () => {
                                     <div className="item">Java(1yr)</div>
                                     <div className="item">VB.net(1yr)<div>
                                     </div>
+                                    <div className="item">Git(3yr)</div>
                                     </div>
                                 </div>
                             </div>
