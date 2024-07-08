@@ -62,7 +62,7 @@ const Header: React.FC = () => {
 
     return (
         <header>
-            <div className="logo">
+            <div className="logo" onClick={() => { nav('/') }}>
                 MR©S
             </div>
             <div className="midCon">

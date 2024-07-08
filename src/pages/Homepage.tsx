@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import Header from '../comp/Header'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import { CustomEase } from "gsap/CustomEase";
 
 //mockup imgs
 import riri from '../mockups/orderingAPp.jpg'
@@ -16,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../comp/Footer';
 import ScrollToTop from '../comp/ScrollToTop';
 import SplitType from 'split-type'
-
+import Marquee from 'react-fast-marquee'
 
 
 const Homepage: React.FC = () => {
@@ -110,95 +109,45 @@ const Homepage: React.FC = () => {
           start: 'top 90%',
           end: 'bottom',
         },
-        duration: 0.7, 
+        duration: 0.7,
       });
     });
-  }, []); 
+  }, []);
 
-
-  const [prefImgs, setPrefsImgs] = useState<{ src: string; index: number }[]>([]);
-
-  const itemHover: NodeListOf<HTMLImageElement> = document.querySelectorAll('.selectedWorks .workItem .imageCon .outerImg');
-
-  const allowedToHover: Set<string> = new Set();
-  const hoverImageSources: { src: string, height: number, index: number, allowed?: boolean }[] = Array.from(itemHover)
-    .map((img, index) => ({
-      src: img.src,
-      height: img.height,
-      index,
-      allowed: img.height >= 250
-    }));
 
 
   useEffect(() => {
-    hoverImageSources.forEach((image) => {
-      if (image.allowed && prefImgs.some(prefImg => prefImg.src === image.src)) {
-        allowedToHover.add(image.src);
+    const itemHover: NodeListOf<HTMLImageElement> = document.querySelectorAll('.selectedWorks .workItem');
 
+    itemHover.forEach((itm) => {
+
+
+      const goDown = () => {
+        gsap.to(itm.querySelector('.absoImg'), {
+          top: '0%',
+          ease: 'bounce'
+        })
       }
-    });
-  }, [prefImgs, hoverImageSources]);
 
-
-
-  const handleMouseEnter = useCallback((showImg: Element) => {
-    const imgElementsList = showImg.querySelectorAll<HTMLImageElement>('img');
-    const imgs: HTMLImageElement[] = Array.from(imgElementsList);
-
-    const hoverImageSources: string[] = imgs.map(img => img.src);
-    const storedImageSources: string[] = imgArr.map(img => img.src);
-
-
-    const anyImgIncluded = Array.from(allowedToHover).some(src => hoverImageSources.includes(src));
-
-
-    if (anyImgIncluded) {
-      gsap.to(showImg.querySelectorAll('img'), { opacity: 1, duration: 0 });
-
-      if (imgs.length >= 2) {
-        const [firstImg, secondImg] = imgs;
-
-        const tl = gsap.timeline({ defaults: { duration: 0.5, ease: 'Power4.inOut' } });
-        tl.to('.absoImg', { opacity: 1 })
-          .to(firstImg, { scale: 0.8 })
-          .to(secondImg, { scale: 0.5, zIndex: 1000 }, 0)
-          .to(firstImg, { scale: 1, delay: 0.2 })
-          .to(secondImg, { scale: 1, zIndex: 1000 }, '-=0.4');
-      } else {
-        console.log('Not enough img elements found in this .absoImg.');
+      const goUp = () => {
+        gsap.to(itm.querySelector('.absoImg'), {
+          top: '100%',
+          ease: 'bounce'
+        })
       }
-    }
 
+      itm.addEventListener("mouseover", goDown)
+      itm.addEventListener("mouseleave", goUp)
 
-    setPrefsImgs((prevImgs) => {
-      const existingSrcs = prevImgs.map(img => img.src);
-      const newImgs = hoverImageSources.filter((src) => !existingSrcs.includes(src));
+      return () => {
 
-      const updatedImgs = newImgs.map((src, index) => ({
-        src,
-        index: index
-      }));
+        itm.addEventListener("mouseover", goDown)
+        itm.addEventListener("mouseleave", goUp)
+      }
 
-      return [...prevImgs, ...updatedImgs];
-    });
+    })
 
-  }, [imgArr, hoverImageSources]);
-
-
-  useEffect(() => {
-    const itemHovers = document.querySelectorAll('.selectedWorks .workItem .imageCon .absoImg');
-
-    itemHovers.forEach((showImg) => {
-      showImg.addEventListener('mouseenter', () => handleMouseEnter(showImg));
-    });
-
-
-    return () => {
-      itemHovers.forEach((showImg) => {
-        showImg.removeEventListener('mouseenter', () => handleMouseEnter(showImg));
-      });
-    };
-  }, [handleMouseEnter, allowedToHover]); 
+  }, [])
 
 
   useEffect(() => {
@@ -411,9 +360,9 @@ const Homepage: React.FC = () => {
               </div>
             </div>
             <div className="secLayer">
-            <div className="item">
-            SCROLL DOWN
-            </div>
+              <div className="item">
+                SCROLL DOWN
+              </div>
             </div>
           </div>
         </div>
@@ -434,9 +383,19 @@ const Homepage: React.FC = () => {
               <div className="imageCon item">
                 <img className='outerImg' src={cafeEunoia} alt="" />
                 <div className="absoImg">
-                  <img src={cafeEunoia} alt="" />
-                  <img src={cafeEunoia} alt="" />
+
+                  <Marquee autoFill speed={100}>
+                    <div className="item">
+                      <img src={cafeEunoia} alt="" />
+                    </div>
+                    <div className="item">
+                      <img src={cafeEunoia} alt="" />
+                    </div>
+                  </Marquee>
+
+
                 </div>
+
               </div>
               <div className="nameCon">
                 <div className="item title">
@@ -457,9 +416,16 @@ const Homepage: React.FC = () => {
               <div className="imageCon item">
                 <img className='outerImg' src={riri} alt="" />
                 <div className="absoImg">
-                  <img src={riri} alt="" />
-                  <img src={riri} alt="" />
+                  <Marquee autoFill speed={100} direction='right'>
+                    <div className="item">
+                      <img src={riri} alt="" />
+                    </div>
+                    <div className="item">
+                      <img src={riri} alt="" />
+                    </div>
+                  </Marquee>
                 </div>
+
               </div>
               <div className="nameCon">
                 <div className="item title">
@@ -480,8 +446,14 @@ const Homepage: React.FC = () => {
               <div className="imageCon item">
                 <img className='outerImg' src={ulc} alt="" />
                 <div className="absoImg">
-                  <img src={ulc} alt="" />
-                  <img src={ulc} alt="" />
+                  <Marquee autoFill speed={100}>
+                    <div className="item">
+                      <img src={ulc} alt="" />
+                    </div>
+                    <div className="item">
+                      <img src={ulc} alt="" />
+                    </div>
+                  </Marquee>
                 </div>
               </div>
               <div className="nameCon">
@@ -503,8 +475,14 @@ const Homepage: React.FC = () => {
               <div className="imageCon item">
                 <img className='outerImg' src={pcup} alt="" />
                 <div className="absoImg">
-                  <img src={pcup} alt="" />
-                  <img src={pcup} alt="" />
+                  <Marquee autoFill speed={100} direction='right'>
+                    <div className="item">
+                      <img src={pcup} alt="" />
+                    </div>
+                    <div className="item">
+                      <img src={pcup} alt="" />
+                    </div>
+                  </Marquee>
                 </div>
               </div>
               <div className="nameCon">
@@ -520,14 +498,20 @@ const Homepage: React.FC = () => {
           <div className="workItem">
             <div
               onClick={() => {
-                nav(`selectedwork/melchorairs`)
+                nav(`selectedwork/melchoraas`)
               }}
               className="con">
               <div className="imageCon item">
                 <img className='outerImg' src={melchoraIRS} alt="" />
                 <div className="absoImg">
-                  <img src={melchoraIRS} alt="" />
-                  <img src={melchoraIRS} alt="" />
+                  <Marquee autoFill speed={100}>
+                    <div className="item">
+                      <img src={melchoraIRS} alt="" />
+                    </div>
+                    <div className="item">
+                      <img src={melchoraIRS} alt="" />
+                    </div>
+                  </Marquee>
                 </div>
               </div>
               <div className="nameCon">
@@ -541,7 +525,7 @@ const Homepage: React.FC = () => {
             </div>
           </div>
           <div className="workItem lastworkItem">
-            <div className="button" onClick={() => {nav('/allworks')}}>
+            <div className="button" onClick={() => { nav('/allworks') }}>
               <div className="textCon">
                 <span>   + VIEW ALL PROJECTS </span>
                 <span>    VIEW ALL PROJECTS +</span>

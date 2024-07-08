@@ -9,6 +9,8 @@ import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
 import VisitProject from '../../comp/VisitProject';
 import ScrollToTop from '../../comp/ScrollToTop';
+import ProjectHeader from '../../comp/ProjectHeader';
+import Navigator from '../../comp/Navigator';
 
 
 const CafeEunoia: React.FC = () => {
@@ -91,8 +93,8 @@ const CafeEunoia: React.FC = () => {
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
             userScrollTimeout.current = setTimeout(() => {
                 isUserScrolling.current = false;
-                handleAutoScroll(); 
-            }, 2000); 
+                handleAutoScroll();
+            }, 2000);
         };
 
         window.addEventListener('scroll', updateScrollPercentage);
@@ -109,7 +111,7 @@ const CafeEunoia: React.FC = () => {
             window.removeEventListener('scroll', handleUserScroll);
             if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, [workID]);
 
@@ -118,7 +120,7 @@ const CafeEunoia: React.FC = () => {
 
     const nav = useNavigate()
     const [scrollWidthDoc, setScrollWidthDoc] = useState<number>(0);
-    const prevScrollWidth = useRef<number>(0); 
+    const prevScrollWidth = useRef<number>(0);
 
     useEffect(() => {
         const handleResize = () => {
@@ -146,7 +148,7 @@ const CafeEunoia: React.FC = () => {
             clearTimeout(resizeTimeout);
             window.removeEventListener('resize', debouncedResize);
         };
-    }, []); 
+    }, []);
 
     useEffect(() => {
         if (prevScrollWidth.current !== 0 && scrollWidthDoc !== prevScrollWidth.current) {
@@ -155,7 +157,7 @@ const CafeEunoia: React.FC = () => {
         }
 
         prevScrollWidth.current = scrollWidthDoc;
-    }, [scrollWidthDoc, prevScrollWidth]); 
+    }, [scrollWidthDoc, prevScrollWidth]);
 
 
 
@@ -187,8 +189,8 @@ const CafeEunoia: React.FC = () => {
     }
 
     const [emblaRef, emblaApi] = useEmblaCarousel(
-        { loop: true }, 
-        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] 
+        { loop: true },
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })]
     );
 
 
@@ -202,14 +204,11 @@ const CafeEunoia: React.FC = () => {
 
 
     return (
-        <div className="SelectedWorks slctd" style={{ height:docuHeigth}}>
+        <div className="SelectedWorks slctd" style={{ height: docuHeigth }}>
             <Opacity />
-        <ScrollToTop />
+            <ScrollToTop />
 
-            <div className="header">
-                <div className="logo">MR©S</div>
-                <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0);  }}>Close</div>
-            </div>
+            <ProjectHeader />
             <div className="content">
                 <div className="left" ref={leftColumnRef}>
                     {MyWorks.length > 0 && MyWorks[0]?.images.length > 0 &&
@@ -271,10 +270,8 @@ const CafeEunoia: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="navigation">
-                        <VisitProject linkToProject={MyWorks[0].link} />
-                        <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
-                    </div>
+
+                    <Navigator visitProject={MyWorks[0]?.link} nextProject={MyWorks[0]?.next} />
                 </div>
             </div>
         </div>

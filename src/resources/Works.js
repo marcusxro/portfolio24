@@ -49,8 +49,8 @@ import MELScanner from '../mockups/melchoraimages/scanner.JPG'
 
 export const MyWorks = [
     {
-        title: 'Cafe Eunoia',
-        info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste quasi non porro sed. Cupiditate obcaecati praesentium aliquid error laborum consectetur numquam qui odit',
+        title: 'CAFE EUNOIA',
+        info: 'Cafe Eunoia offers an innovative inventory system that seamlessly blends exceptional functionality with an aesthetically pleasing design, making it a joy for employees to use.',
         role: [
             'Full-Stack Developer',
             'Web Designer',
@@ -79,8 +79,8 @@ export const MyWorks = [
         next: "ririswrs"
     },
     {
-        title: "Riri's WRS",
-        info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste quasi non porro sed. Cupiditate obcaecati praesentium aliquid error laborum consectetur numquam qui odit',
+        title: "RIRI'S WRS",
+        info: "Riri's WRS is a cutting-edge ordering system designed to streamline and enhance the entire order process. With its user-friendly interface and efficient management features, it offers a seamless experience from start to finish, ensuring accuracy and satisfaction for both customers and staff.",
         role: [
             'Full-Stack Developer',
             'Web Designer',
@@ -94,7 +94,7 @@ export const MyWorks = [
             'EmailJS',
             'MongoDB'
         ],
-        link: 'https://cafeeunoia.onrender.com/',
+        link: 'COMING SOON',
          images: [
             {src: RRImage, type: 'img'},
             {src: RRCart, type: 'img'},
@@ -106,8 +106,8 @@ export const MyWorks = [
         next: "ulctelesales"
     },
     {
-        title: "ULC Telesales",
-        info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste quasi non porro sed. Cupiditate obcaecati praesentium aliquid error laborum consectetur numquam qui odit',
+        title: "ULC TELESALES",
+        info: "ULC Telesales is a comprehensive knowledge website designed to streamline the search process for telesales professionals at BPI, making it easier for them to find the information they need quickly and efficiently.",
         role: [
             'Full-Stack Developer',
             'Web Designer',
@@ -133,7 +133,7 @@ export const MyWorks = [
     },
     {
         title: "PCUP",
-        info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste quasi non porro sed. Cupiditate obcaecati praesentium aliquid error laborum consectetur numquam qui odit',
+        info: "This inventory system for PCUP provides a digital solution for efficiently storing and managing information online, ensuring easy access and secure data management.",
         role: [
             'Full-Stack Developer',
             'Web Designer',
@@ -158,11 +158,11 @@ export const MyWorks = [
             {src: PCUPcontent, type: 'img'},
             {src: PCUPmodal, type: 'img'},
         ],
-        next: "melchorairs"
+        next: "melchoraas"
     },
     {
-        title: "MELCHORA IRS",
-        info: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste quasi non porro sed. Cupiditate obcaecati praesentium aliquid error laborum consectetur numquam qui odit',
+        title: "MELCHORA AAS",
+        info: "This automated attendance system for ICT students at Melchora simplifies and modernizes attendance tracking, ensuring accurate records and effortless management for both students and faculty.",
         role: [
             'Full-Stack Developer',
             'Web Designer',

@@ -8,6 +8,8 @@ import AutoScroll from 'embla-carousel-auto-scroll';
 import Opacity from '../../comp/Opacity';
 import VisitProject from '../../comp/VisitProject';
 import ScrollToTop from '../../comp/ScrollToTop';
+import ProjectHeader from '../../comp/ProjectHeader';
+import Navigator from '../../comp/Navigator';
 
 
 const Pcup: React.FC = () => {
@@ -199,10 +201,7 @@ const Pcup: React.FC = () => {
         <div className="SelectedWorks slctd" style={{ height:docuHeigth}}>
             <ScrollToTop />
            <Opacity />
-            <div className="header">
-                <div className="logo">MR©S</div>
-                <div className="close" onClick={() => { nav('/'); window.scrollTo(0, 0);  }}>Close</div>
-            </div>
+        <ProjectHeader />
             <div className="content">
                 <div className="left" ref={leftColumnRef}>
                     {MyWorks.length > 0 && MyWorks[3]?.images.length > 0 &&
@@ -264,11 +263,7 @@ const Pcup: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="navigation">
-                    <VisitProject linkToProject={MyWorks[3].link} />
-
-                        <div className="item" onClick={() => { nextBtn() }}>NEXT</div>
-                    </div>
+                    <Navigator visitProject={MyWorks[3]?.link} nextProject={MyWorks[3]?.next} />
                 </div>
             </div>
         </div>
