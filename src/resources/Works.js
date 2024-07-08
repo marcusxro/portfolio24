@@ -80,7 +80,7 @@ export const MyWorks = [
     },
     {
         title: "RIRI'S WRS",
-        info: "Riri's WRS is a cutting-edge ordering system designed to streamline and enhance the entire order process. With its user-friendly interface and efficient management features, it offers a seamless experience from start to finish, ensuring accuracy and satisfaction for both customers and staff.",
+        info: "Riri's WRS is a cutting-edge ordering system that simplifies the order process with a user-friendly interface, ensuring accuracy and satisfaction for both customers and staff.",
         role: [
             'Full-Stack Developer',
             'Web Designer',
