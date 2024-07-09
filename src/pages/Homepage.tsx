@@ -392,11 +392,11 @@ const Homepage: React.FC = () => {
             </div> -
           </div>
 
-          <div 
-          onClick={() => {
-            nav('/selectedwork/cafeeunoia')
-          }}
-          className="workItem contentWorkItem">
+          <div
+            onClick={() => {
+              nav('/selectedwork/cafeeunoia')
+            }}
+            className="workItem contentWorkItem">
             <GridImgs imageItem={cafeEunoia} />
             <div className="imageCon item ">
               <img className='outerImg' src={cafeEunoia} alt="" />
@@ -412,7 +412,11 @@ const Homepage: React.FC = () => {
             </div>
           </div>
 
-          <div className="workItem contentWorkItem">
+          <div
+            onClick={() => {
+              nav('/selectedwork/ririswrs')
+            }}
+            className="workItem contentWorkItem">
             <GridImgs imageItem={riri} />
             <div className="imageCon item ">
               <img className='outerImg' src={riri} alt="" />
@@ -429,7 +433,11 @@ const Homepage: React.FC = () => {
           </div>
 
 
-          <div className="workItem contentWorkItem">
+          <div
+            onClick={() => {
+              nav('/selectedwork/ulctelesales')
+            }}
+            className="workItem contentWorkItem">
             <GridImgs imageItem={ulc} />
             <div className="imageCon item ">
               <img className='outerImg' src={ulc} alt="" />
@@ -446,7 +454,11 @@ const Homepage: React.FC = () => {
           </div>
 
 
-          <div className="workItem contentWorkItem">
+          <div 
+            onClick={() => {
+              nav('/selectedwork/pcup')
+            }}
+          className="workItem contentWorkItem">
             <GridImgs imageItem={pcup} />
             <div className="imageCon item ">
               <img className='outerImg' src={pcup} alt="" />
@@ -462,7 +474,11 @@ const Homepage: React.FC = () => {
             </div>
           </div>
 
-          <div className="workItem contentWorkItem">
+          <div 
+           onClick={() => {
+            nav('/selectedwork/melchoraas')
+          }}
+          className="workItem contentWorkItem">
             <GridImgs imageItem={melchoraIRS} />
             <div className="imageCon item ">
               <img className='outerImg' src={melchoraIRS} alt="" />

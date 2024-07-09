@@ -83,7 +83,7 @@ const MelchoraIRS: React.FC = () => {
 
         const handleUserScroll = () => {
             isUserScrolling.current = true;
-            stopAutoScroll(); 
+            stopAutoScroll();
 
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
             userScrollTimeout.current = setTimeout(() => {
@@ -104,13 +104,13 @@ const MelchoraIRS: React.FC = () => {
             window.removeEventListener('scroll', handleUserScroll);
             if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
             if (userScrollTimeout.current) clearTimeout(userScrollTimeout.current);
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, [workID]);
 
     const nav = useNavigate()
     const [scrollWidthDoc, setScrollWidthDoc] = useState<number>(0);
-    const prevScrollWidth = useRef<number>(0); 
+    const prevScrollWidth = useRef<number>(0);
 
     useEffect(() => {
         const handleResize = () => {
@@ -125,7 +125,7 @@ const MelchoraIRS: React.FC = () => {
         let resizeTimeout: NodeJS.Timeout;
         const debouncedResize = () => {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(handleResize, 200); 
+            resizeTimeout = setTimeout(handleResize, 200);
         };
 
         handleResize();
@@ -144,7 +144,7 @@ const MelchoraIRS: React.FC = () => {
         }
 
         prevScrollWidth.current = scrollWidthDoc;
-    }, [scrollWidthDoc, prevScrollWidth]); 
+    }, [scrollWidthDoc, prevScrollWidth]);
 
 
     useEffect(() => {
@@ -156,7 +156,7 @@ const MelchoraIRS: React.FC = () => {
         } else {
             console.log('Page has already reloaded.');
         }
-    }, []); 
+    }, []);
 
     const nextBtn = () => {
         gsap.to([`.header`, '.imageItem',
@@ -174,8 +174,8 @@ const MelchoraIRS: React.FC = () => {
 
     }
     const [emblaRef, emblaApi] = useEmblaCarousel(
-        { loop: true }, 
-        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })] 
+        { loop: true },
+        [AutoScroll({ startDelay: 2000, stopOnInteraction: false, })]
     );
 
 
@@ -189,19 +189,19 @@ const MelchoraIRS: React.FC = () => {
 
 
     return (
-        <div className="SelectedWorks slctd" style={{ height:docuHeigth}}>
+        <div className="SelectedWorks slctd" style={{ height: docuHeigth }}>
             <ScrollToTop />
             <Opacity />
-        <ProjectHeader />
+            <ProjectHeader />
             <div className="content">
                 <div className="left" ref={leftColumnRef}>
                     {MyWorks.length > 0 && MyWorks[4]?.images.length > 0 &&
                         MyWorks[4].images.map((image, index) => (
                             image.type === 'img' ?
                                 <div className="imageItem" key={index}>
-                                    <img 
+                                    <img
                                         loading="lazy"  // Added lazy loading here
-                                    src={image.src} alt={`Image ${index + 1}`} />
+                                        src={image.src} alt={`Image ${index + 1}`} />
                                 </div> :
                                 <div className="imageItem videos" key={index}>
                                     {image.type === 'vid' &&
@@ -221,9 +221,9 @@ const MelchoraIRS: React.FC = () => {
                             MyWorks[4].images.map((image, index) => (
                                 <div className="embla__slide imageItem" key={index}>
                                     {image.type === 'img' ? (
-                                        <img src={image.src} 
-                                        loading="lazy"  
-                                        alt={`Image ${index + 1}`} />
+                                        <img src={image.src}
+                                            loading="lazy"
+                                            alt={`Image ${index + 1}`} />
                                     ) : image.type === 'vid' ? (
                                         <video autoPlay muted loop playsInline>
                                             <source src={image.src} type="video/mp4" />
@@ -258,7 +258,7 @@ const MelchoraIRS: React.FC = () => {
                             </div>
                         </div>
                     </div>
-              
+
                     <Navigator visitProject={MyWorks[4]?.link} nextProject={MyWorks[4]?.next} />
                 </div>
             </div>
