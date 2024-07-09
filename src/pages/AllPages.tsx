@@ -28,6 +28,10 @@ const AllPages: React.FC = () => {
     const [isAllowed, setIsAllowed] = useState<boolean>(false)
 
     useEffect(() => {
+        document.title = 'ALL WORKS - MR©S'
+    })
+
+    useEffect(() => {
 
         new SplitType('.AllPages .content .landingText .big', { types: 'words' })
 

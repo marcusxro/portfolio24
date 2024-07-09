@@ -169,12 +169,12 @@ const Homepage: React.FC = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.to('.workItem .date span', {
-      y: '-2vw',
+      y: '-.99999vw',
+      ease: 'bounce',
       scrollTrigger: {
         trigger: '.workItem .date',
         start: 'top 80%',
         end: 'bottom',
-        scrub: 1
       }
     })
   }, [])
@@ -263,11 +263,11 @@ const Homepage: React.FC = () => {
           <div className="landingCon">
             <div className="textCon">
               <span>
-                <div className="word">MR©S</div>
+                <div className="word logoWord"></div>
                 <div className="word">IS</div>
               </span>
               <span>
-                <div className="word">MR©S</div>
+              <div className="word logoWord">MR©S</div>
                 <div className="word">IS</div>
               </span>
             </div>

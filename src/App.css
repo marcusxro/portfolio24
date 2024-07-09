@@ -229,6 +229,14 @@ header {
           .word {
             color: #171717;
             opacity: 0;
+            letter-spacing: -.5vw;
+            margin-right: .5%;
+            line-height: 90%;
+          }
+          
+          .logoWord {
+            letter-spacing: -1vw;
+            margin-right: .5%;
           }
         }
       }
@@ -268,7 +276,7 @@ header {
           text-align: center;
           max-width: 1200px;
           color: black;
-          font-family: 'mediumFont', sans-serif;
+          font-family: 'boldFont', sans-serif;
         }
 
         .gridCon {
@@ -280,7 +288,7 @@ header {
 
     .firstLayer {
       display: flex;
-      font-family: 'regularFont', sans-serif;
+      font-family: 'mediumFont', sans-serif;
       justify-content: space-between;
       font-size: clamp(1rem, 1vw, 1.5rem);
 
@@ -438,7 +446,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      font-size: 7vw;
+      font-size: 3vw;
       display: flex;
       height: auto;
       overflow: hidden;
@@ -447,11 +455,10 @@ header {
       .date {
         display: flex;
         flex-direction: column;
-        height: 5vw;
+        height: 3vw;
         overflow: hidden;
-
         span {
-          transform: translateY(-10vw);
+          transform: translateY(-4vw);
         }
       }
     }
