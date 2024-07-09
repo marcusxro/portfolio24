@@ -314,7 +314,7 @@ header {
 
 
   .GridImgs {
-    height: 150vh;
+    height: 250vh;
     width: 250vw;
     display: flex;
     align-items: center;
@@ -323,13 +323,14 @@ header {
     position: absolute;
     opacity: 1;
     left: 10vh;
-    top: 50vh;
+    top:100vh;
     transform: rotate(10deg) translate(-50%, -50%);
     z-index: 2000000;
     background-color: #171717;
     scale: 1;
     transition: height 1s ease-in-out;
     display: none;
+
   } 
 
   .imageCon .hoverWorkItem {
@@ -346,6 +347,7 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     gap: 10px;
   }
 
@@ -375,6 +377,7 @@ header {
     display: flex;
     align-items: center;
     height: 100%;
+    overflow: hidden;
     width: 100%;
   }
 
