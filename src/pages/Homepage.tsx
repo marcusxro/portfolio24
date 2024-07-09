@@ -17,6 +17,7 @@ import ScrollToTop from '../comp/ScrollToTop';
 import SplitType from 'split-type'
 import Marquee from 'react-fast-marquee'
 import Cursor from '../comp/Cursor'
+import GridImgs from '../comp/GridImgs'
 
 
 const Homepage: React.FC = () => {
@@ -263,11 +264,11 @@ const Homepage: React.FC = () => {
           <div className="landingCon">
             <div className="textCon">
               <span>
-                <div className="word logoWord"></div>
+                <div className="word logoWord">MR©S</div>
                 <div className="word">IS</div>
               </span>
               <span>
-              <div className="word logoWord">MR©S</div>
+                <div className="word logoWord">MR©S</div>
                 <div className="word">IS</div>
               </span>
             </div>
@@ -390,163 +391,100 @@ const Homepage: React.FC = () => {
               <span>('23?)</span>
             </div> -
           </div>
-          <div className="workItem contentWorkItem">
-            <div
-              onClick={() => {
-                nav(`selectedwork/cafeeunoia`)
-              }}
-              className="con">
-              <div className="imageCon item">
-                <img className='outerImg' src={cafeEunoia} alt="" />
-                <div className="absoImg">
 
-                  <Marquee autoFill speed={100}>
-                    <div className="item">
-                      <img src={cafeEunoia} alt="" />
-                    </div>
-                    <div className="item">
-                      <img src={cafeEunoia} alt="" />
-                    </div>
-                  </Marquee>
+          <div 
+          onClick={() => {
+            nav('/selectedwork/cafeeunoia')
+          }}
+          className="workItem contentWorkItem">
+            <GridImgs imageItem={cafeEunoia} />
+            <div className="imageCon item ">
+              <img className='outerImg' src={cafeEunoia} alt="" />
+            </div>
 
-
-                </div>
-
+            <div className="nameCon">
+              <div className="selectedCase">
+                SELECTED CASE
               </div>
-              <div className="nameCon">
-                <div className="item title">
-                  <span>Cafe Eunoia</span>
-                </div>
-                <div className="num item">
-                    //01
-                </div>
+              <div className="title">
+                CAFE EUNOIA
               </div>
             </div>
           </div>
-          <div className="workItem contentWorkItem">
-            <div
-              onClick={() => {
-                nav(`selectedwork/ririswrs`)
-              }}
-              className="con">
-              <div className="imageCon item ">
-                <img className='outerImg' src={riri} alt="" />
-                <div className="absoImg">
-                  <Marquee autoFill speed={100} direction='right'>
-                    <div className="item">
-                      <img src={riri} alt="" />
-                    </div>
-                    <div className="item">
-                      <img src={riri} alt="" />
-                    </div>
-                  </Marquee>
-                </div>
 
-              </div>
-              <div className="nameCon">
-                <div className="item title">
-                  Riri's WRS
-                </div>
-                <div className="num item">
-                    //02
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="workItem contentWorkItem">
-            <div
-              onClick={() => {
-                nav(`selectedwork/ulctelesales`)
-              }}
-              className="con">
-              <div className="imageCon item">
-                <img className='outerImg' src={ulc} alt="" />
-                <div className="absoImg">
-                  <Marquee autoFill speed={100}>
-                    <div className="item">
-                      <img src={ulc} alt="" />
-                    </div>
-                    <div className="item">
-                      <img src={ulc} alt="" />
-                    </div>
-                  </Marquee>
-                </div>
+            <GridImgs imageItem={riri} />
+            <div className="imageCon item ">
+              <img className='outerImg' src={riri} alt="" />
+            </div>
+
+            <div className="nameCon">
+              <div className="selectedCase">
+                SELECTED CASE
               </div>
-              <div className="nameCon">
-                <div className="item title">
-                  ULC Telesales
-                </div>
-                <div className="num item">
-                    //03
-                </div>
+              <div className="title">
+                RIRI'S WRS
               </div>
             </div>
           </div>
+
+
           <div className="workItem contentWorkItem">
-            <div
-              onClick={() => {
-                nav(`selectedwork/pcup`)
-              }}
-              className="con">
-              <div className="imageCon item">
-                <img className='outerImg' src={pcup} alt="" />
-                <div className="absoImg">
-                  <Marquee autoFill speed={100} direction='right'>
-                    <div className="item">
-                      <img src={pcup} alt="" />
-                    </div>
-                    <div className="item">
-                      <img src={pcup} alt="" />
-                    </div>
-                  </Marquee>
-                </div>
+            <GridImgs imageItem={ulc} />
+            <div className="imageCon item ">
+              <img className='outerImg' src={ulc} alt="" />
+            </div>
+
+            <div className="nameCon">
+              <div className="selectedCase">
+                SELECTED CASE
               </div>
-              <div className="nameCon">
-                <div className="item title">
-                  PCUP
-                </div>
-                <div className="num item">
-                    //04
-                </div>
+              <div className="title">
+                ULC TELESALES
               </div>
             </div>
           </div>
+
+
           <div className="workItem contentWorkItem">
-            <div
-              onClick={() => {
-                nav(`selectedwork/melchoraas`)
-              }}
-              className="con">
-              <div className="imageCon item">
-                <img className='outerImg' src={melchoraIRS} alt="" />
-                <div className="absoImg">
-                  <Marquee autoFill speed={100}>
-                    <div className="item">
-                      <img src={melchoraIRS} alt="" />
-                    </div>
-                    <div className="item">
-                      <img src={melchoraIRS} alt="" />
-                    </div>
-                  </Marquee>
-                </div>
+            <GridImgs imageItem={pcup} />
+            <div className="imageCon item ">
+              <img className='outerImg' src={pcup} alt="" />
+            </div>
+
+            <div className="nameCon">
+              <div className="selectedCase">
+                SELECTED CASE
               </div>
-              <div className="nameCon">
-                <div className="item title">
-                  MELCHORA IRS
-                </div>
-                <div className="num item">
-                    //05
-                </div>
+              <div className="title">
+                PCUP INV
               </div>
             </div>
           </div>
-          <div className="workItemmarqs">
+
+          <div className="workItem contentWorkItem">
+            <GridImgs imageItem={melchoraIRS} />
+            <div className="imageCon item ">
+              <img className='outerImg' src={melchoraIRS} alt="" />
+            </div>
+
+            <div className="nameCon">
+              <div className="selectedCase">
+                SELECTED CASE
+              </div>
+              <div className="title">
+                MELCHORA AAS
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="workItemmarqs">
             <Marquee speed={200} autoFill>
               <div className="item">
                 <span>PEOPLE</span> OVER PROFIT-
               </div>
             </Marquee>
-          </div>
+          </div> */}
           <div className="workItem lastworkItem">
             <div className="button" onClick={() => { nav('/allworks') }}>
               <div className="textCon">

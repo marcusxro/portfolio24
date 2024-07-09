@@ -409,10 +409,9 @@ const About: React.FC = () => {
                                 </div>
                                 <div className="list">
                                     <div className="item">Java(1yr)</div>
-                                    <div className="item">VB.net(1yr)<div>
-                                    </div>
-                                    <div className="item">Git(3yr)</div>
-                                    </div>
+                                    <div className="item">VB.net(1yr)</div>
+                                    <div className="item">Git(3yrs)</div>
+                                    <div className="item">Spline(1yr)</div>
                                 </div>
                             </div>
                         </div>
