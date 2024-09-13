@@ -11,6 +11,7 @@ import Footer from '../comp/Footer';
 import { useLocation } from 'react-router-dom';
 import ScrollToTop from '../comp/ScrollToTop';
 import SplitType from 'split-type'
+import MetaDecorator from '../comp/meta/MetaDecorator';
 
 
 const About: React.FC = () => {
@@ -20,11 +21,6 @@ const About: React.FC = () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-
-
-    useEffect(() => {
-        document.title = "ABOUT - MR©S"
-    }, [])
 
     const [isAllowed, setIsALlowed] = useState<boolean>(false)
 
@@ -248,7 +244,7 @@ const About: React.FC = () => {
     return (
         <>
             <div className='About'>
-
+                <MetaDecorator title='ABOUT - MR©S' description="Want to know more about me? Kindly deep dive into this page!" />
                 <Header />
                 <ScrollToTop />
                 <div className="content outerCon">

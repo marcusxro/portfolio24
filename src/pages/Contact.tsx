@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import Marquee from 'react-fast-marquee'
 import Footer from '../comp/Footer'
 import ScrollToTop from '../comp/ScrollToTop'
+import MetaDecorator from '../comp/meta/MetaDecorator'
 
 
 const Contact: React.FC = () => {
@@ -12,7 +13,6 @@ const Contact: React.FC = () => {
 
 
     useEffect(() => {
-        document.title = "CONTACT - MR©S"
         window.scrollTo(0, 0)
 
 
@@ -40,6 +40,7 @@ const Contact: React.FC = () => {
         <>
             <div className='ContactPage'>
             <Header />
+            <MetaDecorator title='CONTACT - MR©S' description="Interested about my works? Let's talk about yours!" />
                 <ScrollToTop />
                 <div className="ContentContact">
                     <div className="marq">

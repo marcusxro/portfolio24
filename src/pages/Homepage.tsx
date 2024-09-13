@@ -18,6 +18,7 @@ import SplitType from 'split-type'
 import Marquee from 'react-fast-marquee'
 import Cursor from '../comp/Cursor'
 import GridImgs from '../comp/GridImgs'
+import MetaDecorator from '../comp/meta/MetaDecorator'
 
 
 const Homepage: React.FC = () => {
@@ -25,8 +26,6 @@ const Homepage: React.FC = () => {
   const [percScroll, setPercScroll] = useState<number>(0)
 
   useEffect(() => {
-
-    document.title = "MR©S"
     const updateScrollPercentage = () => {
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -258,6 +257,7 @@ const Homepage: React.FC = () => {
     <div className='Homepage'>
       <Header />
       <ScrollToTop />
+      <MetaDecorator title='MR©S' description='Hello, I am Marcus Salopaso. I develop full-stack web application for all clients.' />
 
       <div className="content">
         <div className="landing">
