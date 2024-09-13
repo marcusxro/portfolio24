@@ -258,7 +258,6 @@ const Homepage: React.FC = () => {
       <Header />
       <ScrollToTop />
       <MetaDecorator title='MR©S' description='Hello, I am Marcus Salopaso. I develop full-stack web application for all clients.' />
-
       <div className="content">
         <div className="landing">
           <div className="landingCon">

@@ -19,6 +19,7 @@ import MusicPlayer from './comp/MusicPlayer';
 import AllPages from './pages/AllPages';
 import StaticEffect from './comp/StaticEffect';
 import Cursor from './comp/Cursor';
+import NotFound from './pages/NotFound';
 
 
 const App: React.FC = () => {
@@ -59,7 +60,7 @@ const App: React.FC = () => {
           <Route path="/SelectedWork/pcup" element={<Pcup />} />
           <Route path="/SelectedWork/melchoraas" element={<MelchoraIRS />} />
           <Route path="/allworks" element={<AllPages />} />
-
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>

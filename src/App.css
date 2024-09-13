@@ -2399,3 +2399,46 @@ html {
     display: none;
   }
 }
+
+
+.NotFoundPage {
+  background-color: #f4f3ed;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+}
+
+
+.NotFoundContent {
+  gap:  0px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+  p{
+    background-color: aqua;
+  }
+}
+.notFoundCon {
+  overflow: hidden;
+}
+
+.notFoundHeader {
+  font-weight: bolder;
+  display: flex;
+font-size: 9.5rem;
+text-align: center;
+font-family: 'boldFont'; 
+}
+
+.notFoundHeader .word .char {
+  opacity: 0;
+}
+
+.NotFoundMarqs {
+  opacity: 0;
+  font-family: 'mediumFont';
+}
